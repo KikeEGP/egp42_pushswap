@@ -1,12 +1,14 @@
-#include "libft/complete_libft.h"
+/*INCLUDE HEADER HERE*/
+
+#include "push_swap.h"
 
 /*OKAY, LET'S SEE HOW THIS WORKS*/
 int	main(int arg_count, char *arg_values[])
 {
 	if (arg_count == 1)
-		exit(0);/*In case of no arguments, nothing.
-		Check if exit(0) is correct*/
-/*In case of 2 or more arguments, you may convert to int*/
+		exit(1);/*In case of no arguments, nothing.*/
+
+	/*In case of 2 or more arguments, you may convert to int*/
 	
 	/*Also, you must check if are correct arguments:
 	 * ---integers---
@@ -21,8 +23,9 @@ int	main(int arg_count, char *arg_values[])
 	 * arguments. Remember: LIFO*/
 	if (arg_count == 2)
 		ft_printf("Hello %s", arg_values[1]);
-	else
-		ft_printf("No arguments");
+	
+	/*You have here the stack_a ready. Let's sort it*/
+	
 	/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
 	/*While you are sorting, at the end of a move,
 	 * you may ft_printf("%s\n", command) 
