@@ -5,10 +5,25 @@
 /*OKAY, LET'S SEE HOW THIS WORKS*/
 int	main(int arg_count, char *arg_vector[])
 {
+	static int	a;
+	int	*p;
+
+	p = &a;
+	ft_putendl("Error\n");
+	exit(1);
+	ft_printf("%p\n", p);
+	ft_printf("%d\n", a);
+	ft_printf("%p\n", &p);
 	if (arg_count == 1)
 		exit(1);/*In case of no arguments, nothing.*/
 
 	/*In case of 2 or more arguments, you may convert to int*/
+
+	/*PARSE: TARGETS
+	 * 	1. Check arguments
+	 * 	2. Create stack_a (and stack_b empty but with same size)
+	 * 	3. Fill stack_a with integers parsed
+	 * 		3.1: in case of error, free, "Error\n" and exit(1)*/	
 	
 	/*Also, you must check if are correct arguments:
 	 * ---integers---
