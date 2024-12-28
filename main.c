@@ -3,7 +3,7 @@
 #include "push_swap.h"
 
 /*OKAY, LET'S SEE HOW THIS WORKS*/
-int	main(int arg_count, char *arg_values[])
+int	main(int arg_count, char *arg_vector[])
 {
 	if (arg_count == 1)
 		exit(1);/*In case of no arguments, nothing.*/
@@ -22,7 +22,7 @@ int	main(int arg_count, char *arg_values[])
 	 * later create stack_a with malloc, knowing number of
 	 * arguments. Remember: LIFO*/
 	if (arg_count == 2)
-		ft_printf("Hello %s", arg_values[1]);
+		ft_printf("Hello %s", arg_vector[1]);
 	
 	/*You have here the stack_a ready. Let's sort it*/
 	
