@@ -10,12 +10,12 @@ int	main(int arg_count, char *arg_vector[])
 
 	p = &a;
 	ft_putendl("Error\n");
-	exit(1);
+	//exit(1);
 	ft_printf("%p\n", p);
 	ft_printf("%d\n", a);
 	ft_printf("%p\n", &p);
 	if (arg_count == 1)
-		exit(1);/*In case of no arguments, nothing.*/
+		exit(EXIT_FAILURE);/*In case of no arguments, nothing.*/
 
 	/*In case of 2 or more arguments, you may convert to int*/
 
@@ -45,5 +45,5 @@ int	main(int arg_count, char *arg_vector[])
 	/*While you are sorting, at the end of a move,
 	 * you may ft_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
-	return (0);
+	exit(EXIT_SUCCESS);
 }
