@@ -3,18 +3,19 @@
 #include "push_swap.h"
 
 /*OKAY, LET'S SEE HOW THIS WORKS*/
-int	main(int arg_count, char *arg_vector[])
+int	main(int arg_counter, char *arg_vector[])
 {
 	static int	a;
 	int	*p;
 
 	p = &a;
-	ft_putendl("Error\n");
+	ft_printf("Sizeof(int) == %d\n", sizeof(int));
+	ft_printf("Sizeof(long) == %d\n", sizeof(long));
 	//exit(1);
 	ft_printf("%p\n", p);
 	ft_printf("%d\n", a);
 	ft_printf("%p\n", &p);
-	if (arg_count == 1)
+	if (arg_counter == 1)
 		exit(EXIT_FAILURE);/*In case of no arguments, nothing.*/
 
 	/*In case of 2 or more arguments, you may convert to int*/
@@ -36,7 +37,7 @@ int	main(int arg_count, char *arg_vector[])
 	 * parse first arguments to check if are correct, and
 	 * later create stack_a with malloc, knowing number of
 	 * arguments. Remember: LIFO*/
-	if (arg_count == 2)
+	if (arg_counter == 2)
 		ft_printf("Hello %s", arg_vector[1]);
 	
 	/*You have here the stack_a ready. Let's sort it*/
