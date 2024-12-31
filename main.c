@@ -12,9 +12,9 @@ int	main(int arg_counter, char *arg_vector[])
 	ft_printf("Sizeof(int) == %d\n", sizeof(int));
 	ft_printf("Sizeof(long) == %d\n", sizeof(long));
 	//exit(1);
-	ft_printf("%p\n", p);
-	ft_printf("%d\n", a);
-	ft_printf("%p\n", &p);
+	ft_printf("p %p, %x\n", p, p);
+	ft_printf("a %d\n", a);
+	ft_printf("&p %p, %x\n", &p, &p);
 	if (arg_counter == 1)
 		exit(EXIT_FAILURE);/*In case of no arguments, nothing.*/
 
