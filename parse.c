@@ -20,14 +20,13 @@
 	/*ft_atoi_protected(), which uses ft_atol() and check if it's integer*/
 	/*If it's integer, return or put in stack_a*/
 	/*If not, free mem allocated, "Error\n", exit(1)*/
+		/*How to check? If it's INT_MAX or INT_MIN, extreme_value()
+		 * and use strncmp to see if it's all OK*/
+
+/*Put new integer in a new node of stac_a*/
 
 /*FUNCTION TO COMPARE INTEGERS*/
-	/*Maybe shall do it with str. But i believe is better now*/
-		/*We are sure that there are correct integers*/
-		/*Now it's time to check if some int is repeat*/
-		/*...
-		 * This will take so much time...*/
 	/*Compare number of stack with all of others. 
 	 * 	Forward or reverse?*/
-		
-	
+		/*Forward, maybe before put in stack_a, 
+		 * check from first to last if there's the same int*/
