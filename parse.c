@@ -4,6 +4,12 @@
 
 #include "push_swap.h"
 
+/*OKAY, 5/1/2025
+ * we are gonna do as strtol, but with atoi_protected.
+ * So, it's not strtol, but we will use here exactly the same
+ * as done in ft_strtol*/
+
+
 /*FUNCTION TO CHECK IF ARE NUMBERS*/
 	/*If there can only be numbers, just check arg by arg*/
 	/*If there can be a string with numbers, take care of it too*/
