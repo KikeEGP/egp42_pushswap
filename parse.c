@@ -4,6 +4,23 @@
 
 #include "push_swap.h"
 
+static int	overflow_happened(char *str, char *endptr)
+{
+	size_t	str_size;
+	size_t	end_size;
+
+	str_size = ft_strlen(str);
+	if (!endptr && str[str_size] == 48)
+		return (1);
+	else
+	{
+		end_size = str_size - ft_strlen(endptr);
+		if (str[end_size - 1] == 48)
+			return (1);
+	}
+	return (0);
+}
+
 static char	*get_endptr(const char *str)
 {
 	const char	*expected_null;
@@ -26,6 +43,7 @@ static int	string_to_int(const char *source_str, char **endptr)
 	size_t	aux_len;
 	long	result;
 
+	aux_len = 0;
 	if (!ft_strchr_digit(source_str))/*This protects in case of
 						source_str == ""*/
 	{
@@ -38,16 +56,12 @@ static int	string_to_int(const char *source_str, char **endptr)
 	if (!endptr)
 		result = ft_atoi_protected(source_str);
 	else
-	{
+	{/*HEY, MAYBE DON'T NEED THIS PART, AND JUST STOP IF EXISTS ENDPTR*/
 		aux_len = ft_strlen(source_str) - ft_strlen(*endptr);
 		aux = ft_substr(source_str, 0, aux_len);
 		if (!aux)
 			return (/*FUNCTION_ERROR*/);
 		result = ft_atoi_protected(aux);
-		if (result == INT_MAX || result == INT_MIN)
-			/*Hacer un strncmp de aux con strings
-			 * de int_max e int_min*/
-			/*Take care of whitespace before*/
 		free(aux);
 	}
 	return (result);
@@ -59,11 +73,14 @@ static int	just_parse(const char argv_input)
 	char	**endptr;
 	int	result;
 
+	*endptr = NULL;
 	aux = argv_input;
 	result = string_to_int(aux, &endptr);
-	if (/*Here is place to check if result = 0. Is a conversion?
-		Or maybe is an error?*/)	
+	if (!overflow_happened(aux, *endptr))
+	{
 
+	}
+	/*error_function: free() and exit()*/
 }
 
 int	parse_and_add(/*Use argv and (argc - 1) as parameters*/)
