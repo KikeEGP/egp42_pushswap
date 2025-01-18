@@ -6,13 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/17 19:24:42 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:19:02 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	overflow_happened(char *str, char *endptr)
+/*static int	overflow_happened(char *str, char *endptr)
 {
 	size_t	str_size;
 	size_t	end_size;
@@ -27,9 +27,9 @@ static int	overflow_happened(char *str, char *endptr)
 			return (1);
 	}
 	return (0);
-}
+}*/
 
-static char	*get_endptr(const char *str)
+/*static char	*get_endptr(const char *str)
 {
 	const char	*expected_null;
 	int		i;
@@ -43,67 +43,42 @@ static char	*get_endptr(const char *str)
 	while (str[i] && ft_isdigit(str[i++]))
 		expected_null = &str[i];
 	return ((char *)expected_null);
-}
+}*/
 
-static int	string_to_int(const char *source_str, char **endptr)
+/*static int	string_to_int(const char *source_str, char **endptr)
 {
 	char	*aux;
 	size_t	aux_len;
 	long	result;
 
 	aux_len = 0;
-	if (!ft_strchr_digit(source_str))/*This protects in case of
-						source_str == ""*/
+	if (!ft_strchr_digit(source_str)) //This protects in case of
+						source_str == ""
 	{
 		*endptr = (char *)source_str;
-		return (0);/*MAYBE FUNCTION ERROR?*/
-		/*This logic have sense in strtol. Maybe now I can remove*/
-		/*Yeah, I think is better to error and exit*/
+		return (0);//MAYBE FUNCTION ERROR?
+		//This logic have sense in strtol. Maybe now I can remove
+		//Yeah, I think is better to error and exit
 	}
 	*endptr = get_endptr(source_str);
 	if (!endptr)
 		result = ft_atoi_protected(source_str);
 	else
-	{/*HEY, MAYBE DON'T NEED THIS PART, AND JUST STOP IF EXISTS ENDPTR*/
+	{//HEY, MAYBE DON'T NEED THIS PART, AND JUST STOP IF EXISTS ENDPTR
 		aux_len = ft_strlen(source_str) - ft_strlen(*endptr);
 		aux = ft_substr(source_str, 0, aux_len);
 		if (!aux)
-			return (/*FUNCTION_ERROR*/);
+			return (//FUNCTION_ERROR);
 		result = ft_atoi_protected(aux);
 		free(aux);
 	}
 	return (result);
-}
+}*/
 
-static int	just_parse(const char argv_input)
+void	parse_arg_vector(int arg_counter, char **arg_vector)
 {
-	char	*aux;
-	char	**endptr;
-	int	result;
-
-	*endptr = NULL;
-	aux = argv_input;
-	result = string_to_int(aux, &endptr);
-	if (!overflow_happened(aux, *endptr))
-	{
-
-	}
-	/*error_function: free() and exit()*/
-}
-
-int	parse_and_add(/*Use argv and (argc - 1) as parameters*/)
-{
-	int	i;
-
-	i = 0;
-	/*MAYBE THIS ONE MUST BE MAIN FUNCTION TO ALL, AND PARSE
-	 * MUST BE DONE IN SECOND ONE. AND STRTOL, THIRD ONE*/
-	while (i < /*argc - 1*/)
-	/*INT IN STACK*/ = just_parse(argv);
-	if (*endptr == )
-
-	/*MAIN FUNCTION OF THE FILE. Function to call conversion and
-	 * add to stack_a int by int*/
+	while (arg_counter > 1)
+		check_forbidden_chars(arg_vector[arg_counter--]);
 }
 /*OKAY, 5/1/2025
  * we are gonna do as strtol, but with atoi_protected.
