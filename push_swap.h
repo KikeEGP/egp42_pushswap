@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/17 19:24:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/18 22:44:30 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,8 @@
 # include "libft/complete_libft.h"
 /*		Defines and structs		*/
 # include "definitions.h"
+
+/*				parse				*/
+int	chars_allowed(int c);
 
 #endif

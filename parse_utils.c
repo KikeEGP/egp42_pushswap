@@ -6,21 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/18 22:18:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/18 22:45:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*	Digits, whitespace and '+' or '-'	*/
-int	chars_allowed(char *argument)
+/*	Digits, whitespace and '+' or '-'. Based in ft_isalnum	*/
+int	chars_allowed(int c)
 {
-	int	i;
-
-	i = 0;
-	while (argument[i])
-	{
-		if (
-	}
-	return (0);
+	return (ft_isdigit(c) || ft_isspace(c) || ft_issign(c));
 }
