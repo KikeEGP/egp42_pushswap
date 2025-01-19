@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/18 23:19:02 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/19 17:00:52 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@
 	return (0);
 }*/
 
-/*static char	*get_endptr(const char *str)
+void	check_atoi_overflow(long result, int count)
+{
+	if(!count || (count > 10 && (result == INT_MAX || result == INT_MIN)))
+		error_argument(/*wHAT?*/);
+}
+
+static char	*get_endptr(const char *str)
 {
 	const char	*expected_null;
 	int		i;
@@ -40,40 +46,34 @@
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] && ft_isdigit(str[i++]))
-		expected_null = &str[i];
-	return ((char *)expected_null);
-}*/
-
-/*static int	string_to_int(const char *source_str, char **endptr)
-{
-	char	*aux;
-	size_t	aux_len;
-	long	result;
-
-	aux_len = 0;
-	if (!ft_strchr_digit(source_str)) //This protects in case of
-						source_str == ""
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		*endptr = (char *)source_str;
-		return (0);//MAYBE FUNCTION ERROR?
-		//This logic have sense in strtol. Maybe now I can remove
-		//Yeah, I think is better to error and exit
+		expected_null = &str[i];
+		i++;
 	}
+	return ((char *)expected_null);
+}
+
+/*Based on strtol, just checks if a str can be totally converted*/
+static int	string_to_int(const char *source_str)
+{
+	long	result;
+	char	*endptr;
+	int	atoi_counter;
+
+	atoi_counter = 0;
+	if (!ft_strchr_digit(source_str))
+		return (error_argument(/*What???*/));
 	*endptr = get_endptr(source_str);
 	if (!endptr)
-		result = ft_atoi_protected(source_str);
-	else
-	{//HEY, MAYBE DON'T NEED THIS PART, AND JUST STOP IF EXISTS ENDPTR
-		aux_len = ft_strlen(source_str) - ft_strlen(*endptr);
-		aux = ft_substr(source_str, 0, aux_len);
-		if (!aux)
-			return (//FUNCTION_ERROR);
-		result = ft_atoi_protected(aux);
-		free(aux);
+	{
+		result = ft_atoi_protected(source_str, &atoi_counter);
+		check_atoi_overflow(result, atoi_counter); 
 	}
+	else
+		return (error_argument(/*What?*/));
 	return (result);
-}*/
+}
 
 void	parse_arg_vector(int arg_counter, char **arg_vector)
 {
