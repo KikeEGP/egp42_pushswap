@@ -19,6 +19,8 @@
 # include "definitions.h"
 
 /*				parse				*/
+void	check_forbidden_chars(char *argument);
 int	chars_allowed(int c);
+void	error_argument(/*check this one*/);
 
 #endif
