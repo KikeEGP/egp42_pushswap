@@ -6,14 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 19:53:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/19 20:17:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Based on strtol, just checks if a str can be totally converted*/
-static int	string_to_int(const char *source_str)
+static int	string_to_int(const char *source_str,/* where_storage*/)
 {
 	long	result;
 	int	atoi_counter;
@@ -25,7 +25,7 @@ static int	string_to_int(const char *source_str)
 		check_atoi_overflow(result, atoi_counter); 
 	}
 	else
-		return (error_argument(/*#iWhat?*/));
+		return (error_argument(/*storage*/));
 	return (result);
 }
 
@@ -37,9 +37,9 @@ static void convert_and_compare(char **split_arg, /*where_storage*/)
 	i = 0;
 	while (split_arg[i])
 	{
-		/*where_storage*/ = string_to_int(split_arg[i]);
+		/*where_storage*/ = string_to_int(split_arg[i], /*storage*/);
 		if(!/*compare_numbers*/)
-			error_argument(/*What*/);
+			error_argument(/*storage*/);
 		i++;
 	}
 }
@@ -54,19 +54,18 @@ static void	split_to_convert(int argc, char **argv, /*where_storage*/)
 	{
 		split_arg = ft_split(argv[i]);
 		if (!split)
-			error_argument(/*What?*/);
+			error_argument(/*storage*/);
 		convert_and_compare(split_arg, /*where_storage*/);
-		/*compare numbers*/
 		i++;
 	}
 }
 
-/*WHAT*/	parse_convert(int arg_counter, char **arg_vector)
+/*WHAT*/	parse_main(int argc, char **argv, /*where_storage*/)
 {
 	char	*split_args;
 
-	parse_chars(arg_counter, arg_vector);
-	split_to_convert(arg_counter, arg_vector);
+	parse_chars(argc, argv);
+	split_to_convert(argc, argv);
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
 }
