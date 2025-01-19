@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 17:29:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/19 18:09:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ void	check_forbidden_chars(char *argument)
 			error_argument();
 		i++;
 	}
+}
+
+void	parse_chars(int arg_counter, char **arg_vector)
+{
+	while (arg_counter > 1)
+		check_forbidden_chars(arg_vector[arg_counter--]);
 }

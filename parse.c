@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 17:00:52 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/19 18:12:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,7 @@
 	return (0);
 }*/
 
-void	check_atoi_overflow(long result, int count)
-{
-	if(!count || (count > 10 && (result == INT_MAX || result == INT_MIN)))
-		error_argument(/*wHAT?*/);
-}
-
-static char	*get_endptr(const char *str)
+char	*get_endptr(const char *str)
 {
 	const char	*expected_null;
 	int		i;
@@ -58,28 +52,27 @@ static char	*get_endptr(const char *str)
 static int	string_to_int(const char *source_str)
 {
 	long	result;
-	char	*endptr;
 	int	atoi_counter;
 
-	atoi_counter = 0;
-	if (!ft_strchr_digit(source_str))
-		return (error_argument(/*What???*/));
-	*endptr = get_endptr(source_str);
-	if (!endptr)
+	if (!ft_strchr_digit(source_str) && !get_endptr(source_str))
 	{
+		atoi_counter = 0;
 		result = ft_atoi_protected(source_str, &atoi_counter);
 		check_atoi_overflow(result, atoi_counter); 
 	}
 	else
-		return (error_argument(/*What?*/));
+		return (error_argument(/*#iWhat?*/));
 	return (result);
 }
 
-void	parse_arg_vector(int arg_counter, char **arg_vector)
+/*WHAT*/	parse_convert(int arg_counter, char **arg_vector)
 {
-	while (arg_counter > 1)
-		check_forbidden_chars(arg_vector[arg_counter--]);
-}
+	parse_chars(arg_counter, arg_vector);
+	/*Split args, one by one*/
+	/*string to int, one by one*/
+	/*HOW DO STORAGE OF CONVERSIONS*/
+		//strdup is not an option
+
 /*OKAY, 5/1/2025
  * we are gonna do as strtol, but with atoi_protected.
  * So, it's not strtol, but we will use here exactly the same
