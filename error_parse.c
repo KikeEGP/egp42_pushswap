@@ -10,4 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void error_argument()
+{
+	free();/*WHAT HAVE TO FREE HERE?!?*/
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
+}
