@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 20:17:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/25 19:58:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,11 @@ static void	split_to_convert(int argc, char **argv, /*where_storage*/)
 		convert_and_compare(split_arg, /*where_storage*/);
 		i++;
 	}
+	free(split_arg);
 }
 
 /*WHAT*/	parse_main(int argc, char **argv, /*where_storage*/)
 {
-	char	*split_args;
-
 	parse_chars(argc, argv);
 	split_to_convert(argc, argv);
 	/*Add to list every conversion, that's storage*/
