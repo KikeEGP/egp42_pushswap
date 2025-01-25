@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/25 19:58:58 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/25 20:27:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ static void	split_to_convert(int argc, char **argv, /*where_storage*/)
 		if (!split)
 			error_argument(/*storage*/);
 		convert_and_compare(split_arg, /*where_storage*/);
+		free(split_arg);
 		i++;
 	}
-	free(split_arg);
 }
 
 /*WHAT*/	parse_main(int argc, char **argv, /*where_storage*/)
