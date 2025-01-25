@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 18:09:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/01/25 20:21:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	chars_allowed(int c)
 	return (ft_isdigit(c) || ft_isspace(c) || ft_issign(c));
 }
 
-void	check_forbidden_chars(char *argument)
+static void	check_forbidden_chars(char *argument)
 {
 	size_t	i;
 
