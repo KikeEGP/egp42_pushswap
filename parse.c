@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/31 23:50:52 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/01 00:18:31 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	split_to_convert(int argc, char **argv, /*where_storage*/)
 	}
 }
 
-t_stack	*parse_main(int argc, char **argv)
+t_stack	*parse_main(int argc, char **argv/*, maybe t_stack *stack_a here*/)
 {
 	t_stack	*parse_list;/*both*/
 	t_stack	*stack_a;/*must be initialized*/
@@ -70,4 +70,6 @@ t_stack	*parse_main(int argc, char **argv)
 	split_to_convert(argc, argv);
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
+	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
+	return (stack_a);
 }
