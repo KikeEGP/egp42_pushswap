@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/08 22:23:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:34:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ static int	string_to_int(const char *source_str, char **endptr)
 static int	convert_and_compare(char **split_arg, /*where_storage*/)
 {
 	int	i;
-	char	**conversion_flag;
+	char	**flag;
 
 	i = 0;
-	conversion_flag = NULL;
+	flag = NULL;
 	while (split_arg[i])
 	{
 		if (!ft_strchr_digit(split_arg[i]))
 			return (0);
-		/*storage*/ = string_to_int(split_arg[i], &conversion_flag);
-		if (conversion_flag != NULL)
+		/*storage*/ = string_to_int(split_arg[i], &flag);
+		if (flag != NULL)
 			return (0);
 		i++;
 	}
