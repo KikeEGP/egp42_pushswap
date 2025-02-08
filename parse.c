@@ -6,14 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/01 00:18:31 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:09:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Based on strtol, just checks if a str can be totally converted*/
-static int	string_to_int(const char *source_str,/* where_storage*/)
+static int	string_to_int(const char *source_str,/* ENDPTR*/)
 {
 	long	result;
 	int	atoi_counter;
@@ -66,7 +66,8 @@ t_stack	*parse_main(int argc, char **argv/*, maybe t_stack *stack_a here*/)
 	t_stack	*parse_list;/*both*/
 	t_stack	*stack_a;/*must be initialized*/
 
-	parse_chars(argc, argv);
+	if (!parse_chars(argc, argv))
+		error_argument(/*storage*/);
 	split_to_convert(argc, argv);
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
