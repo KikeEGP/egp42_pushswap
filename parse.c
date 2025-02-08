@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/08 22:34:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:41:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ static int	string_to_int(const char *source_str, char **endptr)
 }
 
 /*Convert, storage and compares numbers*/
-static int	convert_and_compare(char **split_arg, /*where_storage*/)
+static int	convert_and_add(char **split_arg, /*where_storage*/)
 {
 	int	i;
 	char	**flag;
+	int	value;
 
 	i = 0;
 	flag = NULL;
@@ -42,10 +43,11 @@ static int	convert_and_compare(char **split_arg, /*where_storage*/)
 	{
 		if (!ft_strchr_digit(split_arg[i]))
 			return (0);
-		/*storage*/ = string_to_int(split_arg[i], &flag);
+		value = string_to_int(split_arg[i], &flag);
 		if (flag != NULL)
 			return (0);
 		i++;
+		/*Add new node and put value there*/
 	}
 	return (1);
 }
@@ -61,7 +63,7 @@ static int	split_to_convert(int argc, char **argv, /*where_storage*/)
 		split_arg = ft_split(argv[i]);
 		if (!split_arg)/*CHECK THIS, I HAVE DOUBTS*/
 			return (0);
-		convert_and_compare(split_arg, /*where_storage*/);
+		convert_and_add(split_arg, /*where_storage*/);
 		free(split_arg);
 		i++;
 	}
