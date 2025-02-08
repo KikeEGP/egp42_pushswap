@@ -6,33 +6,39 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/25 20:21:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:07:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*	Digits, whitespace and '+' or '-'. Based in ft_isalnum	*/
-static int	chars_allowed(int c)
+static int	found_forbidden(int c)
 {
 	return (ft_isdigit(c) || ft_isspace(c) || ft_issign(c));
 }
 
-static void	check_forbidden_chars(char *argument)
+static int	chars_allowed(char *argument)
 {
 	size_t	i;
 
 	i = 0;
 	while (argument[i])
 	{
-		if (!chars_allowed(argument[i]))
-			error_argument();
+		if (!found_forbidden(argument[i]))
+			return (0);
 		i++;
 	}
+	return (1);
 }
 
-void	parse_chars(int arg_counter, char **arg_vector)
+int	parse_chars(int arg_counter, char **arg_vector)
 {
-	while (arg_counter > 1)
-		check_forbidden_chars(arg_vector[arg_counter--]);
+	while (arg_counter > 1 && chars_allowed(arg_vector[arg_counter]))
+	{
+		if (!chars_allowed(arg_vector[arg_counter]))
+			return (0);
+		arg_counter--;
+	}
+	return (1);
 }
