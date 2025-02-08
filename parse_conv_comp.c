@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:42:00 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/19 20:12:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:02:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 /*ADD HERE Function to compare new number to all previous*/
 
 /*Below here, string_to_int's utils functions*/
-void	check_atoi_overflow(long result, int count)
+int	check_atoi_overflow(long result, int count)
 {
-	if(!count || (count > 10 && (result == INT_MAX || result == INT_MIN)))
-		error_argument(/*wHAT?*/);
+	if (!count || (count > 10 && (result == INT_MAX || result == INT_MIN)))
+		return (0);
+	return (1);
 }
 
 /*If string != totally converted, returns a pointer*/
