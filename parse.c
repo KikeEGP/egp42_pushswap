@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/08 22:41:08 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/09 03:42:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ static int	convert_and_add(char **split_arg, /*where_storage*/)
 		if (flag != NULL)
 			return (0);
 		i++;
-		/*Add new node and put value there*/
+		add_to_list(value,/*storage*/);
+		/*Maybe check if add to node works properly*/
 	}
 	return (1);
 }
