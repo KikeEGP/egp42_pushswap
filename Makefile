@@ -10,4 +10,27 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+SOURCES =
+OBJECTS = $(SOURCES: .c=.o)
 
+CFLAGS = -Wall -Wextra -Werror
+CC = cc
+RM = rm -f
+
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(SOURCES)
+
+clean:
+	$(NAME) $(OBJECTS)
+
+compclean: all clean
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re compclean
