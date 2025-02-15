@@ -17,7 +17,7 @@ typedef struct	s_stack
 	int		value;
 	struct s_stack	*prev;
 	struct s_stack	*next;
-	int		position;
+	size_t		position;
 }	t_stack;
 
 /*pdel-olm storages data in different structs, as matrioshkas
