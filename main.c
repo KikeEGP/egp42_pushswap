@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/16 15:20:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/17 20:56:38 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int a_counter, char *a_vector[])
 
 	initialize(/*struct*/)
 	if (a_counter == 1)
-		exit(EXIT_FAILURE);/*In case of no arguments, nothing.*/
+		return (0);
 	/*struct????*/ = parse_main(a_counter, a_vector/*, MAYBE SOMETHING*/);
 	/*You have here the stack_a ready. Let's sort it*/
 	
