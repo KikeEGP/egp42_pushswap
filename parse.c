@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/09 03:42:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/02/23 20:01:03 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static int	convert_and_add(char **split_arg, /*where_storage*/)
 			return (0);
 		i++;
 		add_to_list(value,/*storage*/);
+		/*THis should create a node, and now ADD NODE TO LIST*/
 		/*Maybe check if add to node works properly*/
 	}
 	return (1);
