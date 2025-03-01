@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/23 20:23:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/02 00:10:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	string_to_int(const char *source_str, char **endptr)
 }
 
 /*Convert, storage and compares numbers*/
-static int	convert_and_add(char **split_arg, /*where_storage*/)
+static int	convert_and_add(char **split_arg, t_storage stacks)
 {
 	int	i;
 	char	**flag;
@@ -47,14 +47,14 @@ static int	convert_and_add(char **split_arg, /*where_storage*/)
 		if (flag != NULL)
 			return (0);
 		i++;
-		add_to_list(value,/*storage*/);
+		add_to_list(value, stacks->parse_list);
 		/*THis should create a node, and now ADD NODE TO LIST*/
 		/*Maybe check if add to node works properly*/
 	}
 	return (1);
 }
 
-static int	split_to_convert(int argc, char **argv, /*where_storage*/)
+static int	split_to_convert(int argc, char **argv, t_storage stacks)
 {
 	int	i;
 	char	**split_arg;
@@ -65,7 +65,7 @@ static int	split_to_convert(int argc, char **argv, /*where_storage*/)
 		split_arg = ft_split(argv[i]);
 		if (!split_arg)/*CHECK THIS, I HAVE DOUBTS*/
 			return (0);
-		convert_and_add(split_arg, /*where_storage*/);
+		convert_and_add(split_arg, stacks);
 		free(split_arg);
 		i++;
 	}
@@ -76,6 +76,7 @@ t_stack	*parse_main(int argc, char **argv, t_storage stacks)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
+	parse_list = NULL;
 	if (!parse_chars(argc, argv))
 		error_argument(/*storage*/);
 	if (!split_to_convert(argc, argv, &parse_list))

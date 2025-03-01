@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/09 03:47:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/02 00:11:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	add_front(t_stack **head, t_stack *new)
 	*head = new;
 }
 
-int	add_to_list(int value, /*storage*/)
+int	add_to_list(int value, t_stack parse_list)
 {
 	t_stack	new_node;
 	new_node = create_node(value);/*THIS CREATES NEW NODE, NOT LIST*/
-	if (!new_node || !add_front(/*&stack_list_parse*/, new_node)
+	if (!new_node || !add_front(parse_list, new_node)
 		return (0);	
 	return (1);
 }
