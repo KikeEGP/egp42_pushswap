@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/23 20:18:15 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/02 00:03:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main(int a_counter, char *a_vector[])
 	/*t_stack	stack_a;*//*Do I Need this?*/
 	t_storage	*stacks;
 
-	initialize(stacks);/*IS THIS CORRECT??*/
 	if (a_counter == 1)
 		return (0);
+	initialize(stacks);/*IS THIS CORRECT??*/
 	stacks->stack_a = parse_main(a_counter, a_vector, stacks);
 	/*You have here the stack_a ready. Let's sort it*/
 	
