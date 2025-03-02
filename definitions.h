@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/23 20:13:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:27:15 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ typedef struct	s_stack
 	size_t		position;
 }	t_stack;
 
-typedef struct	s_storage
+typedef struct	s_storage/*PKAY, FORGOT THIS ONE AT THE MOMENT, 
+			TRY FIRST WITH T_STACK*/
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
