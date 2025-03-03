@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/02 00:03:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:24:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 int	main(int a_counter, char *a_vector[])
 {
 	/*t_stack	stack_a;*//*Do I Need this?*/
-	t_storage	*stacks;
+	t_storage	*stacks;/*Forget of this at the moment*/
 
 	if (a_counter == 1)
 		return (0);
