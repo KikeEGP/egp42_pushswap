@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/02 20:39:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 18:20:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ int	add_front(t_stack *head, t_stack *new)
 	head->prev = new;/*Check this functions*/
 	new->next = head;/*This had *head, and was wrong*/
 	*head = *new;/*before was *head = new, and was wrong*/
+	return (1);
 }
 
 int	add_to_list(int value, t_stack *parse_list)
 {
-	t_stack	*new_node;
+	t_stack	*new_node;/*Will this new_node die here as a local var?*/
 	new_node = create_node(value);/*THIS CREATES NEW NODE, NOT LIST*/
 	if (!new_node || !add_front(parse_list, new_node))
 		return (0);	
