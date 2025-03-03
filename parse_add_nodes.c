@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 18:20:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 18:55:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*create_node(void *content)
 	return (new_node);
 }
 
-int	add_front(t_stack *head, t_stack *new)
+static int	add_front(t_stack *head, t_stack *new)
 {
 	if ((head == NULL || new == NULL) || head->value == new->value)
 		return (0);/*Any time is accurate to compare two integers*/

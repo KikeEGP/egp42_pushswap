@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 19:24:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:36:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 
 int	main(int a_counter, char *a_vector[])
 {
-	/*t_stack	stack_a;*//*Do I Need this?*/
-	t_storage	*stacks;/*Forget of this at the moment*/
+	t_stack *stack_a;/*I will use this until I understand*/
+	/*t_storage	*stacks;*Forget of this at the moment*/
 
 	if (a_counter == 1)
 		return (0);
-	initialize(stacks);/*IS THIS CORRECT??*/
-	stacks->stack_a = parse_main(a_counter, a_vector, stacks);
+	initialize(stack_a);/*IS THIS CORRECT??*/
+	stack_a = parse_main(a_counter, a_vector, stack_a);
 	/*You have here the stack_a ready. Let's sort it*/
 	
 	/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/

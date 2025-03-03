@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/02 00:10:13 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:38:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	string_to_int(const char *source_str, char **endptr)
 }
 
 /*Convert, storage and compares numbers*/
-static int	convert_and_add(char **split_arg, t_storage stacks)
+static int	convert_and_add(char **split_arg, t_stack *parse_list)
 {
 	int	i;
 	char	**flag;
@@ -47,14 +47,14 @@ static int	convert_and_add(char **split_arg, t_storage stacks)
 		if (flag != NULL)
 			return (0);
 		i++;
-		add_to_list(value, stacks->parse_list);
+		add_to_list(value, parse_list);/*Is parse_list initialze?*/
 		/*THis should create a node, and now ADD NODE TO LIST*/
 		/*Maybe check if add to node works properly*/
 	}
 	return (1);
 }
 
-static int	split_to_convert(int argc, char **argv, t_storage stacks)
+static int	split_to_convert(int argc, char **argv, t_stack *parse_list)
 {
 	int	i;
 	char	**split_arg;
@@ -62,21 +62,22 @@ static int	split_to_convert(int argc, char **argv, t_storage stacks)
 	i = 1;
 	while (i < argc)
 	{
-		split_arg = ft_split(argv[i]);
+		split_arg = ft_split(argv[i], 32);
 		if (!split_arg)/*CHECK THIS, I HAVE DOUBTS*/
 			return (0);
-		convert_and_add(split_arg, stacks);
+		convert_and_add(split_arg, parse_list);
 		free(split_arg);
 		i++;
 	}
 	return (1);
 }
 
-t_stack	*parse_main(int argc, char **argv, t_storage stacks)
+t_stack	*parse_main(int argc, char **argv, t_stack *stack_a)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
-	parse_list = NULL;
+	parse_list = NULL;/*Vicmarti says this will crash
+				in case of dereference*/
 	if (!parse_chars(argc, argv))
 		error_argument(/*storage*/);
 	if (!split_to_convert(argc, argv, &parse_list))
