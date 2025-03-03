@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 18:55:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:10:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 /*	*	*	*	* parse	*	*	*	*	*/
 t_stack		*parse_main(int argc, char **argv, /**/);
 int		parse_chars(int arg_counter, char **arg_vector);
-static int	split_to_convert(int argc, char **argv, t_storage stacks);
-static int	convert_and_add(char **split_arg, t_storage stacks);
+static int	split_to_convert(int argc, char **argv, t_stack *parse_list);
+static int	convert_and_add(char **split_arg, t_stack *parse_list);
 static int	string_to_int(const char *source_str, char **endptr);
 /*	* parse_conv_add *	*/
 int		check_atoi_overflow(long result, int count);
