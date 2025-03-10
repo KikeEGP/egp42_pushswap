@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 19:38:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:30:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ t_stack	*parse_main(int argc, char **argv, t_stack *stack_a)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
-	parse_list = NULL;/*Vicmarti says this will crash
-				in case of dereference*/
+	parse_list = initialize(parse_list);
+	if (!parse_list)
+		return (NULL);
 	if (!parse_chars(argc, argv))
 		error_argument(/*storage*/);
 	if (!split_to_convert(argc, argv, &parse_list))
