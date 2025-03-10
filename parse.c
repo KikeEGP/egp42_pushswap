@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/10 20:11:44 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 20:26:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ static int	convert_and_add(char **split_arg, t_stack *parse_list)
 		if (flag != NULL)
 			return (0);
 		i++;
-		add_to_list(value, parse_list);/*Is parse_list initialze?*/
-		/*THis should create a node, and now ADD NODE TO LIST*/
-		/*Maybe check if add to node works properly*/
+		add_to_list(value, &parse_list);
 	}
 	return (1);
 }
