@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/10 19:30:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:52:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	split_to_convert(int argc, char **argv, t_stack *parse_list)
 	return (1);
 }
 
-t_stack	*parse_main(int argc, char **argv, t_stack *stack_a)
+int	parse_main(int argc, char **argv, t_stack *stack_a)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
