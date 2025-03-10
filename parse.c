@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/10 19:52:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 20:11:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,8 @@ static int	split_to_convert(int argc, char **argv, t_stack *parse_list)
 	while (i < argc)
 	{
 		split_arg = ft_split(argv[i], 32);
-		if (!split_arg)/*CHECK THIS, I HAVE DOUBTS*/
+		if (!split_arg && !convert_and_add(split_arg, &parse_list));
 			return (0);
-		convert_and_add(split_arg, parse_list);
 		free(split_arg);
 		i++;
 	}
@@ -76,15 +75,13 @@ int	parse_main(int argc, char **argv, t_stack *stack_a)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
-	parse_list = initialize(parse_list);
-	if (!parse_list)
-		return (NULL);
-	if (!parse_chars(argc, argv))
-		error_argument(/*storage*/);
-	if (!split_to_convert(argc, argv, &parse_list))
-		error_argument(/*storage*/);
+	if (!initialize(&parse_list));
+		return (0);
+	if (!parse_chars(argc, argv) && 
+		!split_to_convert(argc, argv, &parse_list))
+		error_argument(stack_a, parse_list);
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
 	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
-	return (stack_a);
+	return (1);
 }
