@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 19:40:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:50:25 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 /*		Defines and structs		*/
 # include "definitions.h"
 
+/*	*	*	*	* main	*	*	*	*	*/
+int		initialize_stack(t_stack *new_stack);
 /*	*	*	*	* parse	*	*	*	*	*/
-t_stack		*parse_main(int argc, char **argv, t_stack *stack_a);
+int		parse_main(int argc, char **argv, t_stack *stack_a);
 int		parse_chars(int arg_counter, char **arg_vector);
 static int	split_to_convert(int argc, char **argv, t_stack *parse_list);
 static int	convert_and_add(char **split_arg, t_stack *parse_list);
