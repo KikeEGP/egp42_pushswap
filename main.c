@@ -6,18 +6,22 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 19:36:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:19:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*	????	*/	initialize_stack(t_stack /*struct*/)
+t_stack	*initialize_stack(t_stack *new_stack)
 {
-	/*struct*/->value = 0;/*	CORRECT THIS		*/
-	/*struct*/->prev = NULL;
-	/*struct*/->next = NULL;
-	/*struct*/->position = 0;
+	new_stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_stack)
+		return (NULL);
+	new_stack->value = 0;
+	new_stack->prev = NULL;
+	new_stack->next = NULL;
+	new_stack->position = 0;
+	return (new_stack);
 }
 
 int	main(int a_counter, char *a_vector[])
@@ -27,7 +31,9 @@ int	main(int a_counter, char *a_vector[])
 
 	if (a_counter == 1)
 		return (0);
-	initialize(stack_a);/*IS THIS CORRECT??*/
+	stack_a = initialize(stack_a);/*IS THIS CORRECT??*/
+	if (!stack_a)
+		exit(EXIT_FAILURE);
 	stack_a = parse_main(a_counter, a_vector, stack_a);
 	/*You have here the stack_a ready. Let's sort it*/
 	
