@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/12 21:21:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/12 21:22:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /*Maybe, in case of few unexpected positions, 
  * could work with different instructions. But pdel-olm suggest to focus
  * in algorithm. In case of being well programmed, it should do this too*/
-int	sort_check(t_stack stack_a)
+int	sort_check(t_stack *stack_a)
 {
 	/*PARAMETER SHOULD BE A STRUCT WITH BOTH STACKS,
 	 * so you can check if stack_b->value != NULL*/
@@ -27,8 +27,10 @@ int	sort_check(t_stack stack_a)
 	 * and could be used to know how many erros are there*/
 	size_t	index;
 	int	check;
-	t_stack	pointer_stack;
+	t_stack	*pointer_stack;
 
+	if (!stack_a)
+		return (0);/*MAYBE NOT NECESSARY. OR MAYBE PUT HERE ERROR*/
 	pointer_stack = stack_a;
 	index = 0;
 	wrong_place = 0;
