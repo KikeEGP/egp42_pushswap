@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/16 13:41:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/12 21:21:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	sort_check(t_stack stack_a)
 	int	check;
 	t_stack	pointer_stack;
 
-	if (!stack_a)
-		return (0);/*MAYBE NOT NECESSARY. OR MAYBE PUT HERE ERROR*/
 	pointer_stack = stack_a;
 	index = 0;
 	wrong_place = 0;
