@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/03 18:55:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/14 18:26:30 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int	add_to_list(int value, t_stack *parse_list)
 {
 	t_stack	*new_node;/*Will this new_node die here as a local var?*/
 	new_node = create_node(value);/*THIS CREATES NEW NODE, NOT LIST*/
-	if (!new_node || !add_front(parse_list, new_node))
-		return (0);	
+	if (!new_node || !add_front(parse_list, new_node)
+		|| parse_list->next != NULL
+		&& (parse_list->value == parse_list->next->value))
+		return (0);
 	return (1);
 }
