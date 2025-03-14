@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/14 19:01:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/14 19:17:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	parse_main(int argc, char **argv, t_stack *stack_a)
 {
 	t_stack	*parse_list;/*must be initialized*/
 
-	if (!initialize(&parse_list));
+	if (!initialize_stack(&parse_list));
 		return (0);
 	if (!parse_chars(argc, argv) && 
 		!split_to_convert(argc, argv, &parse_list))

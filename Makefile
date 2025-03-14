@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/14 19:08:56 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/14 19:18:55 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) $(SOURCES) $(LIBFT)
 
 clean:
-	$(NAME) $(OBJECTS)
+	$(RM) $(OBJECTS)
 
 compclean: all clean
 

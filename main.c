@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/10 19:46:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/14 19:16:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(int argc, char *a_vector[])
 
 	if (argc == 1)
 		return (0);
-	if (!initialize(&stack_a) && !parse_main(argc, a_vector, &stack_a));
+	if (!initialize_stack(&stack_a)
+		&& !parse_main(argc, a_vector, &stack_a));
 		exit(EXIT_FAILURE);
 	/*You have here the stack_a ready. Let's sort it*/
 	
