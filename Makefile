@@ -6,16 +6,15 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/02 00:29:26 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/14 19:08:56 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SOURCES = main.c parse.c parse_chars.c error_parse.c\
-          parse_add_nodes.c parse_conv_add.c\
+SOURCES = main.c parse.c parse_chars.c parse_add_nodes.c parse_conversion.c\
 
 LIBFT_DIR = #where is libft
-LIBFT = #libft.a
+LIBFT = libft/libft.a
 #Should check this with pdel-olm
 
 OBJECTS = $(SOURCES: .c=.o)
@@ -27,7 +26,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) $(LIBFT)
 
 clean:
 	$(NAME) $(OBJECTS)
