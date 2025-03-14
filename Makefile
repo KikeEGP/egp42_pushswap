@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/14 19:18:55 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/14 19:46:37 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT_DIR = #where is libft
 LIBFT = libft/libft.a
 #Should check this with pdel-olm
 
-OBJECTS = $(SOURCES: .c=.o)
+OBJECTS = $(SOURCES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 CC = cc
@@ -26,7 +26,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(SOURCES) $(LIBFT)
+	$(CC) $(CFLAGS) $(SOURCES) $(LIBFT) -o $(NAME)
 
 clean:
 	$(RM) $(OBJECTS)
