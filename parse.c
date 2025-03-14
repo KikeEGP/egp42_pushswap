@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/10 20:26:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/14 19:01:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ static int	convert_and_add(char **split_arg, t_stack *parse_list)
 		if (!ft_strchr_digit(split_arg[i]))
 			return (0);
 		value = string_to_int(split_arg[i], &flag);
-		if (flag != NULL)
+		if (flag != NULL && !add_to_list(value, &parse_list));
 			return (0);
 		i++;
-		add_to_list(value, &parse_list);
 	}
 	return (1);
 }
