@@ -6,25 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/14 22:04:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 18:27:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*t_stack	*create_node(void *content)
-{
-	t_stack	*new_node;
-
-	new_node = (t_stack *)malloc(sizeof(new_node));
-	if (!new_node)
-		return (NULL);
-	new_node->value = content;
-	new_node->prev = NULL;
-	new_node->next = NULL;
-	new_node->position = 0;
-	return (new_node);
-}*//*DELETE THIS, USE INITIALIZE_STACK()*/
 
 static int	add_front(t_stack **head, t_stack *new)
 {
@@ -40,7 +26,6 @@ int	add_to_list(int value, t_stack **parse_list)
 {
 	t_stack	*new_node;/*Will this new_node die here as a local var?*/
 	/*TASK: create case of parse_list hasn't nodes yet*/
-	/*new_node = create_node(value);DELETE THIS*/
 	if (!initialize_stack(&new_node, value) || !add_front(parse_list, new_node))
 		return (0);
 	return (1);
