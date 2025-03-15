@@ -6,13 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 22:35:21 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 23:01:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 /*Based on strtol, just checks if a str can be totally converted*/
 static int	string_to_int(char *source_str, char **endptr)
@@ -29,6 +27,7 @@ static int	string_to_int(char *source_str, char **endptr)
 		if (!check_atoi_overflow(result, atoi_counter))
 			*endptr = "Error";
 	}
+	ft_printf("THIS IS STRING_TO_INT. Result is %d\n", result);//debug
 	return (result);
 }
 
@@ -61,6 +60,7 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	int	i;
 	char	**split_arg;
 
+	ft_printf("%d\n", *parse_list);
 	i = 1;
 	while (i < argc)
 	{
@@ -93,5 +93,7 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
 	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
+	ft_printf("Parse successufl\n");//DEBUGGING
+	ft_printf("%d\n", (*stack_a)->value);//debug
 	return (1);
 }
