@@ -6,21 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 22:32:20 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:35:21 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_split(char **array)
-{
-	size_t	i;
 
-	i = 0;
-	while (array[i])
-		free(array[i++]);
-	free(array);
-}
 
 /*Based on strtol, just checks if a str can be totally converted*/
 static int	string_to_int(char *source_str, char **endptr)

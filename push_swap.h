@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:12:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:36:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int		check_atoi_overflow(long result, int count);
 void		clean_list(t_stack *head);
 void		free_stacks(t_stack *stack_a, t_stack *stack_b);
 void		error_argument(t_stack *stack_a, t_stack *stack_b);
+void		free_split(char **array);
+
 
 #endif
