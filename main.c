@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:08:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:10:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	initialize_stack(t_stack **new_stack, int value)
 	(*new_stack)->prev = NULL;
 	(*new_stack)->next = NULL;
 	(*new_stack)->position = 0;
-	ft_printf("Initialize\n");
 	return (1);
 }
 
