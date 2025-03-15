@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:29:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:47:47 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	chars_allowed(char *argument)
 	i = 0;
 	while (argument)
 	{
+		ft_printf("Not seg\n");/***/
 		if (!found_forbidden(argument[i]))
 			return (0);
 		i++;
