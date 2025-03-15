@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 23:01:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 23:20:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ static int	string_to_int(char *source_str, char **endptr)
 
 	result = 0;
 	*endptr = get_endptr(source_str);
-	if (!endptr)
+	if (endptr == NULL)
 	{
+		ft_printf("**STRING_TO_INT. input is %s\n", source_str);//debug
 		atoi_counter = 0;
 		result = ft_atoi_protected(source_str, &atoi_counter);
 		if (!check_atoi_overflow(result, atoi_counter))
