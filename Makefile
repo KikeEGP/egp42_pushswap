@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/14 22:08:11 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/15 17:19:14 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(SOURCES) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(SOURCES) $(LIBFT) -o $(NAME)
+	$(info CREATED $(NAME))
 
 clean:
 	$(RM) $(OBJECTS)
