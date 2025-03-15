@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 18:04:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 18:18:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ void	clean_list(t_stack *head)
 	}
 }
 
-void	error_argument(t_stack *stack_a, t_stack *stack_b)
+void	free_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	/*TASK: study if you can free in any case or error_argument
-	just free a null values stack_a.
-
-	NO, FOR ANY CASE. PARSE MAY RETURN STACK_A EMPTY 
-	BUT ALSO WITH MANY NODES*/
 	if (stack_b)
 		clean_list(stack_b);
-	clean_list(stack_a);
+	if (stack_a)
+		clean_list(stack_a);
+}
+
+void	error_argument(t_stack *stack_a, t_stack *stack_b)
+{
+	free_stacks(stack_a, stack_b);
 	ft_putendl_error("Error");
 	exit(EXIT_FAILURE);
 }
