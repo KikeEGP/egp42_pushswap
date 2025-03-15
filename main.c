@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 18:24:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:08:30 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	initialize_stack(t_stack **new_stack, int value)
 	(*new_stack)->prev = NULL;
 	(*new_stack)->next = NULL;
 	(*new_stack)->position = 0;
+	ft_printf("Initialize\n");
 	return (1);
 }
 
@@ -33,7 +34,7 @@ int	main(int argc, char *a_vector[])
 		return (0);
 	stack_b = NULL;
 	if (!initialize_stack(&stack_a, 0)
-		&& !parse_main(argc, a_vector, &stack_a))
+		|| !parse_main(argc, &a_vector, &stack_a))
 		error_argument(stack_a, stack_b);
 	/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
 	/*While you are sorting, at the end of a move,
