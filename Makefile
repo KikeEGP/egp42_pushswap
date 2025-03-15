@@ -6,13 +6,13 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/15 17:19:14 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/15 17:38:37 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SOURCES = 	main.c parse.c parse_chars.c parse_add_nodes.c\
-		parse_conversion.c error_parse.c\
+		parse_conversion.c error_clean.c\
 
 LIBFT_DIR = #where is libft
 LIBFT = libft/libft.a
