@@ -6,11 +6,21 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:50:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:32:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	free_split(char **array)
+{
+	size_t	i;
+
+	i = 0;
+	while (array[i])
+		free(array[i++]);
+	free(array);
+}
 
 /*Based on strtol, just checks if a str can be totally converted*/
 static int	string_to_int(char *source_str, char **endptr)
@@ -39,10 +49,13 @@ static int	convert_and_add(char **split_arg, t_stack **parse_list)
 
 	i = 0;
 	flag = NULL;
+	ft_printf("convert and add\n");/*Debug*/
 	while (split_arg[i])
 	{
+		ft_printf("In loop\n");/*Debug*/
 		if (!ft_strchr_digit(split_arg[i]))
 			return (0);
+		ft_printf("Second step in loop\n");/*Debug*/
 		value = string_to_int(split_arg[i], &flag);
 		if (flag != NULL && !add_to_list(value, parse_list))
 			return (0);
@@ -60,9 +73,15 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	while (i < argc)
 	{
 		split_arg = ft_split(argv[i], 32);
-		if (!split_arg && !convert_and_add(split_arg, parse_list))
+		ft_printf("%s\n%s\n", split_arg[0], split_arg[2]);//Debug
+		if (!split_arg || !convert_and_add(split_arg, parse_list))
+		{
+			if (split_arg)
+				free_split(split_arg);
 			return (0);
-		free(split_arg);
+		}
+		ft_printf("split\n");/*Debug*/
+		free_split(split_arg);
 		i++;
 	}
 	return (1);
