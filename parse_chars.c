@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 22:13:08 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:14:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:29:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	chars_allowed(char *argument)
 	size_t	i;
 
 	i = 0;
-	while (argument[i])
+	while (argument)
 	{
 		if (!found_forbidden(argument[i]))
 			return (0);
@@ -43,6 +43,5 @@ int	parse_chars(int arg_counter, char **arg_vector)
 			return (0);
 		arg_counter--;
 	}
-	ft_printf("parse\n");
 	return (1);
 }
