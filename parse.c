@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:15 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:15:56 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 {
 	t_stack	*parse_list;
 
+	ft_printf("Enter in parse_main\n");
 	if (!initialize_stack(&parse_list, 0) || !parse_chars(argc, argv)
 		|| !split_to_convert(argc, argv, &parse_list))
 	{
@@ -79,6 +80,7 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 		return (0);
 	}
 	*stack_a = parse_list;
+	ft_printf("Here I am\n");
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
 	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
