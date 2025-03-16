@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:24:42 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/30 04:56:26 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:36:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h> //For malloc() and free()
 # include <stdint.h> //For SIZE_MAX
 
-//		Part 1 - Libc Functions
-//								ctype.h functions 
+//Part 1 - Libc Functions
+//				ctype.h functions 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -26,7 +26,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-//								string.h functions
+//				string.h functions
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -41,7 +41,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
-//								stdlib.h functions
+//				stdlib.h functions
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t	size);
 //Part 2 - Additional Functions
