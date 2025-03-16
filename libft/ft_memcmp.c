@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:25:26 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/04/25 17:53:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:16:14 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	int	myresult;
-	int	expected;
-
-	char*	str1; 
-	str1= "rggsrhs";
-	char*	str2;
-	str2= "nxhjfgjfj";
-	myresult = ft_memcmp(str1, str2, 5);
-	expected = memcmp(str1, str2, 5);
-	printf("Myresult: Strs differ %d. Expected: %d\n", myresult, expected);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:44:19 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/04/25 18:02:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:26:00 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,3 @@ char	*ft_strdup(const char *s1)
 	s1_copy[i] = '\0';
 	return (s1_copy);
 }
-/*
-int main(void)
-{
-	char  *string;
-	char  *copy;
-	
-	string = "Hello World";
-	printf("String is: %s.\nNow we are gonna copy it.\n\n", string);
-	copy = ft_strdup(string);
-	printf("Here is the copy: %s.\n", copy);
-	free(copy);
-	printf("Finally, copy memory has been dellocated");
-	return (0);
-}*/

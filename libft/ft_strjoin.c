@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:45:57 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/18 21:52:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:26:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char const	*text_1;
-	char const	*text_2;
-	char	*merge;
-
-	text_1 = "\0Capi";
-	text_2 = "cua";
-	printf("Texts are '%s' and '%s'\n", text_2, text_1);
-	merge = ft_strjoin(text_1, text_2);
-	printf("I joined them, now is: %s\n", merge);
-	free(merge);
-	return (0);
-}*/

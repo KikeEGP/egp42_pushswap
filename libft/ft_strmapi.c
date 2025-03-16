@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 23:15:15 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/05/07 18:38:10 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:30:38 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (0);
 }
-/*
-char	alpha_upper(unsigned int i, char str)
-{
-	if (ft_isalpha(str) && (!(str >= 65 && str <= 90)))
-		str -= 32;
-	return (str);
-}
-
-int	main(void)
-{
-	char	str[20] = "Hello World";
-	printf("%s\n\n", str);
-	char	*new = ft_strmapi(str, alpha_upper);
-	printf("%s\n", new);
-	free(new);
-	printf("Memory dellocated");
-	return (0);
-}*/

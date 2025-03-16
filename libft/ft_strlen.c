@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:36:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/05/09 20:29:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:30:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-/*
-int	main(void)
-{
-	const char*	text;
-
-	text = "Hello World";
-	printf("My function counts length %lu in %s\n", ft_strlen(text), text);
-	printf("Original counts length %lu in %s\n", strlen(text), text);
-	return (0);
-}*/

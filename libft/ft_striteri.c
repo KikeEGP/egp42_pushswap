@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 21:41:28 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/05/14 21:32:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 16:26:25 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		}
 	}
 }
-/*
-void	my_ft(unsigned int i, char *str)
-{
-	int	num;
-
-	if (ft_isalpha(*str) && (!(*str >= 65 && *str <= 90)))
-		*str = *str - 32;
-	else if (ft_isdigit(*str))
-	{
-		num = *str - '0';
-		num = num / 2;
-		*str = num + '0';
-	}
-}
-
-int	main(void)
-{
-	char	text[] = "Hello, World. I'm Enrique, studtent at 42 Madrid!";
-	printf("%s\n\n", text);
-	ft_striteri(text, my_ft);
-	printf("%s\n", text);
-	return (0);
-}*/
