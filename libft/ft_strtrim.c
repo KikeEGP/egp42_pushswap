@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:38:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/05/15 15:03:46 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:27:14 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,31 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = ft_memcpy(result, &s1[forw_i], (rev_i - forw_i) + 1);
 	return (result);
 }
-/*
-int	main(void)
-{
-	char	*text;
-	char	*del;
-	char	*cleaned;
-
-	text = "";
-	del = "Hola";
-	cleaned = ft_strtrim(text, del);
-	if (!cleaned)
-		return (printf("Function retruned (null)"));
-
-	printf("%s\n", text);
-	printf("%s\n", cleaned);
-	if (ft_strncmp(cleaned, text, ft_strlen(text)))
-	{
-		printf("Extracted %s from %s", cleaned, text);
-		printf("%lu", sizeof(cleaned));
-	}
-	else
-	{
-		printf("No char deleted at %s\n", text);
-		printf("Result of function is: %s\n", cleaned);
-	}
-	free(cleaned);
-	return (0);
-}*/

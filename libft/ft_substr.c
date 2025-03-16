@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:23:03 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/05/15 15:08:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:27:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	char	*text;
-	char	*portion;
-	size_t	i;
-
-	text = "Hello World";
-	printf("Original text: %s\n", text);
-	portion = ft_substr(text, 5, 111);
-	printf("Portion is: %s\n", portion);
-	i = 0;
-	while (portion[i])
-		i++;
-	printf("%zu", i);
-	free(portion);
-	return (0);
-}*/
