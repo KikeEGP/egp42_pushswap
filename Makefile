@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/16 15:04:29 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/16 20:00:49 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ clean:
 compclean: all clean
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 	$(info REMOVED OBJECTS AND $(NAME))
 
 re: fclean all
