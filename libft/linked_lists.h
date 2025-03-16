@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:10:50 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/15 01:36:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 15:29:22 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:21:17 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/17 19:07:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 15:19:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,16 @@ static char	*convert_to_string(char *string, int num, size_t len)
 
 char	*ft_itoa(int n)
 {
-char	*str;
-size_t	len;
+	char	*str;
+	size_t	len;
 
-len = count_chars_needed(n);
-str = ft_calloc(len + 1, sizeof(char));
-if (!str)
-	return (NULL);
-if (n == 0)
-	str[0] = '0';
-else
+	len = count_chars_needed(n);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
+	else
 		str = convert_to_string(str, n, len);
 	return (str);
 }
-/*
-int	main(void)
-{
-	int	num;
-	char	*text;
-
-	num = -85673;
-	text = ft_itoa(num);
-	ft_putstr_fd(text, 1);
-	free(text);	
-	return (0);
-}*/
