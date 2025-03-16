@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:42:00 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 23:17:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/16 20:40:28 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ char	*get_endptr(char *str)
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	while (str[i] && ft_isdigit(str[i]))
-	{
-		expected_null = &str[i + 1];
-		i++;
-	}
+		expected_null = &str[++i];
 	ft_printf("Endptr is %s\n", expected_null);//debug
 	return (expected_null);
 }
