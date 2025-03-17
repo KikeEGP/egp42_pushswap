@@ -46,5 +46,6 @@ int	add_to_list(int value, t_stack ***parse_list)
 		free(new_node);
 		return (0);
 	}
+	ft_printf("\nCheck First node value %d and second %d\n", (**parse_list)->value, (**parse_list)->next->value);//TEST IN DEBUG
 	return (1);
 }
