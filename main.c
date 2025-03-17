@@ -18,6 +18,7 @@ int	initialize_stack(t_stack **new_stack, int value)
 	if (!new_stack)
 		return (0);
 	(*new_stack)->value = value;
+	ft_printf("\nCreating node, with %d value\n\n", (*new_stack)->value);//debug
 	(*new_stack)->prev = NULL;
 	(*new_stack)->next = NULL;
 	(*new_stack)->position = 0;

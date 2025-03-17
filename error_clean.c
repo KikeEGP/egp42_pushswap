@@ -28,9 +28,11 @@ void	clean_list(t_stack *head)
 
 	while (head)
 	{
+		ft_printf("// this is CLEAN: value is %d\n", head->value);//TEST
 		keeper = head;
 		head = keeper->next;
 		keeper->next = NULL;
+//		head->prev = NULL;
 		free(keeper);
 	}
 }

@@ -27,7 +27,7 @@ int		parse_chars(int arg_counter, char **arg_vector);
 int		check_atoi_overflow(long result, int count);
 char		*get_endptr(char *str);
 /*	* parse_add_nodes *	*/
-int		add_to_list(int value, t_stack **parse_list);
+int		add_to_list(int value, t_stack ***parse_list);
 char		*get_endptr(char *str);
 int		check_atoi_overflow(long result, int count);
 /*	*	*	*	error_clean	*	*	*	*/

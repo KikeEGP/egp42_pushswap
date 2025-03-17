@@ -12,27 +12,33 @@
 
 #include "push_swap.h"
 
-static int	add_front(t_stack **head, t_stack *new)
+static int	add_front(t_stack ***head, t_stack *new)
 {
-	if ((*head == NULL || new == NULL) || (*head)->value == new->value)
+	ft_printf("Add_front compare: %d and %d\n", (**head)->value, new->value);//debug
+	if ((**head == NULL || new == NULL) || (**head)->value == new->value)
 		return (0);/*Any time is accurate to compare two integers*/
-	(*head)->prev = new;/*Check this functions*/
-	new->next = *head;/*This had *head, and was wrong*/
-	*head = new;/*before was *head = new, and was wrong*/
+	ft_printf("^^^ADD_FRONT: new value is %d^\n", new->value);//Debug
+	(**head)->prev = new;
+	new->next = **head;
+	**head = new;
 	return (1);
 }
 
-int	add_to_list(int value, t_stack **parse_list)
+int	add_to_list(int value, t_stack ***parse_list)
 {
 	t_stack	*new_node;/*Will this new_node die here as a local var?*/
 	/*TASK: create case of parse_list hasn't nodes yet*/
+	static int	flag_first_time;
 	
+	ft_printf("The flag_first time is now %d\n", flag_first_time);
 	ft_printf("add_to_list begins here with value %d\n", value);//debug
 	if (!initialize_stack(&new_node, value))
 		return (0);
-	if (!(*parse_list)->next)
+	if (!flag_first_time)
 	{
-		parse_list = &new_node;
+		**parse_list = new_node;
+		flag_first_time = 1;
+		ft_printf("\nparse_list FIRST node, %d. PASS HERE JUST ONE TIME\n", (**parse_list)->value);//debug
 		return (1);
 	}
 	if (!add_front(parse_list, new_node))
