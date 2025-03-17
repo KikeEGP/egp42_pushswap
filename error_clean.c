@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 22:54:02 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/17 20:11:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	clean_list(t_stack *head)
 
 	while (head)
 	{
+		ft_printf("//	CLEAN %d value\n", head->value);//test_debug
 		keeper = head;
 		head = keeper->next;
 		keeper->next = NULL;
@@ -41,8 +42,9 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b)
 		clean_list(stack_b);
 	if (stack_a)
 	{
+		ft_printf("CLEAN STACK_A <--\n");//debug test
 		clean_list(stack_a);
-		ft_printf("Cleaning stack_a\n");//DEBUGGING
+		ft_printf("\n * stack_a has been cleaned *\n");//DEBUGGING
 	}
 }
 

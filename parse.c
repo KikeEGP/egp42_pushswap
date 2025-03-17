@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/16 22:53:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/17 21:38:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	convert_and_add(char **split_arg, t_stack **parse_list)
 //		ft_printf("Second step in loop\n");/*Debug*/
 		value = string_to_int(split_arg[i], &flag);
 		ft_printf("FLAG NOW has %s value\n", flag);//debug
-		if (flag[0] != '\0' || !add_to_list(value, parse_list))
+		if (flag[0] != '\0' || !add_to_list(value, &parse_list))
 			return (0);
 		i++;
 	}
@@ -86,17 +86,17 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 {
 	t_stack	*parse_list;
 
-	if (!initialize_stack(&parse_list, 0) /*|| !parse_chars(argc, argv)*/
+	if (!initialize_stack(&parse_list, 0)/* || !parse_chars(argc, argv)*/
 		|| !split_to_convert(argc, argv, &parse_list))
 	{
+		ft_printf("CLEAN PARSE_LIST\n");//test
 		clean_list(parse_list);
 		return (0);
 	}
-	*stack_a = parse_list;
+	*stack_a = parse_list;//HEY, FREE PARSE_LIST
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
 	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
 	ft_printf("Parse successufl\n");//DEBUGGING
-	ft_printf("%d\n", (*stack_a)->value);//debug
 	return (1);
 }
