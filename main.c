@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/15 21:57:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/20 19:17:22 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main(int argc, char *a_vector[])
 	 * you may ft_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
 	free_stacks(stack_a, stack_b);
-	ft_printf("Exit success\n");//Debugging
 	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,
 	in main this should be a return*/
 }

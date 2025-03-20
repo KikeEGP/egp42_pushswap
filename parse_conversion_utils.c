@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_conversion.c                                 :+:      :+:    :+:   */
+/*   parse_conversion_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:42:00 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/16 20:40:28 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/20 20:16:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ char	*get_endptr(char *str)
 		i++;
 	while (str[i] && ft_isdigit(str[i]))
 		expected_null = &str[++i];
-	ft_printf("Endptr is %s\n", expected_null);//debug
 	return (expected_null);
 }

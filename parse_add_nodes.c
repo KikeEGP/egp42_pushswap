@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/17 19:57:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/20 19:08:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,18 @@ int	add_to_list(int value, t_stack ***parse_list)
 {
 	t_stack		*new_node;
 	static int	flag_first_node_created;
-	
-	ft_printf("add_to_list begins here with value %d\n", value);//debug
+
 	if (!initialize_stack(&new_node, value))
 		return (0);
 	if (!flag_first_node_created)
 	{
 		**parse_list = new_node;
 		flag_first_node_created = 1;
-		return (1);
 	}
 	else if (!add_front(parse_list, new_node))
 	{
 		free(new_node);
 		return (0);
 	}
-	ft_printf("\nCheck first node value %d and second %d\n", (**parse_list)->value, (**parse_list)->next->value);//debug test
 	return (1);
 }
