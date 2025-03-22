@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 04:56:47 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/16 15:43:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/22 22:28:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include "linked_lists.h"
 /*				NOT ASSIGNED TO SPECIFIC PROJECT	*/
 # include "conversions.h"
 # include "write.h"
