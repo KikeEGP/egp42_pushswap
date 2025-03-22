@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/20 19:17:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:35:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *a_vector[])
 		error_argument(stack_a, stack_b);
 	/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
 	/*While you are sorting, at the end of a move,
-	 * you may ft_printf("%s\n", command) 
+	 * you may t_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
 	free_stacks(stack_a, stack_b);
 	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,

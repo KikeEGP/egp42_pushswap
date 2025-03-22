@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/20 21:10:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:10:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 		return (0);
 	}
 	*stack_a = parse_list;//HEY, FREE PARSE_LIST
-//	free(parse_list);
+	//clean_list(parse_list);
 //	*stack_a = NULL;don't use this, make leaks
 	/*Add to list every conversion, that's storage*/
 	/*When do we compare new numbers? At moment of put in list?*/
