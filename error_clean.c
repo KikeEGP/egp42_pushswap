@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 19:32:51 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/23 21:30:56 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	clean_list(t_stack *head)
 	ft_printf("Inside of clean_list with %p\n", head);//debug
 	while (head)
 	{
+		ft_printf("Value is %d\n", head->value);//debug
+		ft_printf("Position is %d\n", head->position);//debug
 		keeper = head;
-		head = keeper->next;
+		head = head->next;
 		free(keeper);
 	ft_printf("Node %p is free\n", head);//debug
 	}
