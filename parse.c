@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/22 23:47:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/23 17:07:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	int		i;
 	char	**split_arg;
 
+	ft_printf("*\n");//debug
 	i = 1;
 	while (i < argc)
 	{
 		split_arg = ft_split(argv[i], 32);
+		ft_printf("%p SPLIT allocated\n", split_arg);//debug
 		if (!split_arg || !convert_and_add(split_arg, parse_list))
 		{
 			if (split_arg)
@@ -88,9 +90,10 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 	}
 	parse_list_size = stack_size(parse_list); 
 	aux_ptr = &parse_list;
+	ft_printf("%p parse_list before transfer\n", parse_list);//debug
 	while (parse_list_size-- >= 1)
 		pop_push(&stack_a, &aux_ptr);
-	ft_printf("Parse_list is empty\n");//debug
+	ft_printf("Parse_list is emptyi, see %p\n", parse_list);//debug
 	parse_list = NULL;
 	clean_list(parse_list);
 //	clean_list(parse_list);

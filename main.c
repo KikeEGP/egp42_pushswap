@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/22 19:35:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/23 15:50:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	initialize_stack(t_stack **new_stack, int value)
 {
 	*new_stack = (t_stack *)malloc(sizeof(t_stack));
+	ft_printf("%p Initialize some node\n", *new_stack);//debug
 	if (!new_stack)
 		return (0);
 	(*new_stack)->value = value;
