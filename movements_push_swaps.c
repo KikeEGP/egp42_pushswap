@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/22 22:43:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:37:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 {
 	t_stack	*transition_ptr;
 
-	ft_printf("Works\n");//debug
 	transition_ptr = **stack_out;
 	(**stack_out)->prev = NULL;
 	if (**stack_in)
@@ -28,7 +27,6 @@ void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 		(**stack_in)->prev = transition_ptr;
 	}
 	**stack_in = transition_ptr;
-	ft_printf("Out of push\n");//debug
 }
 /*
 //Something	push(stack, ¿node?)
