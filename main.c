@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 15:50:08 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/24 18:12:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	main(int argc, char *a_vector[])
 	if (!initialize_stack(&stack_a, 0)
 		|| !parse_main(argc, a_vector, &stack_a))
 		error_argument(stack_a, stack_b);
+	if (!sort_check(&stack_a))
+		//How many integers to sort? Check and choose sort_function
 	/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
 	/*While you are sorting, at the end of a move,
 	 * you may t_printf("%s\n", command) 
