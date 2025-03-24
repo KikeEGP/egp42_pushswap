@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/24 20:52:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:57:02 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ stacks, size and wrong_cases*/)
 	if (size_stack <= 5)
 		/*Container to function of few arguments*/
 	else
+		/*Hey, do your stack have less than 10% or 5% 
+		of nodes in wrong position? May check here, fella*/
 		/*Yellow brick road to the EmmerAlgorithm City*/
 }
 
