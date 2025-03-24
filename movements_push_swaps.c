@@ -6,14 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 16:37:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:59:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*QUESTION: prints immediatly? OR MAYBE STORES MOVES AND PUTENDL's
-ALL AT THE END*/
+//Not only used by pa and pb, but also by parse check_duplicates() 
 void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 {
 	t_stack	*transition_ptr;
@@ -28,6 +27,10 @@ void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 	}
 	**stack_in = transition_ptr;
 }
+
+/*QUESTION: prints immediatly? OR MAYBE STORES MOVES AND PUTENDL's
+ALL AT THE END*/
+
 /*
 //Something	push(stack, ¿node?)
 {

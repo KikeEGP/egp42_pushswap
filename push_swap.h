@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 21:12:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/24 19:27:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@ char		*get_endptr(char *str);
 int		check_atoi_overflow(long result, int count);
 /*	* parse_check_duplicate */
 int		check_duplicates(t_stack **parse_list, t_stack **stack_a);
+//
+/*	*	*	*	sort time	*	*	*	*/
+int		sort_check(t_stack **stack_a);
+/*	*	*	*	movements	*	*	*	*/
+void		pop_push(t_stack ***stack_in, t_stack ***stack_out);
 /*	*	*	*	error_clean	*	*	*	*/
 void		clean_list(t_stack *head);
 void		free_stacks(t_stack *stack_a, t_stack *stack_b);
-void		error_argument(t_stack *stack_a, t_stack *stack_b);
+void		error_happened(t_stack *stack_a, t_stack *stack_b);
 void		free_split(char **array);
-/*	*	*	*	movements	*	*	*	*/
-void		pop_push(t_stack ***stack_in, t_stack ***stack_out);
-/*	*	*	* Taken from libft	*	*	*	*/
+/*	*	*	* 	Taken from libft *	*	*	*/
 int		stack_size(t_stack *lst);
 
 #endif
