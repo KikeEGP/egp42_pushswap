@@ -6,24 +6,26 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/25 18:48:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:09:56 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **stack_a, int stack_size)
+void	sort_three(t_stack **stack_a, int size)
 {
-	while (sort_check(stack_a, NULL, NULL) == -1)
+	ft_printf("\n\ninside sort three\n\n");
+	ft_printf("inside stack_siez == %d\n");
 	{
-		if (stack_size == 2/*||pos 2 == is in 2th of list*/)
-			ft_printf("\n\nHEY, THIS SHOULD BE SWAPED\n\n");
+		if (size == 2/*||pos 2 == is in 2th of list*/)
+			ft_printf("\n\nFirst node is %d\n", (*stack_a)->position);//debug
 			//sa();
-		else if (stack_a->position == 2)
+/*		else if (stack_a->position == 2)
 			ra();
-		else
-			rra();
-	}
+*/		else
+			ft_printf("Size is not 2, is %d\n", size);//debug
+/*			rra();
+*/	}
 }
 /*Place to create functions for arguments <= 3, 4 or 5. 
  *

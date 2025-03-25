@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/25 18:56:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:28:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,20 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
 	if (sort_check_result <= 0)
 	{
+		ft_printf("Hey, this int -> %d <- MUST BE SIZE 2", size_stack);
 		if (sort_check_result == 0)
 			return (0);
-	//	else if (size_stack <= 3)
-			/*Container to function of few arguments*/
+		else if (size_stack <= 3)
+			sort_three(&stack_a, size_stack);
 	//	else if (size_stack <= 5)
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
 			/*Hey, do your stack have less than 10% or 5% 
 			of nodes in wrong position? May check here, fella*/
 			/*Yellow brick road to the EmmerAlgorithm City*/
+		//sort_main(stack_a, stack_b);
 	}
+	ft_printf("Where is seg_Afult\n");//debug
 	return (1);
 }
 
