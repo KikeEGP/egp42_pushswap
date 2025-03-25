@@ -6,18 +6,18 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/02 19:27:15 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 19:03:03 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-typedef struct	s_stack
+typedef struct s_stack
 {
-	int		value;
 	struct s_stack	*prev;
 	struct s_stack	*next;
-	size_t		position;
+	int				value;
+	int				position;
 }	t_stack;
 
 typedef struct	s_storage/*PKAY, FORGOT THIS ONE AT THE MOMENT, 

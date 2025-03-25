@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/25 18:29:31 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:52:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		check_atoi_overflow(long result, int count);
 int		check_duplicates(t_stack **parse_list, t_stack **stack_a);
 //
 /*	*	*	*	sort time	*	*	*	*/
-int		sort_check(t_stack **stack_a);
+int		sort_check(t_stack *stack_a, int *index, int *wrong_place);
 /*	*	*	*	movements	*	*	*	*/
 void		pop_push(t_stack ***stack_in, t_stack ***stack_out);
 /*	*	*	*	error_clean	*	*	*	*/

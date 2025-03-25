@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/24 20:08:51 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:57:00 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
  * could work with different instructions. But pdel-olm suggest to focus
  * in algorithm. In case of being well programmed, it should do this too*/
 /*May check if stack_b exists and have nodes?*/
-int	sort_check(t_stack **stack_a, int *index, int *wrong_place)
+int	sort_check(t_stack *stack_a, int *index, int *wrong_place)
 {
 	t_stack	*pointer_stack;
 	int		check;
 
 	if (!stack_a)
 		return (0);
-	pointer_stack = *stack_a;
+	pointer_stack = stack_a;
 	index = 0;
 	wrong_place = 0;
 	check = 1;
