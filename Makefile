@@ -6,14 +6,15 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/24 19:23:33 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/03/25 18:28:45 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		parse_check_duplicate.c error_clean.c movements_push_swaps.c\
-		stack_size.c sort_check.c\
+		sort_check.c\
+		stack_size.c stack_last.c\
 
 LIBFT_DIR = #where is libft
 LIBFT = libft/libft.a
