@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 21:10:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:13:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static int	string_to_int(char *source_str, char **endptr)
 	return (result);
 }
 
-/*Convert, storage and compares numbers*/
 static int	convert_and_add(char **split_arg, t_stack **parse_list)
 {
 	char	*flag;
@@ -56,12 +55,10 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	int		i;
 	char	**split_arg;
 
-	ft_printf("*\n");//debug
 	i = 1;
 	while (i < argc)
 	{
 		split_arg = ft_split(argv[i], 32);
-		ft_printf("%p SPLIT allocated\n", split_arg);//debug
 		if (!split_arg || !convert_and_add(split_arg, parse_list))
 		{
 			if (split_arg)
@@ -90,10 +87,5 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 		return (0);
 	}
 	clean_list(parse_list);
-//	clean_list(parse_list);
-//	*stack_a = NULL;don't use this, make leaks
-	/*Add to list every conversion, that's storage*/
-	/*When do we compare new numbers? At moment of put in list?*/
-	/*[1/2/25]PARSE_LIST for parse, then add to stack_a with LIFO*/
 	return (1);
 }
