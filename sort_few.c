@@ -6,19 +6,19 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/02/13 20:01:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:48:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*	???	*/	sort_three()/*Try to apply to two, too.
-					And you enter here if (!sort_check)*/
+void	sort_three(t_stack **stack_a, int stack_size)
 {
-	while (!sorted(/*stack_a*/))
+	while (sort_check(stack_a, NULL, NULL) == -1)
 	{
-		if (/*numbers == 2*/ || /*pos 2 == is in 2th of list*/)
-			sa();
+		if (stack_size == 2/*||pos 2 == is in 2th of list*/)
+			ft_printf("\n\nHEY, THIS SHOULD BE SWAPED\n\n");
+			//sa();
 		else if (stack_a->position == 2)
 			ra();
 		else
