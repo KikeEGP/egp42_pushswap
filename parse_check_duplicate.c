@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/23 21:28:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/25 20:34:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
 	t_stack	*iterator;
 
 	parse_list_size = stack_size(*parse_list);
-	while (parse_list_size-- >= 1)
+	//while (parse_list_size-- >= 1)
+	while ((*parse_list)->next != NULL)
 	{
 		iterator = (*parse_list)->next;
 		while (iterator)
