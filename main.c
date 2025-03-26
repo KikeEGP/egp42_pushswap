@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/25 20:28:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/26 21:06:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	initialize_stack(t_stack **new_stack, int value)
 static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 {
 	int	sort_check_result;
-	static int	wrong_place;
-	static int	size_stack;
+	int	wrong_place;
+	int	size_stack;
 	stack_b = NULL;//DELETE THIS, IS TESTING
 	
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
