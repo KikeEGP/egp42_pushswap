@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/24 17:59:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:12:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,21 @@ void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 /*QUESTION: prints immediatly? OR MAYBE STORES MOVES AND PUTENDL's
 ALL AT THE END*/
 
-/*
-//Something	push(stack, ¿node?)
-{
-		1ºAcces to head of original stack. Add a pointer
-		2ºChange head to second node of list
-		3ºDelete ex-head-> next, or directly point to the other
-			stack's head
-		4ºNow, ex-head of original stack is pointed by head
-			of the target stack
-		5ºFunction MUST KNOW which is stack target and 
-			putendl("pa") || putendl("pb")
-}
 
+void	push(t_stack  **stack_a, t_stack **stack_b, int id_stack)
+{
+	if (id_stack == 'b')
+	{
+		pop_push(&stack_b, &stack_a);
+		ft_putendl("pb");
+	}
+	if (id_stack == 'a')
+	{
+		pop_push(&stack_b, &stack_a);
+		ft_putendl("pa");
+	}
+}
+/*
 Something	swap(stack, ¿node?)
 {
 		1ºAcces to stack's head. head->next now points to third_node
