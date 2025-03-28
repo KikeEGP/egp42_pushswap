@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/28 18:12:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:52:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,21 @@ void	push(t_stack  **stack_a, t_stack **stack_b, int id_stack)
 		ft_putendl("pa");
 	}
 }
-/*
-Something	swap(stack, ¿node?)
-{
-		1ºAcces to stack's head. head->next now points to third_node
-		2ºSecond_node->next now points to head
-		3ºhead now pooints to former second_node
-		4º MUST BE OUT OF HERE: putendl("sa") || putendl("sb")
-			must be out because if ss calls this function
-			for both stacks, must only putendl("ss")
-}
 
+void	swap(t_stack ***stack_swapped, int id_stack)
+{
+	int	aux_value;
+	int	aux_position;
+
+	ft_swap(&(**stack_swapped)->value, &(**stack_swapped)->next->value);
+	ft_swap(&(**stack_swapped)->position, 
+	&(**stack_swapped)->next->position);
+	if (id_stack == 'a')
+		ft_putendl("sa");
+	else
+		ft_putendl("sb");
+}
+/*
 Something	swap_both(stack_a,stack_b)
 {
 	swap(stack_a,¿node?);
