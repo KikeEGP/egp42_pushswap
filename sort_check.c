@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/30 18:45:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/30 19:01:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * could work with different instructions. But pdel-olm suggest to focus
  * in algorithm. In case of being well programmed, it should do this too*/
 /*May check if stack_b exists and have nodes?*/
-int	sort_check(t_stack *stack_a, int *wrong_place)
+int	sort_check(t_stack *stack_a, int *index, int *wrong_place)
 {
 	t_stack	*pointer_stack;
 	int		check;
@@ -27,6 +27,8 @@ int	sort_check(t_stack *stack_a, int *wrong_place)
 	if (!stack_a)
 		return (0);
 	pointer_stack = stack_a;
+	*index = 0;/*PROBLEM: In sorted list, index is 1 below position.
+	If not sorted, *index = 0 is correct. Study this*/
 	*wrong_place = 0;
 	check = 1;
 	while (pointer_stack->next != NULL)
@@ -36,6 +38,7 @@ int	sort_check(t_stack *stack_a, int *wrong_place)
 			check = -1;
 			wrong_place++;
 		}
+		*index += 1;
 		pointer_stack = pointer_stack->next;
 	}
 	return (check);
