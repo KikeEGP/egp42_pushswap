@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/26 21:28:46 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:25:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ void	sort_three(t_stack **stack_a, int size)
 {
 	if (size == 2 || ((*stack_a)->position == 1 
 		&& (*stack_a)->next->position == 0))
-		sa();//creta sa() to try this
-	else if ((*stack_a)->position == 2)
+		swap(&stack_a, 'a');//creta sa() to try this
+/*	else if ((*stack_a)->position == 2)
 		ra();//create ra() to try this
 	else
 		rra();//same as above
+*/
 }
 /*Place to create functions for arguments <= 3, 4 or 5. 
  *

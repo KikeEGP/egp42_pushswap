@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/28 18:52:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:28:24 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,22 @@ void	push(t_stack  **stack_a, t_stack **stack_b, int id_stack)
 
 void	swap(t_stack ***stack_swapped, int id_stack)
 {
-	int	aux_value;
-	int	aux_position;
-
-	ft_swap(&(**stack_swapped)->value, &(**stack_swapped)->next->value);
-	ft_swap(&(**stack_swapped)->position, 
-	&(**stack_swapped)->next->position);
+	ft_printf("%d first, ", (**stack_swapped)->value);//debug
+	ft_printf("then %d\n", (**stack_swapped)->next->value);//debug
+	ft_swap(&((**stack_swapped)->value), &((**stack_swapped)->next->value));
+	ft_swap(&((**stack_swapped)->position), 
+	&((**stack_swapped)->next->position));
+	ft_printf("After swap, %d first, ", (**stack_swapped)->value);//debug
+	ft_printf("then %d\n", (**stack_swapped)->next->value);//debug
 	if (id_stack == 'a')
 		ft_putendl("sa");
 	else
 		ft_putendl("sb");
 }
-/*
-Something	swap_both(stack_a,stack_b)
+
+void	swap_both(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(stack_a,¿node?);
-	swap(stack_b,¿node?);
-	putendl("ss");
-}*/
+	swap(&stack_a, 'a');
+	swap(&stack_b, 'b');
+	ft_putendl("ss");
+}
