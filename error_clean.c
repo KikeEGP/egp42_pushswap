@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/30 17:53:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/31 21:18:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	clean_list(t_stack *head)
 	{
 		keeper = head;
 		head = head->next;
-		ft_printf("%d ", keeper->value);//debug
 		free(keeper);
 	}
 	//free(head);
