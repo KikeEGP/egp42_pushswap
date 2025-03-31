@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/30 18:51:26 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/31 21:45:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 	int	sort_check_result;
 	int	wrong_place;
 	int	size_stack;
-	stack_b = NULL;//DELETE THIS, IS TESTING
-	
+
+	stack_b = NULL;//DELETE THIS, IS TESTING	
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
 	if (sort_check_result <= 0)
 	{
-		ft_printf("Hey, this int -> %d <- MUST BE SIZE 2", size_stack);
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)
-			sort_three(&stack_a, size_stack);
+			sort_three(&stack_a);
 	//	else if (size_stack <= 5)
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
@@ -48,7 +47,6 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 			/*Yellow brick road to the EmmerAlgorithm City*/
 		//sort_main(stack_a, stack_b);
 	}
-	ft_printf("Where is seg_Afult\n");//debug
 	return (1);
 }
 

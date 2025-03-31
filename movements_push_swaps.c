@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/30 18:28:24 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/03/31 21:44:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,15 @@ void	push(t_stack  **stack_a, t_stack **stack_b, int id_stack)
 
 void	swap(t_stack ***stack_swapped, int id_stack)
 {
-	ft_printf("%d first, ", (**stack_swapped)->value);//debug
-	ft_printf("then %d\n", (**stack_swapped)->next->value);//debug
-	ft_swap(&((**stack_swapped)->value), &((**stack_swapped)->next->value));
-	ft_swap(&((**stack_swapped)->position), 
-	&((**stack_swapped)->next->position));
-	ft_printf("After swap, %d first, ", (**stack_swapped)->value);//debug
-	ft_printf("then %d\n", (**stack_swapped)->next->value);//debug
+	t_stack	*transition_ptr;
+
+	transition_ptr = (**stack_swapped)->next;
+	(**stack_swapped)->next = transition_ptr->next;
+	transition_ptr->next->prev = **stack_swapped;
+	transition_ptr->prev = NULL;
+	transition_ptr->next = **stack_swapped;
+	(**stack_swapped)->prev = transition_ptr;
+	(**stack_swapped) = transition_ptr;
 	if (id_stack == 'a')
 		ft_putendl("sa");
 	else
