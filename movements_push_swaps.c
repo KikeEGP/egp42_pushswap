@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/31 21:44:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:46:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ void	pop_push(t_stack ***stack_in, t_stack ***stack_out)
 	**stack_in = transition_ptr;
 }
 
-/*QUESTION: prints immediatly? OR MAYBE STORES MOVES AND PUTENDL's
-ALL AT THE END*/
-
-
-void	push(t_stack  **stack_a, t_stack **stack_b, int id_stack)
+void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
 {
 	if (id_stack == 'b')
 	{
@@ -59,13 +55,13 @@ void	swap(t_stack ***stack_swapped, int id_stack)
 	(**stack_swapped) = transition_ptr;
 	if (id_stack == 'a')
 		ft_putendl("sa");
-	else
+	else if (id_stack == 'b')
 		ft_putendl("sb");
 }
 
 void	swap_both(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(&stack_a, 'a');
-	swap(&stack_b, 'b');
+	swap(&stack_a, 0);
+	swap(&stack_b, 0);
 	ft_putendl("ss");
 }
