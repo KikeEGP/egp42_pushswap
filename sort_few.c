@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/31 21:30:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:40:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 //With recursion, execution must pass two times unless case of 1st condition 
 void	sort_three(t_stack **stack_a)
 {
+	t_stack	**last;
+
 	if (((*stack_a)->position == 1 
 		&& (*stack_a)->next->position == 0))
 		swap(&stack_a, 'a');//creta sa() to try this
-/*	else if ((*stack_a)->position == 2)
-		ra();//create ra() to try this
-	else
+	**last = (*stack_a)->next->next;
+	else if ((*stack_a)->position == 2)
+		rotate(&stack_a, &last, 'a');//create ra() to try this
+	/*else
 		rra();//same as above
 */
 }
