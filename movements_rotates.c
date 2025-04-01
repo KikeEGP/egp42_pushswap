@@ -6,27 +6,29 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/29 21:02:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:29:04 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*QUESTION: prints immediatly? OR MAYBE STORES MOVES AND PUTENDL's
-ALL AT THE END*/
-
-/*Something*/	rotate(/*stack*/, /*¿node?*/)
+void	rotate(t_stack ***first, t_stack ***last, int id_stack)
 {
-	/*	1ºGo to stack's last_node. last_node->next points to head
-		2ºhead now points to second node of list
-		3ºFormer head->next now points to null 
-			(HOW I FIND FORMER HEAD NOW, IF THERE'S NOT NEXT->NULL?)
-		5ºputendl("ra") || putendl("rb"), BUT NOT NOW*/
+	(**first)->prev = **last;
+	(**last)->next = **first;
+	**first = (**first)->next;
+	(**first)->prev = NULL;
+	**last = (**last)->next;
+	(**last)->next = NULL;
+	if (id_stack == 'a')
+		ft_putendl("ra");
+	else if (id_stack == 'b')
+		ft_putendl("rb");
 }
 
-/*Something*/	rotate_both(/*stack_a*/,/*stack_b*/)
+void	rotate_both(/*HEY, HOW I CAN PUT HERE FOUR POINTERS*/)
 {
-	rotate(/*stack_a*/,/*¿node?*/);
+	rotate(stack_a,/*¿node?*/);
 	rotate(/*stack_b*/,/*¿node?*/);
 	putendl("rr"); /*WHEN?!!?*/
 }
