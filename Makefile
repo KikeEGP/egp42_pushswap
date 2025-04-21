@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/03/30 17:22:35 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/04/21 19:02:47 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		sort_check.c stack_size.c stack_last.c\
 		sort_few.c\
 
-LIBFT_DIR = #where is libft
+LIBFT_DIR = ./libft 
 LIBFT = libft/libft.a
 #Should check this with pdel-olm
 
@@ -30,17 +30,22 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
+	@make -C $(LIBFT_DIR) 
+	$(info CREATED $(LIBFT))
 	@$(CC) $(CFLAGS) $(SOURCES) $(LIBFT) -o $(NAME)
 	$(info CREATED $(NAME))
 
 clean:
 	$(RM) $(OBJECTS)
-	$(info REMOVED OBJECTS)
+	@make -C $(LIBFT_DIR) clean
+	$(info REMOVED OBJECTS AND LIBFT/OBJECTS)
 
 compclean: all clean
+	@make compclean -C $(LIBFT_DIR)
 
 fclean: clean
 	@$(RM) $(NAME)
+	@make -C $(LIBFT_DIR) -fclean
 	$(info REMOVED OBJECTS AND $(NAME))
 
 re: fclean all
