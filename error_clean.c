@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/31 21:18:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:10:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	clean_list(t_stack *head)
 
 	while (head)
 	{
+		ft_printf("%d\n", head->value);//debufg
 		keeper = head;
 		head = head->next;
 		free(keeper);

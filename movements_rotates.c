@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/04/01 19:29:04 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:04:07 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	rotate(t_stack ***first, t_stack ***last, int id_stack)
 {
-	(**first)->prev = **last;
-	(**last)->next = **first;
 	**first = (**first)->next;
-	(**first)->prev = NULL;
-	**last = (**last)->next;
+	(**first)->prev = (**last)->next;
+	**last = (**last->next);
 	(**last)->next = NULL;
+	(**first)->prev = NULL;
 	if (id_stack == 'a')
 		ft_putendl("ra");
 	else if (id_stack == 'b')

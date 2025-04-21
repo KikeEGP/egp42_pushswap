@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/04/01 17:46:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:24:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void	swap(t_stack ***stack_swapped, int id_stack)
 	t_stack	*transition_ptr;
 
 	transition_ptr = (**stack_swapped)->next;
-	(**stack_swapped)->next = transition_ptr->next;
-	transition_ptr->next->prev = **stack_swapped;
-	transition_ptr->prev = NULL;
-	transition_ptr->next = **stack_swapped;
+	(**stack_swapped)->next = (**stack_swapped)->next->next;
+	(**stack_swapped)->next->prev = **stack_swapped;
 	(**stack_swapped)->prev = transition_ptr;
-	(**stack_swapped) = transition_ptr;
+	transition_ptr->next = **stack_swapped;
+	transition_ptr->prev = NULL;
+	**stack_swapped = transition_ptr;
 	if (id_stack == 'a')
 		ft_putendl("sa");
 	else if (id_stack == 'b')
