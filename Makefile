@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/04/21 19:02:47 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/04/21 19:31:59 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,22 +18,24 @@ SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		sort_few.c\
 
 LIBFT_DIR = ./libft 
-LIBFT = libft/libft.a
-#Should check this with pdel-olm
+LIBFT = $(LIBFT_DIR)/libft.a
 
 OBJECTS = $(SOURCES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
+LIBFT_FLAG = -L $(LIBFT_DIR) -l ft
 CC = cc
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(LIBFT) $(OBJECTS)
+	@$(CC) $(CFLAGS) $(SOURCES) $(LIBFT_FLAG) -o $(NAME)
+	$(info CREATED $(NAME))
+
+$(LIBFT):
 	@make -C $(LIBFT_DIR) 
 	$(info CREATED $(LIBFT))
-	@$(CC) $(CFLAGS) $(SOURCES) $(LIBFT) -o $(NAME)
-	$(info CREATED $(NAME))
 
 clean:
 	$(RM) $(OBJECTS)
@@ -45,7 +47,7 @@ compclean: all clean
 
 fclean: clean
 	@$(RM) $(NAME)
-	@make -C $(LIBFT_DIR) -fclean
+	@make -C $(LIBFT_DIR) fclean
 	$(info REMOVED OBJECTS AND $(NAME))
 
 re: fclean all
