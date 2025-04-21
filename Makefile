@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/04/21 19:31:59 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/04/21 20:05:11 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ clean:
 	$(info REMOVED OBJECTS AND LIBFT/OBJECTS)
 
 compclean: all clean
-	@make compclean -C $(LIBFT_DIR)
 
 fclean: clean
 	@$(RM) $(NAME)
