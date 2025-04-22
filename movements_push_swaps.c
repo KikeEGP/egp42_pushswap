@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/04/21 20:24:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:12:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
 
 void	swap(t_stack ***stack_swapped, int id_stack)
 {
+	ft_printf("Debug\n");//debug
 	t_stack	*transition_ptr;
 
 	transition_ptr = (**stack_swapped)->next;
