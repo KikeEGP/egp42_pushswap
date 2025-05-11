@@ -6,23 +6,23 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/20 19:08:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/11 21:14:38 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	add_front(t_stack ***head, t_stack *new)
+static int	add_front(t_stack **head, t_stack *new)
 {
-	if ((**head == NULL || new == NULL) || (**head)->value == new->value)
+	if ((*head == NULL || new == NULL) || (*head)->value == new->value)
 		return (0);
-	(**head)->prev = new;
-	new->next = **head;
-	**head = new;
+	(*head)->prev = new;
+	new->next = *head;
+	*head = new;
 	return (1);
 }
 
-int	add_to_list(int value, t_stack ***parse_list)
+int	add_to_list(int value, t_stack **parse_list)
 {
 	t_stack		*new_node;
 	static int	flag_first_node_created;
@@ -31,7 +31,7 @@ int	add_to_list(int value, t_stack ***parse_list)
 		return (0);
 	if (!flag_first_node_created)
 	{
-		**parse_list = new_node;
+		*parse_list = new_node;
 		flag_first_node_created = 1;
 	}
 	else if (!add_front(parse_list, new_node))
