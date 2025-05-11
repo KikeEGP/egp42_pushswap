@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/11 21:34:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/11 21:49:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 		clean_list(parse_list);
 		return (0);
 	}
+	ft_printf("First is %d\n", (*stack_a)->value);//debug
+	ft_printf("%d\n", (*stack_a)->next->value);//debug
+	ft_printf("%d\n\n", (*stack_a)->next->next->value);//debug
 	clean_list(parse_list);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/11 21:10:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/11 21:38:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		check_duplicates(t_stack **parse_list, t_stack **stack_a);
 int		sort_check(t_stack *stack_a, int *index, int *wrong_place);
 void		sort_three(t_stack **stack_a);
 /*	*	*	*	movements	*	*	*	*/
-void		pop_push(t_stack ***stack_in, t_stack ***stack_out);
+void		pop_push(t_stack **stack_in, t_stack **stack_out);
 void		push(t_stack **stack_a, t_stack **stack_b, int id_stack);
 void		swap(t_stack ***stack_swapped, int id_stack);
 void		swap_both(t_stack **stack_a, t_stack **stack_b);
