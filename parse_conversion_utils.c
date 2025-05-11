@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:42:00 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/20 20:16:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/11 20:06:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	check_atoi_overflow(long result, int count)
 char	*get_endptr(char *str)
 {
 	char	*expected_null;
-	int	i;
+	int		i;
 
 	expected_null = str;
 	i = 0;
-	while (ft_isspace(str[i]))
+	while (str[i] && ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		i++;

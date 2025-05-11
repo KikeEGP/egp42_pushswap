@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:37 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/04/22 21:10:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/11 20:10:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	i = 1;
 	while (i < argc)
 	{
+		if (!ft_strchr_digit(argv[i]))
+			return (0);
 		split_arg = ft_split(argv[i], 32);
 		if (!split_arg || !convert_and_add(split_arg, parse_list))
 		{
