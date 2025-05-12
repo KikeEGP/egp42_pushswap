@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/11 21:38:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 20:46:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 int		initialize_stack(t_stack **new_stack, int value);
 /*	*	*	*	* parse	*	*	*	*	*/
 int		parse_main(int argc, char **argv, t_stack **stack_a);
-int		parse_chars(int arg_counter, char **arg_vector);
 /*	* parse_conversion_utils *	*/
 int		check_atoi_overflow(long result, int count);
 char		*get_endptr(char *str);
