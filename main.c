@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/12 20:42:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:22:56 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	initialize_stack(t_stack **new_stack, int value)
 {
 	*new_stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_stack)
+		return (0);
 	ft_printf("%p Initialize some node\n", *new_stack);/*debug
 	You need to debug here. With pointers malloc you can see which one
 	does not be free at the end. And as long as I can remember,
 	leak was in parse_list*/
-	if (!new_stack)
-		return (0);
 	(*new_stack)->value = value;
 	(*new_stack)->prev = NULL;
 	(*new_stack)->next = NULL;
@@ -69,7 +69,7 @@ int	main(int argc, char *a_vector[])
 	/*While you are sorting, at the end of a move,
 	 * you may t_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
-	free_stacks(stack_a, stack_b);
+	free_stacks(&stack_a, &stack_b);
 	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,
 	in main this should be a return*/
 }

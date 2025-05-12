@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/12 21:17:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:22:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		pop_push(t_stack **stack_in, t_stack **stack_out);
 void		push(t_stack **stack_a, t_stack **stack_b, int id_stack);
 void		swap(t_stack **stack_swapped, int id_stack);
 void		swap_both(t_stack **stack_a, t_stack **stack_b);
-void		rotate(t_stack ***first, t_stack ***last, int id_stack);
+void		rotate(t_stack **first, t_stack **last, int id_stack);
 /*	*	*	*	error_clean	*	*	*	*/
 void		clean_list(t_stack **head);
 void		free_stacks(t_stack **stack_a, t_stack **stack_b);

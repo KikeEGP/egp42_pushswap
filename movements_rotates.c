@@ -6,25 +6,25 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/04/22 21:21:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:26:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_stack ***first, t_stack ***last, int id_stack)
+void	rotate(t_stack **first, t_stack **last, int id_stack)
 {
 	t_stack	*transition_ptr;
 	t_stack	*new_first;
 
-	new_first = (**first)->next;
-	transition_ptr = **first;
+	new_first = (*first)->next;
+	transition_ptr = *first;
 	transition_ptr->next = NULL;
 	new_first->prev = NULL;
-	transition_ptr->prev = **last;
-	(**last)->next = transition_ptr;
-	**last = transition_ptr;
-	**first = new_first;
+	transition_ptr->prev = *last;
+	(*last)->next = transition_ptr;
+	*last = transition_ptr;
+	*first = new_first;
 	if (id_stack == 'a')
 		ft_putendl("ra");
 	else if (id_stack == 'b')
@@ -38,9 +38,9 @@ void	rotate(t_stack ***first, t_stack ***last, int id_stack)
 // 	putendl("rr");
 // }
 
-// void	reverse_rotate(t_stack ***last, t_stack ***first, int id_stack)
+// void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 // {
-// 	(**last)->next = **first;
+// 	(*last)->next = *first;
 // 	/*	1ºGo to last_node. Now, last_node->next points to head
 // 		2ºprev of last_node->next should point now to NULL
 // 		3ºformer last_node now is pointed by head
