@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/12 20:46:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:04:19 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void		swap(t_stack ***stack_swapped, int id_stack);
 void		swap_both(t_stack **stack_a, t_stack **stack_b);
 void		rotate(t_stack ***first, t_stack ***last, int id_stack);
 /*	*	*	*	error_clean	*	*	*	*/
-void		clean_list(t_stack *head);
-void		free_stacks(t_stack *stack_a, t_stack *stack_b);
+void		clean_list(t_stack **head);
+void		free_stacks(t_stack **stack_a, t_stack **stack_b);
 void		error_happened(t_stack *stack_a, t_stack *stack_b);
 void		free_split(char **array);
 /*	*	*	* 	Taken from libft *	*	*	*/
