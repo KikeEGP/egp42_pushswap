@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/11 21:48:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:11:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
 	parse_list_size = stack_size(*parse_list);
 	while (parse_list_size-- >= 1)
 //	while ((*parse_list)->next != NULL)
+//	with this loop may have some problem.But check it.
+//	What if this one helps ypu tp clean the bug?
 	{
 		iterator = (*parse_list)->next;
 		while (iterator)
