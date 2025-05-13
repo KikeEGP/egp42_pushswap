@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/13 19:07:18 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/13 20:35:00 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ void	sort_three(t_stack **stack_a)
 		rotate(stack_a, &last, 'a');//create ra() to try this
 		ft_printf("After rot, first is %d\n", (*stack_a)->value);//debug
 	}
-	ft_printf("After sort_three, first is %d\n", (*stack_a)->value);//debug
-/*	else
-		rra();//same as above
-*/}
+	else
+		reverse_rotate(&last, stack_a, 'a');//same as above
+}
 /*Place to create functions for arguments <= 3, 4 or 5. 
  *
  * Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/12 21:26:08 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/13 20:32:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,25 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 // 	putendl("rr");
 // }
 
-// void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
-// {
-// 	(*last)->next = *first;
-// 	/*	1ºGo to last_node. Now, last_node->next points to head
-// 		2ºprev of last_node->next should point now to NULL
-// 		3ºformer last_node now is pointed by head
-// 		4ºsOMEWHERE and somewhen, putendl("rra") or "rrb"*/
-// }
+void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
+{
+	t_stack	*transition_ptr;
+	t_stack	*new_last;
+ 	
+	new_last = (*last)->prev;
+	transition_ptr = *last;
+	transition_ptr->next = *first;
+	(*first)->prev = transition_ptr;
+	transition_ptr->prev = NULL;
+	new_last->next = NULL;
+	*first = transition_ptr;
+	*last = new_last;
+	if (id_stack == 'a')
+		ft_putendl("rra");
+	else if (id_stack == 'b')
+		ft_putendl("rrb");
+
+}
 
 // /*Something*/	reverse_rotate_both(/*stack_a*/,/*stack_b*/)
 // {
