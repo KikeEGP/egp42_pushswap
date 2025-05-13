@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/12 21:22:56 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/13 19:24:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 
 	stack_b = NULL;//DELETE THIS, IS TESTING	
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
-	if (sort_check_result <= 0)
+	while (sort_check_result <= 0)
 	{
+		ft_printf("Sort_check is %d\n", sort_check_result);//debug
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)
 			sort_three(&stack_a);
+		ft_printf("Out of sort_3, 1st is %d\n", stack_a->value);//debug
+		ft_printf("2nd is %d\n", stack_a->next->value);//debug
+		ft_printf("3rd is %d\n", stack_a->next->next->value);//debug
 	//	else if (size_stack <= 5)
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
@@ -49,6 +53,7 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 			of nodes in wrong position? May check here, fella*/
 			/*Yellow brick road to the EmmerAlgorithm City*/
 		//sort_main(stack_a, stack_b);
+	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
 	}
 	return (1);
 }
