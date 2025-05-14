@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/13 19:24:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/14 19:28:23 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)
-			sort_three(&stack_a);
-		ft_printf("Out of sort_3, 1st is %d\n", stack_a->value);//debug
-		ft_printf("2nd is %d\n", stack_a->next->value);//debug
-		ft_printf("3rd is %d\n", stack_a->next->next->value);//debug
+			sort_three(&stack_a);//Here works WELL
 	//	else if (size_stack <= 5)
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
