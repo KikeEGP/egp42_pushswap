@@ -6,11 +6,29 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/14 19:28:23 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/15 17:22:38 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void debug_list(t_stack *node)
+{//THIS FUNCTION IS TO DEBUG, DO NOT SEND THIS
+
+	ft_printf("\n\n\n---> OPEN DEBUG FUNCTION <---\n");//debug,
+	while (node)
+	{
+		ft_printf("Node %p, elements are: ", node);
+		ft_printf("Prev is %p, ", node->prev);
+		ft_printf("Next is %p, ", node->next);
+		ft_printf("Value is %d, ", node->value);
+		ft_printf("and Position is %d\n", node->position);
+		node = node->next;
+	}
+	ft_printf("---> CLOSE DEBUG FUNCTION <---\n\n\n");/*debug,
+			like all the function*/
+	//REMOVE THIS FUNCTION and PROTOTYPE, WHICH IS IN DEFINITIONS
+}
 
 int	initialize_stack(t_stack **new_stack, int value)
 {
@@ -34,6 +52,7 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 	int	wrong_place;
 	int	size_stack;
 
+	debug_list(stack_a);//debug
 	stack_b = NULL;//DELETE THIS, IS TESTING	
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
 	while (sort_check_result <= 0)

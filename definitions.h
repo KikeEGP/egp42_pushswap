@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/03/25 19:03:03 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/15 17:06:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct	s_storage/*PKAY, FORGOT THIS ONE AT THE MOMENT,
 	t_stack	stack_a;
 	t_stack	stack_b;
 }	t_storage;
+
+/*cLEAN THIS*/void debug_list(t_stack *node);//CLEAN THIS
 
 /*pdel-olm storages data in different structs, as matrioshkas
  * And have two pointers for both stacks: two tops and two bottoms
