@@ -24,7 +24,9 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 	{
 		(*stack_in)->value = transition_ptr->value;
 		(*stack_in)->position = transition_ptr->position;
+		ft_printf("Going to free %p\t", transition_ptr);//debug
 		free(transition_ptr);
+		ft_printf("After free, it is %p\n", transition_ptr);//debug
 		flag_first_time = 1;
 	}
 	else
@@ -59,9 +61,10 @@ void	swap(t_stack **stack_swapped, int id_stack)
 {
 	t_stack	*transition_ptr;
 
-	transition_ptr = (*stack_swapped)->next;
+	transition_ptr = (*stack_swapped)->next;  
 	(*stack_swapped)->next = (*stack_swapped)->next->next;
-	(*stack_swapped)->next->prev = *stack_swapped;
+	if ((*stack_swapped)->next)
+		(*stack_swapped)->next->prev = *stack_swapped;
 	(*stack_swapped)->prev = transition_ptr;
 	transition_ptr->next = *stack_swapped;
 	transition_ptr->prev = NULL;
