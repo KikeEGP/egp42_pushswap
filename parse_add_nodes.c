@@ -31,7 +31,9 @@ int	add_to_list(int value, t_stack **parse_list)
 		return (0);
 	if (!flag_first_node_created)
 	{
+		ft_printf("Going to free %p\t", *parse_list);//debug
 		free(*parse_list);//HERE WAS A LEAK
+		ft_printf("After free, it is %p\n", *parse_list);//debug
 		*parse_list = new_node;
 		flag_first_node_created = 1;
 	}

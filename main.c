@@ -58,7 +58,6 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
 	while (sort_check_result <= 0)
 	{
-		ft_printf("Sort_check is %d\n", sort_check_result);//debug
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)

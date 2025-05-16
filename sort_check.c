@@ -46,7 +46,9 @@ int	sort_check(t_stack *stack_a, int *index, int *wrong_place)
 		}
 		*index += 1;
 		pointer_stack = pointer_stack->next;
+		ft_printf("\tSort_check is %d\n", check);//debug
 	}
+	ft_printf("\t\tOUT OF SORT_CHECK\n");
 	return (check);
 }
 /*OTHER IDEA: CHECK LIKE STRTRIM. You can use this function from top
