@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 22:52:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/16 23:50:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	clean_list(t_stack **head)
 
 void	free_stacks(t_stack **stack_a, t_stack **stack_b)
 {
+	ft_printf("\n\t DING DONG, TIME TO FREE STACKS");//debug
+	debug_list(*stack_a);//debug
 	if (stack_b)
 		clean_list(stack_b);
 	if (stack_a)

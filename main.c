@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 22:27:53 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/16 23:58:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,20 @@ int	initialize_stack(t_stack **new_stack, int value)
 	return (1);
 }
 
-static int	sort_main(t_stack *stack_a, t_stack *stack_b)
+static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 {
 	int	sort_check_result;
 	int	wrong_place;
 	int	size_stack;
 
-	debug_list(stack_a);//debug
 	stack_b = NULL;//DELETE THIS, IS TESTING	
-	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
+	sort_check_result = sort_check(*stack_a, &size_stack, &wrong_place); 
 	while (sort_check_result <= 0)
 	{
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)
-			sort_three(&stack_a);//Here works WELL
+			sort_three(stack_a);//Here works WELL
 	//	else if (size_stack <= 5)
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
@@ -69,8 +68,10 @@ static int	sort_main(t_stack *stack_a, t_stack *stack_b)
 			of nodes in wrong position? May check here, fella*/
 			/*Yellow brick road to the EmmerAlgorithm City*/
 		//sort_main(stack_a, stack_b);
-	sort_check_result = sort_check(stack_a, &size_stack, &wrong_place); 
+	sort_check_result = sort_check(*stack_a, &size_stack, &wrong_place); 
 	}
+	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
+	debug_list(*stack_a);//debug
 	return (1);
 }
 
@@ -84,12 +85,14 @@ int	main(int argc, char *a_vector[])
 	stack_b = NULL;
 	if (!initialize_stack(&stack_a, 0)
 		|| !parse_main(argc, a_vector, &stack_a)
-		|| !sort_main(stack_a, stack_b))
+		|| !sort_main(&stack_a, stack_b))
 		error_happened(stack_a, stack_b);
 		/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
 	/*While you are sorting, at the end of a move,
 	 * you may t_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
+	ft_printf("\tAfter free stacks");//debug
+	debug_list(stack_a);//debug
 	free_stacks(&stack_a, &stack_b);
 	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,
 	in main this should be a return*/
