@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/14 20:04:23 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/16 22:29:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	add_to_list(int value, t_stack **parse_list)
 		return (0);
 	if (!flag_first_node_created)
 	{
+		free(*parse_list);//HERE WAS A LEAK
 		*parse_list = new_node;
 		flag_first_node_created = 1;
 	}

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/15 17:22:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/16 22:27:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ int	initialize_stack(t_stack **new_stack, int value)
 	*new_stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_stack)
 		return (0);
-	ft_printf("%p Initialize some node\n", *new_stack);/*debug
+	ft_printf("%p Initialize some node, ", *new_stack);/*debug
 	You need to debug here. With pointers malloc you can see which one
 	does not be free at the end. And as long as I can remember,
 	leak was in parse_list*/
 	(*new_stack)->value = value;
+	ft_printf("value is %d\n", (*new_stack)->value);//debug
 	(*new_stack)->prev = NULL;
 	(*new_stack)->next = NULL;
 	(*new_stack)->position = 0;

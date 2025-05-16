@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/13 18:33:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/16 22:40:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,29 @@
 void	pop_push(t_stack **stack_in, t_stack **stack_out)
 {
 	t_stack	*transition_ptr;
+	static int	flag_first_time;
 
 	transition_ptr = *stack_out;
-	(*stack_out)->prev = NULL;
-	if (*stack_in)
+	*stack_out = transition_ptr->next;
+	if (!flag_first_time)
 	{
-		*stack_out = transition_ptr->next;
+		(*stack_in)->value = transition_ptr->value;
+		(*stack_in)->position = transition_ptr->position;
+		free(transition_ptr);
+		flag_first_time = 1;
+	}
+	else
+	{
 		transition_ptr->next = *stack_in;
 		(*stack_in)->prev = transition_ptr;
+		*stack_in = transition_ptr;
 	}
-	*stack_in = transition_ptr;
+	(*stack_in)->prev = NULL;//BE SURE NEW STACK_HEAD PREV IS NULL
+	ft_printf("stack_IN check");//debug
+	debug_list(*stack_in);//debug
+	ft_printf("\tstack_OUT check");//debug
+	debug_list(*stack_out);//debug
+
 }
 
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
