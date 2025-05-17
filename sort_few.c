@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/17 22:12:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/17 23:09:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,32 @@ void	sort_three(t_stack **stack_a)
 		reverse_rotate(&last, stack_a, 'a');//same as above
 }
 
-static void	push_lowest(stack_a, &stack_b)
+static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack	*last_a;
+	
+	last_a = stack_last(*stack_a);
+	if ((*stack_a)->position == 0 || (*stack_a)->next->position == 1)
+		push(stack_a, stack_b, 'b');
+	else if ((*stack_a)->next->position == 0)
+		swap(stack_a, 'a');
+	else if (last_a->position == 0)
+		reverse_rotate(&last_a, stack_a, 'a');
+	else if ((*stack_a)->next->position == 1)
+		swap(stack_a, 'a');
+	else if (last_a->position == 1 || last_a->prev->position == 0
+			|| last_a->prev->position == 1)
+		reverse_rotate(&last_a, stack_a, 'a');
 }
 
 void	sort_five(t_stack **stack_a)
 {
 	t_stack	*stack_b;
-	t_stack	*last_a;
 
 	stack_b = NULL;
-	last_a = stack_last(*stack_a);
 	while (stack_size(*stack_a) == 3)
 		push_lowest(stack_a, &stack_b);
-	while (sort_check(*stack_a, NULL, NULL) == 1)
+	while (/*PUT HERE A FUNCTION THAT RETURNS 0 IF POSITON, AND TWO NEXTS ARE NOT SORTED*/)
 		sort_three(stack_a);
 	if(stack_b->next && (stack_b->next->position > stack_b->position))
 		swap(&stack_b, 'b');
