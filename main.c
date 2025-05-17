@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 23:58:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/17 21:51:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,16 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 			return (0);
 		else if (size_stack <= 3)
 			sort_three(stack_a);//Here works WELL
-	//	else if (size_stack <= 5)
+		else if (size_stack <= 5)
+			sort_five(stack_a);//Here works WELL
 			/*To functions of 4 and 5 arguments*/
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
 			/*Hey, do your stack have less than 10% or 5% 
 			of nodes in wrong position? May check here, fella*/
 			/*Yellow brick road to the EmmerAlgorithm City*/
 		//sort_main(stack_a, stack_b);
-	sort_check_result = sort_check(*stack_a, &size_stack, &wrong_place); 
+		sort_check_result = sort_check(*stack_a,
+				&size_stack, &wrong_place); 
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
 	debug_list(*stack_a);//debug
@@ -91,7 +93,7 @@ int	main(int argc, char *a_vector[])
 	/*While you are sorting, at the end of a move,
 	 * you may t_printf("%s\n", command) 
 	 * or putendl_fd("command", 1);*/
-	ft_printf("\tAfter free stacks");//debug
+	ft_printf("\tBefore free stacks");//debug
 	debug_list(stack_a);//debug
 	free_stacks(&stack_a, &stack_b);
 	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,

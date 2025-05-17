@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/14 19:45:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/17 21:54:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	sort_check(t_stack *stack_a, int *index, int *wrong_place)
 	if (!stack_a)
 		return (0);
 	pointer_stack = stack_a;
-	*index = 0;/*PROBLEM: In sorted list, index is 1 below position.
-	If not sorted, *index = 0 is correct. Study this*/
+	*index = 0;
 	*wrong_place = 0;
 	check = 1;
 	while (pointer_stack->next != NULL)
