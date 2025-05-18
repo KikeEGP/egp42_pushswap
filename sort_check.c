@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/17 21:54:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 17:12:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ int	sort_check(t_stack *stack_a, int *index, int *wrong_place)
 		ft_printf("%d\n", pointer_stack->next->value);//debug
 		if (pointer_stack->value > pointer_stack->next->value)
 		{
-			ft_printf("We are in sort_check loop. Now they are ");//debug
-			ft_printf("%d and ", pointer_stack->value);//debug
-			ft_printf("%d\n", pointer_stack->next->value);//debug
+			ft_printf("So, will have to sort now\n");//debug
 			check = -1;
 			wrong_place++;
 		}

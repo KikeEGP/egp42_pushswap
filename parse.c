@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 22:46:29 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 19:09:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ int	parse_main(int argc, char **argv, t_stack **stack_a)
 		clean_list(&parse_list);
 		return (0);
 	}
+	pop_push(&parse_list, stack_a);//DENUG TESTING IF AFTER CHECK_DUPLICATE
+				       //WE CAN PUSH TO LIST AGAIN
 	clean_list(&parse_list);
 	return (1);
 }
