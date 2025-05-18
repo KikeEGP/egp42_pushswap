@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/17 21:51:46 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 20:49:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 
 	stack_b = NULL;//DELETE THIS, IS TESTING	
 	sort_check_result = sort_check(*stack_a, &size_stack, &wrong_place); 
+	ft_printf("\tSize is %d\n", size_stack);//Debug-->Se the size
 	while (sort_check_result <= 0)
 	{
 		if (sort_check_result == 0)
