@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:01:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 21:40:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ void	sort_three(t_stack **stack_a)
 		reverse_rotate(&last, stack_a, 'a');//same as above
 }
 
+static int	best_case(t_stack **stack_a)
+{
+	int	sorted;
+
+	sorted = 0;
+	if (sort_check((*stack_a)->next->next) == 1)
+	{
+		ft_printf("Best case\n");//debug
+		swap(stack_a, 'a');
+		sorted = 1;
+	}
+	return (sorted);
+}
+
 static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*last_a;
@@ -59,16 +73,18 @@ void	sort_five(t_stack **stack_a)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-	initialize_stack(&stack_b, 0);
 	ft_printf("\t\t\t\t\tSORT_FIVE!!!\n");//debug
-	while ((*stack_a)->next->next->next)
-		push_lowest(stack_a, &stack_b);
-	while (((*stack_a)->value < (*stack_a)->next->value) && ((*stack_a)->next->value < (*stack_a)->next->next->value))
-		sort_three(stack_a);
-	if(stack_b->next && (stack_b->next->position > stack_b->position))
-		swap(&stack_b, 0);
-	while (stack_b)
-		push(stack_a, &stack_b, 'a');
+	if (!best_case(stack_a))
+	{
+		while ((*stack_a)->next->next->next)
+			push_lowest(stack_a, &stack_b);
+		while (sort_check(*stack_a) != 1)
+				sort_three(stack_a);
+		if(stack_b->next && (stack_b->next->position > stack_b->position))
+			swap(&stack_b, 0);
+		while (stack_b)
+			push(stack_a, &stack_b, 'a');
+	}
 }
 /*Place to create functions for arguments <= 3, 4 or 5. 
  *

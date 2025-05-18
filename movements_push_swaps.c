@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 20:21:52 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 21:07:30 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 		(*stack_in)->prev = transition_ptr;
 		*stack_in = transition_ptr;
 	}
-	(*stack_in)->prev = NULL;//BE SURE NEW STACK_HEAD PREV IS NULL
+	(*stack_in)->prev = NULL;
 	ft_printf("stack_IN check");//debug
 	debug_list(*stack_in);//debug
 	ft_printf("\tstack_OUT check");//debug

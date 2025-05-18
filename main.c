@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 20:49:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/18 21:35:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,10 @@ int	initialize_stack(t_stack **new_stack, int value)
 static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 {
 	int	sort_check_result;
-	int	wrong_place;
 	int	size_stack;
 
 	stack_b = NULL;//DELETE THIS, IS TESTING	
-	sort_check_result = sort_check(*stack_a, &size_stack, &wrong_place); 
+	sort_check_result = check_sort_and_size(*stack_a, &size_stack); 
 	ft_printf("\tSize is %d\n", size_stack);//Debug-->Se the size
 	while (sort_check_result <= 0)
 	{
@@ -70,8 +69,7 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 			of nodes in wrong position? May check here, fella*/
 			/*Yellow brick road to the EmmerAlgorithm City*/
 		//sort_main(stack_a, stack_b);
-		sort_check_result = sort_check(*stack_a,
-				&size_stack, &wrong_place); 
+		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
 	debug_list(*stack_a);//debug
