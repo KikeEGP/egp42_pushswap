@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:40:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:06:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	best_case(t_stack **stack_a)
 	int	sorted;
 
 	sorted = 0;
-	if (sort_check((*stack_a)->next->next) == 1)
+	if ((*stack_a)->position == 1 && (*stack_a)->next->position == 0)
 	{
 		ft_printf("Best case\n");//debug
 		swap(stack_a, 'a');
@@ -76,11 +76,13 @@ void	sort_five(t_stack **stack_a)
 	ft_printf("\t\t\t\t\tSORT_FIVE!!!\n");//debug
 	if (!best_case(stack_a))
 	{
+		ft_printf("NOT BEST CASE\n");//debug
 		while ((*stack_a)->next->next->next)
 			push_lowest(stack_a, &stack_b);
 		while (sort_check(*stack_a) != 1)
 				sort_three(stack_a);
-		if(stack_b->next && (stack_b->next->position > stack_b->position))
+		if(stack_b->next &&
+				(stack_b->next->position > stack_b->position))
 			swap(&stack_b, 0);
 		while (stack_b)
 			push(stack_a, &stack_b, 'a');

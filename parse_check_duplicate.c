@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 22:24:55 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:00:41 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
 
 	parse_list_size = stack_size(*parse_list);
 	ft_printf("Start Check_duplicate loop\n");//debug->HERE I SEE WHEN I PUSH TO STACK
-	while (parse_list_size-- >= 1)
-//	while ((*parse_list)->next != NULL)
+	while (parse_list_size-- >= 1)//TEST WITH BELOW ONE, PLEASE
+//	while ((*parse_list)->next != NULL)//I DID TWO TIMES, GOES WRONG
 //	with this loop may have some problem.But check it.
 //	What if this one helps ypu tp clean the bug?
 	{
+		ft_printf("\t\tCheck_duplicates LOOP\n");//debug
 		iterator = (*parse_list)->next;
 		while (iterator)
 		{
@@ -45,6 +46,7 @@ int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
 		pop_push(stack_a, parse_list);
 		//(*stack_a)->prev = NULL;
 	}
-	debug_list(*stack_a);//debug
+	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
+			     //WELL DONE
 	return (1);
 }

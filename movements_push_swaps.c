@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:07:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:53:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,18 @@
 void	pop_push(t_stack **stack_in, t_stack **stack_out)
 {
 	t_stack	*transition_ptr;
-	static int	flag_first_time;
+//	static int	flag_first_time;
 
 	transition_ptr = *stack_out;
 	*stack_out = transition_ptr->next;
-	if (!flag_first_time)
-	{
-		(*stack_in)->value = transition_ptr->value;
-		(*stack_in)->position = transition_ptr->position;
-		ft_printf("Going to free %p\t", transition_ptr);//debug
-		free(transition_ptr);
-		ft_printf("After free, it is %p\n", transition_ptr);//debug
-		flag_first_time = 1;
-	}
+	if (*stack_in == NULL)//HERE WAS USED FLAG
+		transition_ptr->next = NULL;
 	else
 	{
 		transition_ptr->next = *stack_in;
 		(*stack_in)->prev = transition_ptr;
-		*stack_in = transition_ptr;
 	}
+	*stack_in = transition_ptr;
 	(*stack_in)->prev = NULL;
 	ft_printf("stack_IN check");//debug
 	debug_list(*stack_in);//debug

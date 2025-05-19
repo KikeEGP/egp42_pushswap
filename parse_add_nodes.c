@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/16 22:29:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:41:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	add_front(t_stack **head, t_stack *new)
 {
-	if ((*head == NULL || new == NULL) || (*head)->value == new->value)
+	if ((/**head == NULL || */new == NULL) || (*head)->value == new->value)
 		return (0);
 	(*head)->prev = new;
 	new->next = *head;

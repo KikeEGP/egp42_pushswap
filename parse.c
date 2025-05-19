@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 20:22:18 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:43:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static int	convert_and_add(char **split_arg, t_stack **parse_list)
 		value = string_to_int(split_arg[i], &flag);
 		if (flag[0] != '\0' || !add_to_list(value, parse_list))
 			return (0);
+		debug_list(*parse_list);//Try to change init of stacks
 		i++;
 	}
 	return (1);
@@ -78,10 +79,11 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 int	parse_main(int argc, char **argv, t_stack **stack_a)
 {
 	t_stack	*parse_list;
-
+	
+	parse_list = NULL;
 	ft_printf("Init parse_list\n");//debug->Here I see node I initialize to start parse
-	if (!initialize_stack(&parse_list, 0)
-		|| !split_to_convert(argc, argv, &parse_list)
+	if (/*!initialize_stack(&parse_list, 0)
+		||*/ !split_to_convert(argc, argv, &parse_list)
 		|| !check_duplicates(&parse_list, stack_a))
 	{
 		ft_printf("WRONG PARSE\n");//DEBUG

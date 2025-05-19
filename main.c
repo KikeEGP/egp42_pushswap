@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:35:42 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:27:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
-	debug_list(*stack_a);//debug
 	return (1);
 }
 
@@ -83,9 +82,10 @@ int	main(int argc, char *a_vector[])
 	
 	if (argc == 1)
 		return (0);
+	stack_a = NULL;//I need to initialize later
 	stack_b = NULL;
-	if (!initialize_stack(&stack_a, 0)
-		|| !parse_main(argc, a_vector, &stack_a)
+	if (/*!initialize_stack(&stack_a, 0)
+		||*/ !parse_main(argc, a_vector, &stack_a)
 		|| !sort_main(&stack_a, stack_b))
 		error_happened(stack_a, stack_b);
 		/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
