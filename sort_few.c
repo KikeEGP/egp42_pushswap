@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 21:10:19 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 21:19:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,20 @@ void	sort_three(t_stack **stack_a)
 {
 	t_stack	*last;
 
-	ft_printf("Before sort_three, first is %d\n", (*stack_a)->value);//debug
 	last = NULL;
 	last = (*stack_a)->next->next;
-	if (((*stack_a)->position == 1 
-		&& (*stack_a)->next->position == 0))
-	{
-		swap(stack_a, 'a');//creta sa() to try this
-		ft_printf("After swa, first is %d\n", (*stack_a)->value);//debug
-	}
+	if (((*stack_a)->position == 1 && (*stack_a)->next->position == 0))
+		swap(stack_a, 'a');
 	else if ((*stack_a)->position == 2)
-	{
-		rotate(stack_a, &last, 'a');//create ra() to try this
-		ft_printf("After rot, first is %d\n", (*stack_a)->value);//debug
-		ft_printf("And last is %d\n", last->value);//debug
-	}
+		rotate(stack_a, &last, 'a');
 	else
-		reverse_rotate(&last, stack_a, 'a');//same as above
+		reverse_rotate(&last, stack_a, 'a');
 }
 
 static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*last_a;
-	
+
 	last_a = stack_last(*stack_a);
 	if ((*stack_a)->position == 1 && (*stack_a)->next->position == 0)
 		swap(stack_a, 'a');
@@ -52,12 +43,13 @@ static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 	else if ((*stack_a)->next->position == 1)
 		swap(stack_a, 'a');
 	else if (last_a->position == 1 || last_a->prev->position == 0
-			|| last_a->prev->position == 1)
+		|| last_a->prev->position == 1)
 		reverse_rotate(&last_a, stack_a, 'a');
 }
 
 void	sort_five(t_stack **stack_a)
 {
+/* Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/
 	t_stack	*stack_b;
 
 	stack_b = NULL;
@@ -66,12 +58,8 @@ void	sort_five(t_stack **stack_a)
 		push_lowest(stack_a, &stack_b);
 	while (sort_check(*stack_a) != 1)
 		sort_three(stack_a);
-	if(stack_b->next && (stack_b->next->position > stack_b->position))
+	if (stack_b->next && (stack_b->next->position > stack_b->position))
 		swap(&stack_b, 0);
 	while (stack_b)
 		push(stack_a, &stack_b, 'a');
-	}
 }
-/*Place to create functions for arguments <= 3, 4 or 5. 
- *
- * Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/
