@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 17:43:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:42:15 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 		free_split(split_arg);
 		i++;
 	}
-	ft_printf("End of first phase of parse\n");//debug->end of first phase of parse
 	return (1);
 }
 
@@ -79,18 +78,13 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 int	parse_main(int argc, char **argv, t_stack **stack_a)
 {
 	t_stack	*parse_list;
-	
+
 	parse_list = NULL;
-	ft_printf("Init parse_list\n");//debug->Here I see node I initialize to start parse
-	if (/*!initialize_stack(&parse_list, 0)
-		||*/ !split_to_convert(argc, argv, &parse_list)
+	if (!split_to_convert(argc, argv, &parse_list)
 		|| !check_duplicates(&parse_list, stack_a))
 	{
-		ft_printf("WRONG PARSE\n");//DEBUG
-		debug_list(parse_list);//DEBUG
 		clean_list(&parse_list);
 		return (0);
 	}
-	clean_list(&parse_list);
 	return (1);
 }

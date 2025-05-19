@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 17:41:53 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:44:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	add_to_list(int value, t_stack **parse_list)
 	if (!flag_first_node_created)
 	{
 		ft_printf("Going to free %p\t", *parse_list);//debug
-		free(*parse_list);//HERE WAS A LEAK
+	//	free(*parse_list);//HERE WAS A LEAK
 		ft_printf("After free, it is %p\n", *parse_list);//debug
 		*parse_list = new_node;
 		flag_first_node_created = 1;

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:36:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:34:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "libft/complete_libft.h"
 /*		Defines and structs		*/
 # include "definitions.h"
-
 /*	*	*	*	* main	*	*	*	*	*/
 int		initialize_stack(t_stack **new_stack, int value);
 /*	*	*	*	* parse	*	*	*	*	*/

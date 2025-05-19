@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 17:27:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:43:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,19 +82,11 @@ int	main(int argc, char *a_vector[])
 	
 	if (argc == 1)
 		return (0);
-	stack_a = NULL;//I need to initialize later
+	stack_a = NULL;
 	stack_b = NULL;
-	if (/*!initialize_stack(&stack_a, 0)
-		||*/ !parse_main(argc, a_vector, &stack_a)
-		|| !sort_main(&stack_a, stack_b))
+	if (!parse_main(argc, a_vector, &stack_a)
+			|| !sort_main(&stack_a, stack_b))
 		error_happened(stack_a, stack_b);
-		/*EXPECTED RESULT IS A LIST OF COMMANDS PRINT*/
-	/*While you are sorting, at the end of a move,
-	 * you may t_printf("%s\n", command) 
-	 * or putendl_fd("command", 1);*/
-	ft_printf("\tBefore free stacks");//debug
-	debug_list(stack_a);//debug
 	free_stacks(&stack_a, &stack_b);
-	exit(EXIT_SUCCESS);/*PMENDEZ- said: exit is to close sons,
-	in main this should be a return*/
+	return(0);
 }
