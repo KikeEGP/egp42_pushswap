@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 21:19:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 21:37:10 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	sort_five(t_stack **stack_a)
 {
 /* Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/
 	t_stack	*stack_b;
+//	int	size_stack_b;
 
 	stack_b = NULL;
 	ft_printf("\t\t\t\t\tSORT_FIVE!!!\n");//debug
@@ -59,7 +60,9 @@ void	sort_five(t_stack **stack_a)
 	while (sort_check(*stack_a) != 1)
 		sort_three(stack_a);
 	if (stack_b->next && (stack_b->next->position > stack_b->position))
-		swap(&stack_b, 0);
+		swap(&stack_b, 'b');
+	//size_stack_b = stack_size(stack_b);
+	//while (size_stack_b--)
 	while (stack_b)
 		push(stack_a, &stack_b, 'a');
 }

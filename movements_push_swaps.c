@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 17:53:58 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/19 21:36:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
 	}
 	if (id_stack == 'a')
 	{
-		pop_push(stack_b, stack_a);
+		pop_push(stack_a, stack_b);
 		ft_putendl("pa");
 	}
 }
