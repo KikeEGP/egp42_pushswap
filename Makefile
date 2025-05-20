@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/04/22 21:23:36 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/05/20 21:13:05 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		parse_check_duplicate.c error_clean.c\
 		movements_push_swaps.c movements_rotates.c\
 		sort_check.c stack_size.c stack_last.c\
-		sort_few.c\
+		sort_few.c sort_utils.c\
 
 LIBFT_DIR = ./libft 
 LIBFT = $(LIBFT_DIR)/libft.a
