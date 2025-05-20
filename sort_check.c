@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/18 21:43:52 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:11:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	sort_check(t_stack *stack_a)
 	if (!stack_a)
 		return (0);
 	check = 1;
-	while (stack_a->next != NULL)
+	while (stack_a->next != NULL && check > 0)
 	{
 		ft_printf("We are in sort_check. Values compared now are ");//debug
 		ft_printf("%d and ", stack_a->value);//debug
 		ft_printf("%d\n", stack_a->next->value);//debug
-		if (stack_a->value > stack_a->next->value)
+		if (next_lower(stack_a))
 		{
 			ft_printf("So, will have to sort now\n");//debug
 			check = -1;
