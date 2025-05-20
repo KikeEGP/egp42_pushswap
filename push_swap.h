@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/20 21:24:20 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/20 22:10:51 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a);
 void	sort_five(t_stack **stack_a);
 /*	*	sort_utils	*/
-int		next_bigger(t_stack *node);
-int		next_next_bigger(t_stack *node);
+int		next_lower(t_stack *node);
+int		next_next_lower(t_stack *node);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
