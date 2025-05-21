@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 21:36:11 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:16:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	pop_push(t_stack **stack_in, t_stack **stack_out)
 {
 	t_stack	*transition_ptr;
-//	static int	flag_first_time;
 
 	transition_ptr = *stack_out;
 	*stack_out = transition_ptr->next;

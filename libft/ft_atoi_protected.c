@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:15:13 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/01/18 21:43:58 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:31:19 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	ft_atoi_protected(const char *str, int *counter)
 		sign = 1 - 2 * (*str == '-');
 		str++;
 	}
+	while (*str == '0' && *(str + 1) != '\0')
+		str++;
 	while (*str >= '0' && *str <= '9')
 	{
 		result = 10 * result + (*str++ - '0');

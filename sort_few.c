@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/20 22:38:18 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:37:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,8 @@ static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*last_a;
 
-	/*USE HERE THE POSITION NODE AND UTILS*/
 	last_a = stack_last(*stack_a);
-	if ((*stack_a)->position == 1 && (*stack_a)->next->position == 0)
-		swap(stack_a, 'a');
-	else if ((*stack_a)->position == 0 || (*stack_a)->position == 1)
+	if ((*stack_a)->position == 0 || (*stack_a)->position == 1)
 		push(stack_a, stack_b, 'b');
 	else if ((*stack_a)->next->position == 0)
 		swap(stack_a, 'a');
@@ -62,23 +59,26 @@ void	sort_five(t_stack **stack_a)
 {
 /* Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/
 	t_stack	*stack_b;
-//	int	size_stack_b;
 
 	stack_b = NULL;
-	ft_printf("\t\t\t\t\tSORT_FIVE!!!\n");//debug
-	while ((*stack_a)->next->next->next)
-		push_lowest(stack_a, &stack_b);
-	while (sort_check(*stack_a) != 1)
+	if ((position_node(*stack_a) == 1) && (next_lower(*stack_a)))
+		swap(stack_a, 'a');
+	else
 	{
-		if (next_lower(*stack_a) && (!next_lower(stack_b)))
-			swap_both(stack_a, &stack_b);
-		else
-			sort_three(stack_a);
+		while ((*stack_a)->next->next->next)
+			push_lowest(stack_a, &stack_b);
+		while (sort_check(*stack_a) != 1)
+		{
+			if (stack_b->next && (next_lower(*stack_a)
+						&& (!next_lower(stack_b))))
+				swap_both(stack_a, &stack_b);
+			else
+			{
+				sort_three(stack_a);}
+		}
+		if (stack_b->next && !next_lower(stack_b))
+			swap(&stack_b, 'b');
+		while (stack_b)
+			push(stack_a, &stack_b, 'a');
 	}
-	if (stack_b->next && (stack_b->next->position > stack_b->position))
-		swap(&stack_b, 'b');
-	//size_stack_b = stack_size(stack_b);
-	//while (size_stack_b--)
-	while (stack_b)
-		push(stack_a, &stack_b, 'a');
 }
