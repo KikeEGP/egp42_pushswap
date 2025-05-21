@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 20:43:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:51:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 	int	sort_check_result;
 	int	size_stack;
 
-	stack_b = NULL;//DELETE THIS, IS TESTING	
 	sort_check_result = check_sort_and_size(*stack_a, &size_stack); 
 	ft_printf("\tSize is %d\n", size_stack);//Debug-->Se the size
 	while (sort_check_result <= 0)
@@ -60,10 +59,9 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_stack <= 3)
-			sort_three(stack_a);//Here works WELL
+			sort_three(stack_a);
 		else if (size_stack <= 5)
-			sort_five(stack_a);//Here works WELL
-			/*To functions of 4 and 5 arguments*/
+			sort_five(stack_a);
 	//	else if (/*Hey, % of wrong_place in size_stack???*/)
 			/*Hey, do your stack have less than 10% or 5% 
 			of nodes in wrong position? May check here, fella*/
