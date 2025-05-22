@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 18:40:42 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 21:07:22 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	initialize_stack(t_stack **new_stack, int value)
 	return (1);
 }
 
-static int	sort_main(t_stack **stack_a, t_stack *stack_b)
+static int	sort_main(t_stack **stack_a, t_stack *stack_b, t_stack **last_a)
 {
 	int	sort_check_result;
 	int	size_stack;
@@ -63,7 +63,10 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 		else if (size_stack <= 5)
 			sort_five(stack_a);
 		else 
+		{
 			stack_b = NULL;//MAKEFILE, SHUT UP
+			last_a = NULL;//MAKEFILE, SHUT UP
+		}
 		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
@@ -73,14 +76,16 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 int	main(int argc, char *a_vector[])
 {
 	t_stack *stack_a;
+	t_stack *last_a;
 	t_stack *stack_b;
 	
 	if (argc == 1)
 		return (0);
 	stack_a = NULL;
+	last_a = NULL;
 	stack_b = NULL;
-	if (!parse_main(argc, a_vector, &stack_a)
-			|| !sort_main(&stack_a, stack_b))
+	if (!parse_main(argc, a_vector, &stack_a, &last_a)
+			|| !sort_main(&stack_a, stack_b, &last_a))
 		error_happened(stack_a, stack_b);
 	free_stacks(&stack_a, &stack_b);
 	return(0);

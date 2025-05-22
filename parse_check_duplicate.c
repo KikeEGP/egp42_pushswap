@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 18:00:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 21:08:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,15 @@ static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 	return (1);
 }
 
-int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
+int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 {
 	t_stack	*iterator;
 	int		parse_list_size;
+	static int	flag_first_node;
 
 	parse_list_size = stack_size(*parse_list);
-	ft_printf("Start Check_duplicate loop\n");//debug->HERE I SEE WHEN I PUSH TO STACK
-	while (parse_list_size-- >= 1)//TEST WITH BELOW ONE, PLEASE
-//	while ((*parse_list)->next != NULL)//I DID TWO TIMES, GOES WRONG
-//	with this loop may have some problem.But check it.
-//	What if this one helps ypu tp clean the bug?
+	while (parse_list_size-- >= 1)
 	{
-		ft_printf("\t\tCheck_duplicates LOOP\n");//debug
 		iterator = (*parse_list)->next;
 		while (iterator)
 		{
@@ -44,9 +40,12 @@ int	check_duplicates(t_stack **parse_list, t_stack **stack_a)
 			iterator = iterator->next;
 		}
 		pop_push(stack_a, parse_list);
-		//(*stack_a)->prev = NULL;
+		if (!flag_first_node)
+		{
+			*last = *stack_a;
+			flag_first_node = 1;
+		}
 	}
 	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
-			     //WELL DONE
 	return (1);
 }

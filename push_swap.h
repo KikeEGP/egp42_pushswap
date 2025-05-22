@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/20 22:10:51 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 21:10:52 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 /*	*	*	*	* main	*	*	*	*	*/
 int		initialize_stack(t_stack **new_stack, int value);
 /*	*	*	*	* parse	*	*	*	*	*/
-int		parse_main(int argc, char **argv, t_stack **stack_a);
+int		parse_main(int argc, char **argv, t_stack **stack_a,
+			t_stack **last);
 /*	* parse_conversion_utils *	*/
 int		check_atoi_overflow(long result, int count);
 char	*get_endptr(char *str);
@@ -28,7 +29,8 @@ char	*get_endptr(char *str);
 int		add_to_list(int value, t_stack **parse_list);
 int		check_atoi_overflow(long result, int count);
 /*	* parse_check_duplicate */
-int		check_duplicates(t_stack **parse_list, t_stack **stack_a);
+int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
+			t_stack **last);
 //
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
@@ -40,7 +42,8 @@ int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
-void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
+void	push(t_stack **stack_a, t_stack **stack_b,
+			int id_stack, t_stack **last);
 void	swap(t_stack **stack_swapped, int id_stack);
 void	swap_both(t_stack **stack_a, t_stack **stack_b);
 void	rotate(t_stack **first, t_stack **last, int id_stack);
