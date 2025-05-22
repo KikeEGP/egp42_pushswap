@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/21 21:16:11 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:11:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,17 @@ void	swap(t_stack **stack_swapped, int id_stack)
 		ft_putendl("sb");
 }
 
+//Call a function 'both' doesn't mean that I have to do both always
 void	swap_both(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(stack_a, 0);
-	swap(stack_b, 0);
-	ft_putendl("ss");
+	if (stack_a && stack_b && !next_lower(stack_b))
+		swap(stack_a, 'a');
+	else
+	{
+		if (stack_a)
+			swap(stack_a, 0);
+		if (stack_b)
+			swap(stack_b, 0);
+		ft_putendl("ss");
+	}
 }

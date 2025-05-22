@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/21 21:51:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:40:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,8 @@ static int	sort_main(t_stack **stack_a, t_stack *stack_b)
 			sort_three(stack_a);
 		else if (size_stack <= 5)
 			sort_five(stack_a);
-	//	else if (/*Hey, % of wrong_place in size_stack???*/)
-			/*Hey, do your stack have less than 10% or 5% 
-			of nodes in wrong position? May check here, fella*/
-			/*Yellow brick road to the EmmerAlgorithm City*/
-		//sort_main(stack_a, stack_b);
+		else 
+			stack_b = NULL;//MAKEFILE, SHUT UP
 		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug

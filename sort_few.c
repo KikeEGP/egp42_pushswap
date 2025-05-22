@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/21 21:37:58 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:35:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort_three(t_stack **stack_a)
 	last = NULL;
 	last = (*stack_a)->next->next;
 	if ((position_node(*stack_a) == 1) && (next_lower(*stack_a)))
-		swap(stack_a, 'a');
+		swap_both(stack_a, NULL);
 	else if (position_node(*stack_a) == 2)
 		rotate(stack_a, &last, 'a');
 	else
@@ -57,7 +57,6 @@ static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_five(t_stack **stack_a)
 {
-/* Remember, max 2 movs with 3 values. 12 moves max in cas of 5*/
 	t_stack	*stack_b;
 
 	stack_b = NULL;
@@ -65,17 +64,11 @@ void	sort_five(t_stack **stack_a)
 		swap(stack_a, 'a');
 	else
 	{
-		while ((*stack_a)->next->next->next)
+		while (sort_check(*stack_a) != 1
+				&& (*stack_a)->next->next->next)
 			push_lowest(stack_a, &stack_b);
 		while (sort_check(*stack_a) != 1)
-		{
-			if (stack_b->next && (next_lower(*stack_a)
-						&& (!next_lower(stack_b))))
-				swap_both(stack_a, &stack_b);
-			else
-			{
-				sort_three(stack_a);}
-		}
+			sort_three(stack_a);
 		if (stack_b->next && !next_lower(stack_b))
 			swap(&stack_b, 'b');
 		while (stack_b)
