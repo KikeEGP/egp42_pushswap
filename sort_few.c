@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 22:47:19 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:26:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,32 @@ static unsigned int	position_node(t_stack *first_node)
 }
 
 //With recursion, execution must pass two times unless case of 1st condition 
-void	sort_three(t_stack **stack_a)
+void	sort_three(t_stack **stack_a, t_stack **last_a)
 {
-	t_stack	*last;
-
-	last = NULL;
-	last = (*stack_a)->next->next;
 	if ((position_node(*stack_a) == 1) && (next_lower(*stack_a)))
 		swap_both(stack_a, NULL);
 	else if (position_node(*stack_a) == 2)
-		rotate(stack_a, &last, 'a');
+		rotate(stack_a, last_a, 'a');
 	else
-		reverse_rotate(&last, stack_a, 'a');
+		reverse_rotate(last_a, stack_a, 'a');
 }
 
-static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
+static void	push_lowest(t_stack **stack_a, t_stack **out, t_stack **last_a)
 {
-	t_stack	*last_a;
-
-	last_a = stack_last(*stack_a);
 	if ((*stack_a)->position == 0 || (*stack_a)->position == 1)
-		push(stack_a, stack_b, 'b');
+		push(stack_a, out, 'b');
 	else if ((*stack_a)->next->position == 0)
 		swap(stack_a, 'a');
-	else if (last_a->position == 0)
-		reverse_rotate(&last_a, stack_a, 'a');
+	else if ((*last_a)->position == 0)
+		reverse_rotate(last_a, stack_a, 'a');
 	else if ((*stack_a)->next->position == 1)
 		swap(stack_a, 'a');
-	else if (last_a->position == 1 || last_a->prev->position == 0
-		|| last_a->prev->position == 1)
-		reverse_rotate(&last_a, stack_a, 'a');
+	else if ((*last_a)->position == 1 || (*last_a)->prev->position == 0
+		|| (*last_a)->prev->position == 1)
+		reverse_rotate(last_a, stack_a, 'a');
 }
 
-//It's easy to get last node when I'm sorting five, so I don't use last in push
-void	sort_five(t_stack **stack_a)
+void	sort_five(t_stack **stack_a, t_stack **last_a)
 {
 	t_stack	*stack_b;
 
@@ -67,9 +59,9 @@ void	sort_five(t_stack **stack_a)
 	{
 		while (sort_check(*stack_a) != 1
 				&& (*stack_a)->next->next->next)
-			push_lowest(stack_a, &stack_b);
+			push_lowest(stack_a, &stack_b, last_a);
 		while (sort_check(*stack_a) != 1)
-			sort_three(stack_a);
+			sort_three(stack_a, last_a);
 		if (stack_b->next && !next_lower(stack_b))
 			swap(&stack_b, 'b');
 		while (stack_b)
