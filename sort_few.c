@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:26:46 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:40:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	sort_five(t_stack **stack_a, t_stack **last_a)
 	else
 	{
 		while (sort_check(*stack_a) != 1
-				&& (*stack_a)->next->next->next)
+			&& (*stack_a)->next->next->next)
 			push_lowest(stack_a, &stack_b, last_a);
 		while (sort_check(*stack_a) != 1)
 			sort_three(stack_a, last_a);
