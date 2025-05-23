@@ -26,7 +26,8 @@ static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 {
 	t_stack	*iterator;
-	int		parse_list_size;
+	int		parse_list_size;//maybe remove this and do the loop while parse_list is not null
+	//And get the size of stack by number of pushes you do here. With these, you don't have to loop for it again
 
 	parse_list_size = stack_size(*parse_list);
 	while (parse_list_size-- >= 1)
