@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 21:08:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:13:31 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 {
 	t_stack	*iterator;
 	int		parse_list_size;
-	static int	flag_first_node;
 
 	parse_list_size = stack_size(*parse_list);
 	while (parse_list_size-- >= 1)
@@ -40,11 +39,7 @@ int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 			iterator = iterator->next;
 		}
 		pop_push(stack_a, parse_list);
-		if (!flag_first_node)
-		{
-			*last = *stack_a;
-			flag_first_node = 1;
-		}
+		update_last_ptr(stack_a, last);
 	}
 	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 20:56:31 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 19:56:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:21:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,15 @@ int	last_prev_lower(t_stack *head, t_stack *last)
 	if ((head != last) && (head->value > last->value))
 		return (1);
 	return (0);
+}
+
+void	update_last_ptr(t_stack **head, t_stack **last)
+{
+	if (!(*head))
+	{
+		ft_printf("HEY\n");
+		*last = NULL;
+	}
+	else if (!(*head)->next)
+		*last = *head;
 }

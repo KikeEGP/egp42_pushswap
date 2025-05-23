@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 22:44:21 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:08:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
 int		check_sort_and_size(t_stack *stack_a, int *size);
-void	sort_three(t_stack **stack_a);
-void	sort_five(t_stack **stack_a);
+void	sort_three(t_stack **stack_a, t_stack **last_a);
+void	sort_five(t_stack **stack_a, t_stack **last_a);
 /*	*	sort_utils	*/
 int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
+int		last_lower(t_stack *head, t_stack *last);
+int		last_prev_lower(t_stack *head, t_stack *last);
+void	update_last_ptr(t_stack **head, t_stack **last);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
