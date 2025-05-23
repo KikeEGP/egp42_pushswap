@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:40:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:43:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	sort_three(t_stack **stack_a, t_stack **last_a)
 		reverse_rotate(last_a, stack_a, 'a');
 }
 
+/*As long as I use here 0 and 1 as position values, sort_five won't work 
+ * in larger sort function*/
 static void	push_lowest(t_stack **stack_a, t_stack **out, t_stack **last_a)
 {
 	if ((*stack_a)->position == 0 || (*stack_a)->position == 1)
