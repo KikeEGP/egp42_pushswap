@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 20:56:31 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:29:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 00:07:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	last_prev_lower(t_stack *head, t_stack *last)
 	return (0);
 }
 
+//After push if a stack could start or finish empty after this move 
 void	update_last_ptr(t_stack **head, t_stack **last)
 {
 	if (!(*head))
