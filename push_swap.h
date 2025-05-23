@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:08:55 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:30:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ void	error_happened(t_stack *stack_a, t_stack *stack_b);
 void	free_split(char **array);
 /*	*	*	* 	Taken from libft *	*	*	*/
 int		stack_size(t_stack *lst);
-t_stack	*stack_last(t_stack *lst);
 
 #endif
