@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:30:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 23:51:26 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		sort_check(t_stack *stack_a);
 int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a, t_stack **last_a);
 void	sort_five(t_stack **stack_a, t_stack **last_a);
+void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a);
 /*	*	sort_utils	*/
 int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
