@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 21:14:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 22:46:14 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 
 	transition_ptr = *stack_out;
 	*stack_out = transition_ptr->next;
-	if (*stack_in == NULL)//HERE WAS USED FLAG
+	if (*stack_in == NULL)
 		transition_ptr->next = NULL;
 	else
 	{
@@ -34,24 +34,19 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 	debug_list(*stack_out);//debug
 }
 
-/*If stack_in starts as a NULL pointer and last != NULL, 1st node == last
+/*If stack_in starts as an empty list and last != NULL, 1st node == last
  * Last is called as NULL just in cases I really don't need it*/
-void	push(t_stack **stack_a, t_stack **stack_b, int id_stack, t_stack **last)
+void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
 {
 	if (id_stack == 'b')
 	{
 		pop_push(stack_b, stack_a);
 		ft_putendl("pb");
-		if (last && !(*stack_b)->next)
-			*last = *stack_b;
 	}
 	if (id_stack == 'a')
 	{
 		pop_push(stack_a, stack_b);
 		ft_putendl("pa");
-		if (last && !(*stack_a)->next)
-			*last = *stack_a;
-
 	}
 }
 

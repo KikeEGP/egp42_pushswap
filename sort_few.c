@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:24 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 21:02:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/23 22:47:19 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	push_lowest(t_stack **stack_a, t_stack **stack_b)
 
 	last_a = stack_last(*stack_a);
 	if ((*stack_a)->position == 0 || (*stack_a)->position == 1)
-		push(stack_a, stack_b, 'b', NULL);
+		push(stack_a, stack_b, 'b');
 	else if ((*stack_a)->next->position == 0)
 		swap(stack_a, 'a');
 	else if (last_a->position == 0)
@@ -73,6 +73,6 @@ void	sort_five(t_stack **stack_a)
 		if (stack_b->next && !next_lower(stack_b))
 			swap(&stack_b, 'b');
 		while (stack_b)
-			push(stack_a, &stack_b, 'a', NULL);
+			push(stack_a, &stack_b, 'a');
 	}
 }
