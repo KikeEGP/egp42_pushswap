@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:51:26 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 00:10:47 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /*		Defines and structs		*/
 # include "definitions.h"
 /*	*	*	*	* main	*	*	*	*	*/
-int		initialize_stack(t_stack **new_stack, int value);
+int		initialize_node(t_stack **new_stack, int value);
 /*	*	*	*	* parse	*	*	*	*	*/
 int		parse_main(int argc, char **argv, t_stack **stack_a,
 			t_stack **last);

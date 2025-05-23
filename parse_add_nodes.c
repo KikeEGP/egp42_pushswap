@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 03:40:56 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/19 21:41:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 00:11:21 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	add_to_list(int value, t_stack **parse_list)
 	t_stack		*new_node;
 	static int	flag_first_node_created;
 
-	if (!initialize_stack(&new_node, value))
+	if (!initialize_node(&new_node, value))
 		return (0);
 	if (!flag_first_node_created)
 	{
