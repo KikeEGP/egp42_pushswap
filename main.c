@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:53:23 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:46:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,26 @@ void debug_list(t_stack *node)
 
 
 
-static int	sort_main(t_stack **stack_a, t_stack *stack_b, t_stack **last_a)
+static int	sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int argc)
 {
 	int	sort_check_result;
-	int	size_stack;
 
-	sort_check_result = check_sort_and_size(*stack_a, &size_stack); 
-	ft_printf("\tSize is %d\n", size_stack);//Debug-->Se the size
+	sort_check_result = sort_check(*st_a); 
+	ft_printf("\tSize is %d\n", argc);//Debug-->Se the size
 	while (sort_check_result <= 0)
 	{
 		if (sort_check_result == 0)
 			return (0);
-		else if (size_stack <= 3)
-			sort_three(stack_a, last_a);
-		else if (size_stack <= 5)
-			sort_five(stack_a, last_a);
+		else if (argc <= 3)
+			sort_three(st_a, last_a);
+		else if (argc <= 5)
+			sort_five(st_a, last_a);
 		else 
 		{
-			stack_b = NULL;//MAKEFILE, SHUT UP
+			st_b = NULL;//MAKEFILE, SHUT UP
 			last_a = NULL;//MAKEFILE, SHUT UP
 		}
-		sort_check_result = sort_check(*stack_a);
+		sort_check_result = sort_check(*st_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
 	return (1);
@@ -70,8 +69,8 @@ int	main(int argc, char *a_vector[])
 	last_a = NULL;
 	stack_b = NULL;
 	if (!parse_main(argc, a_vector, &stack_a, &last_a)
-			|| !sort_main(&stack_a, stack_b, &last_a))/*what if I change number of argf and store there size*/
-		error_happened(stack_a, stack_b);
+			|| !sort(&stack_a, &stack_b, &last_a, argc))
+		error_happened(&stack_a, &stack_b);
 	free_stacks(&stack_a, &stack_b);
 	return(0);
 }

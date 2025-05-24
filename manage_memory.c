@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:58:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:36:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	free_stacks(t_stack **stack_a, t_stack **stack_b)
 		clean_list(stack_a);
 }
 
-void	error_happened(t_stack *stack_a, t_stack *stack_b)
+void	error_happened(t_stack **stack_a, t_stack **stack_b)
 {
-	free_stacks(&stack_a, &stack_b);
+	free_stacks(stack_a, stack_b);
 	ft_putendl_error("Error");
 	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:39:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:46:07 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack);
 /*	*	*	*	error_clean	*	*	*	*/
 void	clean_list(t_stack **head);
 void	free_stacks(t_stack **stack_a, t_stack **stack_b);
-void	error_happened(t_stack *stack_a, t_stack *stack_b);
+void	error_happened(t_stack **stack_a, t_stack **stack_b);
 void	free_split(char **array);
 
 #endif

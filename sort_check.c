@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/20 22:11:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:39:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,3 @@ int	sort_check(t_stack *stack_a)
 	ft_printf("\t\tOUT OF SORT_CHECK\n");
 	return (check);
 }
-
-int	check_sort_and_size(t_stack *stack_a, int *size)
-{
-	int	sort_check_result;
-
-	sort_check_result = sort_check(stack_a);
-	if (sort_check_result != 1)
-		*size = stack_size(stack_a);
-	return (sort_check_result);
-}
-/*OTHER IDEA: CHECK LIKE STRTRIM. You can use this function from top
- * and from bottom too. So you can see where is first error, 
- * maybe you choose one rotate or other...
- BUT REMEMBER IS EASIER TO POP AND PUSH FIRST VALUES*/

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 23:13:31 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:17:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,24 @@ static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 	return (1);
 }
 
-int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
+int	check_dupl(t_stack **parsed, t_stack **st_a, t_stack **last, int *argc)
 {
 	t_stack	*iterator;
-	int		parse_list_size;//maybe remove this and do the loop while parse_list is not null
-	//And get the size of stack by number of pushes you do here. With these, you don't have to loop for it again
-
-	parse_list_size = stack_size(*parse_list);
-	while (parse_list_size-- >= 1)
+	
+	*argc = 0;
+	while (*parsed)
 	{
-		iterator = (*parse_list)->next;
+		iterator = (*parsed)->next;
 		while (iterator)
 		{
-			if (!comparison_values(parse_list, iterator))
+			if (!comparison_values(parsed, iterator))
 				return (0);
 			iterator = iterator->next;
 		}
-		pop_push(stack_a, parse_list);
-		update_last_ptr(stack_a, last);
+		pop_push(st_a, parsed);
+		update_last_ptr(st_a, last);
+		*argc += 1;
 	}
-	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
+	debug_list(*st_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
 	return (1);
 }
