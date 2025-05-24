@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 00:10:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:39:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ char	*get_endptr(char *str);
 int		add_to_list(int value, t_stack **parse_list);
 int		check_atoi_overflow(long result, int count);
 /*	* parse_check_duplicate */
-int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
-			t_stack **last);
+int		check_dupl(t_stack **parsed, t_stack **st_a,
+			t_stack **last, int *argc);
 //
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
-int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a, t_stack **last_a);
 void	sort_five(t_stack **stack_a, t_stack **last_a);
 void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a);
@@ -56,7 +55,5 @@ void	clean_list(t_stack **head);
 void	free_stacks(t_stack **stack_a, t_stack **stack_b);
 void	error_happened(t_stack *stack_a, t_stack *stack_b);
 void	free_split(char **array);
-/*	*	*	* 	Taken from libft *	*	*	*/
-int		stack_size(t_stack *lst);
 
 #endif

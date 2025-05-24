@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/05/24 00:10:21 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/05/24 19:40:09 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = push_swap
 SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		parse_check_duplicate.c manage_memory.c\
 		movements_push_swaps.c movements_rotates.c\
-		sort_check.c stack_size.c\
-		sort_few.c sort_utils.c\
+		sort_check.c sort_few.c sort_utils.c\
 
 LIBFT_DIR = ./libft 
 LIBFT = $(LIBFT_DIR)/libft.a
