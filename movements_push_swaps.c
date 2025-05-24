@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/23 22:46:14 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:59:47 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	swap_both(t_stack **stack_a, t_stack **stack_b)
 	if (stack_a || (stack_b && (*stack_b)->next && !next_lower(*stack_b)))
 		swap(stack_a, 'a');
 	else if (!next_lower(*stack_b) || (stack_a && next_lower(*stack_a)))
-		swap(stack_a, 'b');//Hey, this is wrong!!!! And check conditions
+		swap(stack_b, 'b');//Hey, this is wrong!!!! And check conditions
 	else
 	{
 		if (stack_a)
