@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 22:48:07 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 23:00:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void	swap(t_stack **stack_swapped, int id_stack)
 //Call a function 'both' doesn't mean that I have to do both always
 void	swap_both(t_stack **st_a, t_stack **st_b)
 {
-	if ((st_a && next_lower(*st_a)) && (st_b && !next_lower(*st_b)))
+	if ((st_a && next_lower(*st_a))
+			&& (st_b && (*st_b)->next && !next_lower(*st_b)))
 	{
 		swap(st_a, 0);
 		swap(st_b, 0);
