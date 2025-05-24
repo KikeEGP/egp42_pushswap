@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 20:26:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 22:38:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
 int		check_sort_and_size(t_stack *stack_a, int *size);
-void	sort_three(t_stack **stack_a, t_stack **last_a);
+void	sort_three(t_stack **stack_a, t_stack **last_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **last_a);
 void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a);
 /*	*	sort_utils	*/
@@ -48,7 +48,7 @@ void	update_last_ptr(t_stack **head, t_stack **last);
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
 void	swap(t_stack **stack_swapped, int id_stack);
-void	swap_both(t_stack **stack_a, t_stack **stack_b);
+void	swap_both(t_stack **st_a, t_stack **st_b);
 void	rotate(t_stack **first, t_stack **last, int id_stack);
 void	reverse_rotate(t_stack **last, t_stack **first, int id_stack);
 /*	*	*	*	error_clean	*	*	*	*/

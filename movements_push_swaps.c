@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:59:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 22:32:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,17 @@ void	swap(t_stack **stack_swapped, int id_stack)
 }
 
 //Call a function 'both' doesn't mean that I have to do both always
-void	swap_both(t_stack **stack_a, t_stack **stack_b)
+void	swap_both(t_stack **st_a, t_stack **st_b)
 {
-	if (stack_a || (stack_b && (*stack_b)->next && !next_lower(*stack_b)))
-		swap(stack_a, 'a');
-	else if (!next_lower(*stack_b) || (stack_a && next_lower(*stack_a)))
-		swap(stack_b, 'b');//Hey, this is wrong!!!! And check conditions
-	else
+	if ((st_a && next_lower(st_a)) && (st_b && !next_lower(st_b)))
 	{
-		if (stack_a)
-			swap(stack_a, 0);
-		if (stack_b)
-			swap(stack_b, 0);
+		swap(st_a, 0);
+		swap(st_b, 0);
 		ft_putendl("ss");
 	}
+	else if (!st_b || next_lower(st_b))
+		swap(st_a, 'a');
+	else if (!st_a || !next_lower(st_a))
+		swap(st_b, 'b');
+
 }

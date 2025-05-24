@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 20:41:53 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 22:16:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 		if (sort_check_result == 0)
 			return (0);
 		else if (size_a <= 3)
-			sort_three(stack_a, last_a);
+			sort_three(stack_a, last_a, stack_b);
 		else if (size_a <= 5)
 			sort_five(stack_a, last_a);
 		else 
