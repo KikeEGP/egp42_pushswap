@@ -74,7 +74,7 @@ void	swap_both(t_stack **stack_a, t_stack **stack_b)
 	if (stack_a || (stack_b && (*stack_b)->next && !next_lower(*stack_b)))
 		swap(stack_a, 'a');
 	else if (!next_lower(*stack_b) || (stack_a && next_lower(*stack_a)))
-		swap(stack_a, 'b');
+		swap(stack_a, 'b');//Hey, this is wrong!!!! And check conditions
 	else
 	{
 		if (stack_a)
