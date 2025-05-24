@@ -70,7 +70,7 @@ int	main(int argc, char *a_vector[])
 	last_a = NULL;
 	stack_b = NULL;
 	if (!parse_main(argc, a_vector, &stack_a, &last_a)
-			|| !sort_main(&stack_a, stack_b, &last_a))
+			|| !sort_main(&stack_a, stack_b, &last_a))/*what if I change number of argf and store there size*/
 		error_happened(stack_a, stack_b);
 	free_stacks(&stack_a, &stack_b);
 	return(0);
