@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/22 19:09:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 23:59:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 		ft_putendl("rra");
 	else if (id_stack == 'b')
 		ft_putendl("rrb");
-
 }
 
 // /*Something*/	reverse_rotate_both(/*stack_a*/,/*stack_b*/)
