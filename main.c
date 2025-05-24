@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:46:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 20:41:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,26 @@ void debug_list(t_stack *node)
 
 
 
-static int	sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int argc)
+static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 {
 	int	sort_check_result;
+	int	size_a;
 
-	sort_check_result = sort_check(*st_a); 
-	ft_printf("\tSize is %d\n", argc);//Debug-->Se the size
+	sort_check_result = check_sort_and_size(*stack_a, &size_a); 
 	while (sort_check_result <= 0)
 	{
 		if (sort_check_result == 0)
 			return (0);
-		else if (argc <= 3)
-			sort_three(st_a, last_a);
-		else if (argc <= 5)
-			sort_five(st_a, last_a);
+		else if (size_a <= 3)
+			sort_three(stack_a, last_a);
+		else if (size_a <= 5)
+			sort_five(stack_a, last_a);
 		else 
 		{
-			st_b = NULL;//MAKEFILE, SHUT UP
+			stack_b = NULL;//MAKEFILE, SHUT UP
 			last_a = NULL;//MAKEFILE, SHUT UP
 		}
-		sort_check_result = sort_check(*st_a);
+		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
 	return (1);
@@ -69,7 +69,7 @@ int	main(int argc, char *a_vector[])
 	last_a = NULL;
 	stack_b = NULL;
 	if (!parse_main(argc, a_vector, &stack_a, &last_a)
-			|| !sort(&stack_a, &stack_b, &last_a, argc))
+			|| !sort(&stack_a, &stack_b, &last_a))
 		error_happened(&stack_a, &stack_b);
 	free_stacks(&stack_a, &stack_b);
 	return(0);

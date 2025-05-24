@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:33:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 20:42:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,12 @@ int	parse_main(int argc, char **argv, t_stack **stack_a, t_stack **last_a)
 {
 	t_stack	*parse_list;
 
-	ft_printf("\n\tArgc %d\n\n", argc);//debug
 	parse_list = NULL;
 	if (!split_to_convert(argc, argv, &parse_list)
-		|| !check_dupl(&parse_list, stack_a, last_a, &argc))
+		|| !check_duplicate(&parse_list, stack_a, last_a))
 	{
 		clean_list(&parse_list);
 		return (0);
 	}
-	ft_printf("\n\tArgc %d\n\n", argc);//debug
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:17:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/24 20:31:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,22 @@ static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 	return (1);
 }
 
-int	check_dupl(t_stack **parsed, t_stack **st_a, t_stack **last, int *argc)
+int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 {
 	t_stack	*iterator;
 	
-	*argc = 0;
-	while (*parsed)
+	while (*parse_list)
 	{
-		iterator = (*parsed)->next;
+		iterator = (*parse_list)->next;
 		while (iterator)
 		{
-			if (!comparison_values(parsed, iterator))
+			if (!comparison_values(parse_list, iterator))
 				return (0);
 			iterator = iterator->next;
 		}
-		pop_push(st_a, parsed);
-		update_last_ptr(st_a, last);
-		*argc += 1;
+		pop_push(stack_a, parse_list);
+		update_last_ptr(stack_a, last);
 	}
-	debug_list(*st_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
+	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
 	return (1);
 }

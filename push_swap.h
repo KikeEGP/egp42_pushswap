@@ -6,11 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/05/24 19:46:07 by enrgil-p         ###   ########.fr       */
-=======
-/*   Updated: 2025/05/24 00:10:47 by enrgil-p         ###   ########.fr       */
->>>>>>> parent of 950b935 (Deleted stack_size, because is not needed)
+/*   Updated: 2025/05/24 20:26:09 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
