@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort_few_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 20:56:31 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 00:07:46 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:38:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,4 @@ int	next_next_lower(t_stack *node)
 	if ((node->next->next) && (node->value > node->next->next->value))
 		return (1);
 	return (0);
-}
-
-int	last_lower(t_stack *head, t_stack *last)
-{
-	if ((head != last) && (head->value > last->value))
-		return (1);
-	return (0);
-}
-
-int	last_prev_lower(t_stack *head, t_stack *last)
-{
-	if ((head != last) && (head->value > last->value))
-		return (1);
-	return (0);
-}
-
-//After push if a stack could start or finish empty after this move 
-void	update_last_ptr(t_stack **head, t_stack **last)
-{
-	if (!(*head))
-		*last = NULL;
-	else if (!(*head)->next)
-		*last = *head;
 }

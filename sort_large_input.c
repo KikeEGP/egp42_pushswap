@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 18:50:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:23:41 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ static int	initialize_sort_data(t_sort_data **data,
 	return (1);
 }
 
-//int	push_lower_values(/*Struct pointers*/, /*Struct quartiles*/)
-//{
-//	if (!next_lower(head_a) /*What about stack_b empty or just one node?
-//	It's made seg.fault before*/)
-/*		swap_both(head_a, head_b);
+int	push_lower_values(t_sort_data *data)
+{
+	if (!next_lower(head_a) /*What about stack_b empty or just one node?
+	It's made seg.fault before*/)
+		swap_both(head_a, head_b);
 	else if (head_b->next && next_lower(head_b))
 		swap(head_b, 'b');//If swap_both works, this line is not needed
 	if ((head_a > last_a) && (last_b > last_a))
@@ -55,23 +55,23 @@ static int	initialize_sort_data(t_sort_data **data,
 	else
 		rotate || (rotate_both (if last_b > head_b));
 
-}*/
+}
 
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
-	t_sort_data	*data;
+	t_sort_data	*sort_data;
 
-	if (!initialize_sort_data(&data, st_a, st_b, last_a))
+	if (!initialize_sort_data(&sort_data, st_a, st_b, last_a))
 		return (0);
-	get_quartiles(size_a, data);
-	//while (current_size_b <= median)
-	//	current_size_b = push_lower_values(/*Struct*/);
-	/*while (current_size_b <= quartile_3)
+	get_quartiles(size_a, sort_data);
+	while (sort_data->size_b <= median)
+		sort_data->size_b += push_lower_values(data);
+	while (current_size_b <= quartile_3)
 	{
 	}
 	while ((size_a - current_size_b) > 3)
 	{
-	}*/
+	}
 	free(data);
 	return (1);
 }
