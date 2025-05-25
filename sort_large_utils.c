@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 19:37:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:39:26 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ void	get_quartiles(int size_a, t_sort_data *sort_data)
 	sort_data->median = size_a / 2;
 	sort_data->q3 = sort_data->q1 + sort_data->median;
 	sort_data->size_a = size_a;
-}
-
-int	second_is_lower(t_stack *node_1, t_stack *node_1)
-{
-	if ((node_1 != node_2) && (node_1->value > node_2->value))
-		return (1);
-	return (0);
 }
 
 //After push if a stack could start or finish empty after this move 
