@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/15 17:06:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:04:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,18 @@ typedef struct s_stack
 	int				position;
 }	t_stack;
 
-typedef struct	s_storage/*PKAY, FORGOT THIS ONE AT THE MOMENT, 
-			TRY FIRST WITH T_STACK*/
+typedef struct s_sort_data
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
-}	t_storage;
+	static int	q1;
+	static int	median;
+	static int	q3;
+	t_stack		**stack_a;
+	t_stack		**stack_b;
+	t_stack		**last_a;
+	t_stack		**last_b;
+	int			size_a;
+	int			size_b;
+}	t_sort_data;
 
 /*cLEAN THIS*/void debug_list(t_stack *node);//CLEAN THIS
 
