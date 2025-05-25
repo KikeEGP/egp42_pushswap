@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 17:17:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 18:55:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 	int	sort_check_result;
 	int	size_a;
 
-	sort_check_result = check_sort_and_size(*stack_a, &size_a); 
+	sort_check_result = check_sort_and_size(*stack_a, &size_a);
 	while (sort_check_result <= 0)
 	{
 		if (sort_check_result == 0)
@@ -46,11 +46,8 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 			sort_three(stack_a, last_a, NULL);
 		else if (size_a <= 5)
 			sort_five(stack_a, last_a);
-		else
-		{ 
-			big_sort(stack_a, stack_b, last_a, size_a);
-			return (1);//debug
-		}
+		else if (!big_sort(stack_a, stack_b, last_a, size_a))
+			return (0);
 		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug
@@ -59,19 +56,18 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 
 int	main(int argc, char *a_vector[])
 {
-	t_stack *stack_a;
-	t_stack *last_a;
-	t_stack *stack_b;
-	
+	t_stack	*stack_a;
+	t_stack	*last_a;
+	t_stack	*stack_b;
+
 	if (argc == 1)
 		return (0);
 	stack_a = NULL;
 	last_a = NULL;
 	stack_b = NULL;
 	if (!parse_main(argc, a_vector, &stack_a, &last_a)
-			|| !sort(&stack_a, &stack_b, &last_a))
+		|| !sort(&stack_a, &stack_b, &last_a))
 		error_happened(&stack_a, &stack_b);
-	ft_printf("\n\tWE ARE BACK IN MAIN\n Value now is %d", stack_a->value);//debug to see how works struct
 	free_stacks(&stack_a, &stack_b);
-	return(0);
+	return (0);
 }

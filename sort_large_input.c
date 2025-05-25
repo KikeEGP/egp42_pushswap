@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 17:18:42 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 18:50:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,12 @@ static int	initialize_sort_data(t_sort_data **data,
 
 }*/
 
-void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
-{//Change void to int, return 0 in case if mmalloc_error
+int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
+{
 	t_sort_data	*data;
 
 	if (!initialize_sort_data(&data, st_a, st_b, last_a))
-		return /*(0)*/;//This is for void
-	ft_printf("Original pointer is %p\n", *st_a);//debug
-	ft_printf("and inside struct   %p\n", data->stack_a);//debug
-	ft_printf("Original value is %d\n", (*st_a)->value);//debug
-	ft_printf("and inside struct   %d\n", data->stack_a->value);//debug
-	data->stack_a->value = 21348678;
-
+		return (0);
 	get_quartiles(size_a, data);
 	//while (current_size_b <= median)
 	//	current_size_b = push_lower_values(/*Struct*/);
@@ -78,5 +72,6 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	while ((size_a - current_size_b) > 3)
 	{
 	}*/
-	//return (1);
+	free(data);
+	return (1);
 }
