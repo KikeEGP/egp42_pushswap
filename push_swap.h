@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 22:38:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:03:56 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a, t_stack **last_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **last_a);
 void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a);
-/*	*	sort_utils	*/
+/*	*	sort_utils *	*/
 int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
 int		last_lower(t_stack *head, t_stack *last);
 int		last_prev_lower(t_stack *head, t_stack *last);
 void	update_last_ptr(t_stack **head, t_stack **last);
+/*	* sort_large_utils *	*/
+void	get_quartiles(int size_a, t_sort_data *sort_data);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 16:48:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:18:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	initialize_sort_data(t_sort_data **data,
 	(*data)->q1 = 0;
 	(*data)->median = 0;
 	(*data)->q3 = 0;
-	(*data)->stack_a = *stack_a;
-	(*data)->stack_b = *stack_b;
+	(*data)->stack_a = *st_a;
+	(*data)->stack_b = *st_b;
 	(*data)->last_a = *last_a;
 	(*data)->last_b = NULL;
 	(*data)->size_a = 0;
@@ -57,13 +57,18 @@ static int	initialize_sort_data(t_sort_data **data,
 
 }*/
 
-int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
-{
+void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
+{//Change void to int, return 0 in case if mmalloc_error
 	t_sort_data	*data;
 
 	if (!initialize_sort_data(&data, st_a, st_b, last_a))
-		return (0);
-	current_size_b = 0;
+		return /*(0)*/;//This is for void
+	ft_printf("Original pointer is %p\n", *st_a);//debug
+	ft_printf("and inside struct   %p\n", data->stack_a);//debug
+	ft_printf("Original value is %d\n", (*st_a)->value);//debug
+	ft_printf("and inside struct   %d\n", data->stack_a->value);//debug
+	data->stack_a->value = 21348678;
+
 	get_quartiles(size_a, data);
 	//while (current_size_b <= median)
 	//	current_size_b = push_lower_values(/*Struct*/);
@@ -73,5 +78,5 @@ int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	while ((size_a - current_size_b) > 3)
 	{
 	}*/
-	return (1);
+	//return (1);
 }

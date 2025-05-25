@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 23:36:07 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:17:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 			sort_three(stack_a, last_a, NULL);
 		else if (size_a <= 5)
 			sort_five(stack_a, last_a);
-		else 
-		{
-			stack_b = NULL;//MAKEFILE, SHUT UP
-			last_a = NULL;//MAKEFILE, SHUT UP
+		else
+		{ 
+			big_sort(stack_a, stack_b, last_a, size_a);
+			return (1);//debug
 		}
 		sort_check_result = sort_check(*stack_a);
 	}
@@ -71,6 +71,7 @@ int	main(int argc, char *a_vector[])
 	if (!parse_main(argc, a_vector, &stack_a, &last_a)
 			|| !sort(&stack_a, &stack_b, &last_a))
 		error_happened(&stack_a, &stack_b);
+	ft_printf("\n\tWE ARE BACK IN MAIN\n Value now is %d", stack_a->value);//debug to see how works struct
 	free_stacks(&stack_a, &stack_b);
 	return(0);
 }
