@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:20:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 19:36:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:43:52 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	initialize_node(t_stack **new_node, int value)
 {
 	*new_node = (t_stack *)malloc(sizeof(t_stack));
-	if (!new_node)
+	if (!*new_node)
 		return (0);
 	(*new_node)->value = value;
 	(*new_node)->prev = NULL;
