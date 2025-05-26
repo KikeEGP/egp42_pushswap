@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 23:59:13 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/26 21:15:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 {
 	t_stack	*transition_ptr;
 	t_stack	*new_last;
- 	
+
 	new_last = (*last)->prev;
 	transition_ptr = *last;
 	transition_ptr->next = *first;
@@ -57,9 +57,21 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 		ft_putendl("rrb");
 }
 
-// /*Something*/	reverse_rotate_both(/*stack_a*/,/*stack_b*/)
-// {
-// 	reverse_rotate(/*stack_a*/,/*¿node?*/);
-// 	reverse_rotate(/*stack_b*/,/*¿node?*/);
-// 	putendl("rrr");
-// }
+int	reverse_rotate_both(t_sort_data *sd)
+{
+	if (conditions_reverse_both(sd))
+	{
+		reverse_rotate(sd->last_a, sd->stack_a, 0);
+		reverse_rotate(sd->last_b, sd->stack_b, 0);
+		putendl("rrr");
+	}
+	else if ((second_lower(sd->stack_a, sd->last_a)
+			|| second_lower(sd->stack_a, sd->prev->last_a)))
+		reverse_rotate(sd->last_a, sd->stack_a, 'a');
+	else if ((!second_lower(sd->stack_b, sd->last_b)
+			|| !second_lower(sd->stack_b, sd->prev->last_b)))
+		reverse_rotate(sd->last_b, sd->stack_b, 'b');
+	else
+		return (0);
+	return (1);
+}

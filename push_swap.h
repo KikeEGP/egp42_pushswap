@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 19:41:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/26 21:16:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		next_next_lower(t_stack *node);
 void	get_quartiles(int size_a, t_sort_data *sort_data);
 void	update_last_ptr(t_stack **head, t_stack **last);
 /*	* sort_large_comparison_utils *	*/
-int		second_is_lower(t_stack *node_1, t_stack *node_2);
+int		second_lower(t_stack *node_1, t_stack *node_2);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
