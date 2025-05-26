@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 19:23:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/26 19:37:28 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,32 @@ int	push_lower_values(t_sort_data *data)
 
 }
 
+int	to_empty_a(t_sort_data *data, int quartile)
+{
+//	while (size_b < quartile || size_a - size_b <= 3)
+//	{
+//		reviewing conditions to select move, to push to b
+//	}
+}
+
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	*sort_data;
+	int		quartile;
 
+	quartile = size_a / 4;
 	if (!initialize_sort_data(&sort_data, st_a, st_b, last_a))
 		return (0);
-	get_quartiles(size_a, sort_data);
-	while (sort_data->size_b <= median)
-		sort_data->size_b += push_lower_values(data);
-	while (current_size_b <= quartile_3)
+	while ((size_a - sort_data->size_b) > 3)
 	{
+		quartile += size_a / 4;
+		while ((size_a - sort_data->size_b == 3)
+				|| (sort_data->size_b < quartile))
+		//function that pluses 1 in any pb, sorting inside
 	}
-	while ((size_a - current_size_b) > 3)
-	{
-	}
-	free(data);
+	/*sort_three while is stack_a is not sorted
+	Are stack_b and a sorted? In that case, just pa in loop
+	If not, pa just in case a = b+1, in other case rotate b
+	*/free(data);
 	return (1);
 }
