@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 21:39:26 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/26 19:46:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,11 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 		*last = NULL;
 	else if (!(*head)->next)
 		*last = *head;
+}
+
+int	stop_empty_stack_a(t_sort_data *sort_data)
+{
+	if (sort_data->size_a - sort_data->size_b == 3)
+		return (1);
+	return (0);
 }
