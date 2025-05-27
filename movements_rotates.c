@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/26 21:15:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/27 20:47:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,15 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 		ft_putendl("rb");
 }
 
-/*void	rotate_both(//HEY, HOW I CAN PUT HERE FOUR POINTERS)
+void	rotate_both(t_sort_data *sd, int flag_empty_st_a)
 {
- 	rotate(stack_a,stack_a_ottom, 0);
- 	rotate(stack_b,stack_b_bottom, 0);
- 	putendl("rr");
-}*/
+	if (flag_empty_st_a || conditions_rotate_both(sd))
+	{
+		rotate(sd->stack_a, sd->last_a, 0);
+		rotate(sd->stack_b, sd->last_b, 0);
+		putendl("rr");
+	}
+}
 
 void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 {

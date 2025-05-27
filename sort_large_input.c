@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/26 20:21:19 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/27 20:47:02 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,20 @@ int	push_lower_values(t_sort_data *data)
 
 static int	empty_stack_a(t_sort_data *data, int quartile)
 {
-	if (next_lower(data->stack_a))
-		swap_both(data->stack_a, data->stack_b);/*With this, will only
-	do swap in case of check stack_a is correct. 
-	But what if swap_both return 1 or 0 in case of what it has done?*/
-//
-//Imagine...
-	/*if (!swap_both() || !rotate_both() || !reverse_rotate_both())
-	 * {
-	 * 	push(data->stack_a, data->stack_b, 'b');
-	 * 	return (1);
-	 * }
-	 * */
-//
-//	reviewing conditions to select move, to push to b
-//	return (1); in case of push to b. If not, return (0);
-	return (0);//With else if, just push will return (1)
+	if (next_lower(data->stack_a))//Do I need 'if' when I have more in ft?
+		swap_both(data->stack_a, data->stack_b);
+	if (!set_target_move(data, quartile)
+		|| (size_a / 4) > data->stack_b->position)
+		rotate_both(data, 1);
+	if (set_target_move(data, quartile) == 2)
+		reverse_rotate_both(data);
+	if (set_target_move(data, quartile) == 1)
+	{
+		push(data->stack_b, data->stack_a, 'b');
+		update_last_ptr(data->stack_b, data->last_b);
+		return (1);
+	}
+	return (0);
 }
 
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
