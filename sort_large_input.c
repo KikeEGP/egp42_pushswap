@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/27 20:47:02 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:27:07 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,9 @@ static int	initialize_sort_data(t_sort_data **data,
 	return (1);
 }
 
-int	push_lower_values(t_sort_data *data)
-{
-	else if (head_b->next && next_lower(head_b))
-		swap(head_b, 'b');//If swap_both works, this line is not needed
-	if ((head_a > last_a) && (last_b > last_a))
-	       reverse_rotate_both();
-	else if ((head_a > last_a)
-			|| (((head_a > last_a->prev)
-					&& (last_b > last_a->prev))
-				|| (head_a > last_a->prev)))
-	{
-		reverse_rotate(last_a, head_a);
-		return (0);
-	}
-	if (head_b > head_a)
-	{
-		push(stack_b, stack_a);
-		return (1);
-	}
-	else
-		rotate || (rotate_both (if last_b > head_b));
-
-}
-
 static int	empty_stack_a(t_sort_data *data, int quartile)
 {
-	if (next_lower(data->stack_a))//Do I need 'if' when I have more in ft?
+	if (next_lower(data->stack_a))
 		swap_both(data->stack_a, data->stack_b);
 	if (!set_target_move(data, quartile)
 		|| (size_a / 4) > data->stack_b->position)
@@ -74,14 +50,12 @@ static int	empty_stack_a(t_sort_data *data, int quartile)
 
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
-	t_sort_data	*data;
 	int		quartile;
-	int		stop_flag;
+	t_sort_data	*data;
 
 	quartile = size_a / 4;
 	if (!initialize_sort_data(&data, st_a, st_b, last_a))
 		return (0);
-	stop_flag = size_a
 	while (!stop_empty_stack_a(data))
 	{
 		quartile += size_a / 4;
