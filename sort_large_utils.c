@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/28 18:01:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:02:24 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 int	stop_empty_stack_a(t_sort_data *sd)
 {
 	if (sd->size_a - sd->size_b == 3
-		|| (second_lower(sd->stack_a, sd->stack_a->next)
-			&& second_lower(sd->last_a->prev, sd->last_a)
+		|| (is_2nd_lower(sd->stack_a, sd->stack_a->next)
+			&& is_2nd_lower(sd->last_a->prev, sd->last_a)
 			&& sort_check(sd->stack_a) == 1))
 		return (1);
 	return (0);
@@ -42,8 +42,8 @@ int	stop_empty_stack_a(t_sort_data *sd)
 int	set_target_move(t_sort_data *sd, int quartile)
 {
 	if (quartile > sd->stack_a->position
-		&& second_lower(sd->last_a, sd->stack_a)
-		&& second_lower(sd->last_a->prev, sd->stack_a))
+		&& is_2nd_lower(sd->last_a, sd->stack_a)
+		&& is_2nd_lower(sd->last_a->prev, sd->stack_a))
 		return (1);
 	else if (sd->stack_a->position > quartile
 		&& sd->last_a->position > quartile

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/28 18:13:44 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:04:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ int		next_next_lower(t_stack *node);
 /*	*	sort_large_utils 	*/
 void	get_quartiles(int size_a, /*Do I use this one?*/t_sort_data *sort_data);
 void	update_last_ptr(t_stack **head, t_stack **last);
-int	stop_empty_stack_a(t_sort_data *sd);
-int	set_target_move(t_sort_data *sd, int quartile);
+int		stop_empty_stack_a(t_sort_data *sd);
+int		set_target_move(t_sort_data *sd, int quartile);
 /*	* sort_large_comparison_utils *	*/
-int		second_lower(t_stack *node_1, t_stack *node_2);
+int		is_2nd_lower(t_stack *node_1, t_stack *node_2);
+int		is_consecutive(t_stack *node_1, t_stack *node_2);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
@@ -56,6 +57,8 @@ void	swap(t_stack **stack_swapped, int id_stack);
 void	swap_both(t_stack **st_a, t_stack **st_b);
 void	rotate(t_stack **first, t_stack **last, int id_stack);
 void	reverse_rotate(t_stack **last, t_stack **first, int id_stack);
+void	rotate_both(t_sort_data *sd, int quartile);
+void	reverse_rotate_both(t_sort_data *sd);
 /*	*	*	*	error_clean	*	*	*	*/
 void	clean_list(t_stack **head);
 void	free_stacks(t_stack **stack_a, t_stack **stack_b);

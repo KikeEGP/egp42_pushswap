@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/27 20:47:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:03:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ int	reverse_rotate_both(t_sort_data *sd)
 		reverse_rotate(sd->last_b, sd->stack_b, 0);
 		putendl("rrr");
 	}
-	else if ((second_lower(sd->stack_a, sd->last_a)
-			|| second_lower(sd->stack_a, sd->prev->last_a)))
+	else if ((is_2nd_lower(sd->stack_a, sd->last_a)
+			|| is_2nd_lower(sd->stack_a, sd->prev->last_a)))
 		reverse_rotate(sd->last_a, sd->stack_a, 'a');
-	else if ((!second_lower(sd->stack_b, sd->last_b)
-			|| !second_lower(sd->stack_b, sd->prev->last_b)))
+	else if ((!is_2nd_lower(sd->stack_b, sd->last_b)
+			|| !is_2nd_lower(sd->stack_b, sd->prev->last_b)))
 		reverse_rotate(sd->last_b, sd->stack_b, 'b');
 	else
 		return (0);

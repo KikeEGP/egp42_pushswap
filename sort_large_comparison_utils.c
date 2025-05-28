@@ -6,13 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/26 21:15:55 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 19:01:09 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	second_lower(t_stack *node_1, t_stack *node_2)
+int	is_2nd_lower(t_stack *node_1, t_stack *node_2)
 {
 	if (node_1 && node_2 && (node_1 != node_2)
 			&& (node_1->value > node_2->value))
