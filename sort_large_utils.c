@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/27 19:41:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:01:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 		*last = *head;
 }
 
-int	stop_empty_stack_a(t_sort_data *sort_data)
+int	stop_empty_stack_a(t_sort_data *sd)
 {
-	if (sort_data->size_a - sort_data->size_b == 3)
+	if (sd->size_a - sd->size_b == 3
+		|| (second_lower(sd->stack_a, sd->stack_a->next)
+			&& second_lower(sd->last_a->prev, sd->last_a)
+			&& sort_check(sd->stack_a) == 1))
 		return (1);
 	return (0);
 }
