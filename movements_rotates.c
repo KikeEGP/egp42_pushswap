@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 21:16:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 21:35:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	rotate_both(t_sort_data **sd, int quartile)
 {
 	if (conditions_rotate_both(*sd))
 	{
-		rotate((*sd)->stack_a, (*sd)->last_a, 0);
-		rotate((*sd)->stack_b, (*sd)->last_b, 0);
+		rotate(&(*sd)->stack_a, &(*sd)->last_a, 0);
+		rotate(&(*sd)->stack_b, &(*sd)->last_b, 0);
 		ft_putendl("rr");
 	}
 	else if (conditions_rotate_stack_a(*sd))
-		rotate((*sd)->stack_a, (*sd)->last_a, 'a');
+		rotate(&sd->stack_a, &sd->last_a, 'a');
 	else if (sd->size_a / 4 > sd->stack_b->position
 			|| quartile > sd->stack_b->position)
 		rotate((*sd)->stack_b, (*sd)->last_b, 'b');
