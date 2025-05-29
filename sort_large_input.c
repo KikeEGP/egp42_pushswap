@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 18:22:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 20:06:08 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	empty_stack_a(t_sort_data *data, int quartile)
 
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
-	int		quartile;
+	int			quartile;
 	t_sort_data	*data;
 
 	quartile = size_a / 4;
@@ -58,19 +58,19 @@ int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 		return (0);
 	while (!stop_empty_stack_a(data))
 	{
-		quartile += size_a / 4;
-		while (!stop_empty_stack_a(data) || data->size_b < quartile/*
-		Hey, REMEMBER, WHAT IF YOU DO a function that checks from
-		head and from last if a stack is sorted, to see easier 
-		if there are some nodes !sorted.
-		Imagine, if (next or prev is lower || next or prev is +1 or -1)
-		*/)
+		if (size_a > quartile)
+			quartile += size_a / 4;
+		while (!stop_empty_stack_a(data) || data->size_b < quartile)
 			data->size_b += empty_stack_a(data, quartile);
-		//function that pluses 1 in any pb, sorting inside
 	}
-	/*sort_three while is stack_a is not sorted
-	Are stack_b and a sorted? In that case, just pa in loop
-	If not, pa just in case a = b+1, in other case rotate b
-	*/free(data);
+	while (sort_check(data->stack_a) == 1)
+		sort_three(data->stack_a, data->last_a, data->stack_b);
+	while (data->stack_b)
+	{
+		quartile -= size_a / 4;
+		while (size_b >= quartile)
+			data->size_b = return_nodes_to_stack_a(data, quartile);
+	}
+	free(data);
 	return (1);
 }
