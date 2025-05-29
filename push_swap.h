@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/28 19:04:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 18:38:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,14 @@ int		next_next_lower(t_stack *node);
 void	get_quartiles(int size_a, /*Do I use this one?*/t_sort_data *sort_data);
 void	update_last_ptr(t_stack **head, t_stack **last);
 int		stop_empty_stack_a(t_sort_data *sd);
-int		set_target_move(t_sort_data *sd, int quartile);
+int		set_target_move_empty_a(t_sort_data *sd, int quartile);
 /*	* sort_large_comparison_utils *	*/
 int		is_2nd_lower(t_stack *node_1, t_stack *node_2);
 int		is_consecutive(t_stack *node_1, t_stack *node_2);
+/*	* reverse_rotate_conditions	*	*/
+int		conditions_reverse_stack_a(t_sort_data *sd);
+int		conditions_reverse_stack_b(t_sort_data *sd);
+int		conditions_reverse_both(t_sort_data *sd);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);
