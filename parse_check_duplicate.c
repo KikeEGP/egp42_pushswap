@@ -6,12 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 19:39:26 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:43:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//If two integers are not equal, modifies and set the expected position
 static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 {
 	if ((*parse_list)->value == iterator->value)
