@@ -79,7 +79,7 @@ int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	{
 		quartile -= size_a / 4;
 		while (data->size_b >= quartile)
-			data->size_b = return_nodes_to_stack_a(&data, quartile);
+			data->size_b -= return_nodes_to_stack_a(&data, quartile);//discount size when you push a node to a
 	}
 	free(data);
 	return (1);
