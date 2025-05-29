@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/24 20:31:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:39:26 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	comparison_values(t_stack **parse_list, t_stack *iterator)
 int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 {
 	t_stack	*iterator;
-	
+
 	while (*parse_list)
 	{
 		iterator = (*parse_list)->next;
@@ -39,6 +39,5 @@ int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 		pop_push(stack_a, parse_list);
 		update_last_ptr(stack_a, last);
 	}
-	debug_list(*stack_a);//debug-> HERE I CHECK THAT ALLOCATION HAS BEEN
 	return (1);
 }
