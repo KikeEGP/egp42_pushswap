@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/28 19:03:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:00:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 		ft_putendl("rrb");
 }
 
-int	reverse_rotate_both(t_sort_data *sd)
+void	reverse_rotate_both(t_sort_data *sd)
 {
 	if (conditions_reverse_both(sd))
 	{
@@ -68,13 +68,8 @@ int	reverse_rotate_both(t_sort_data *sd)
 		reverse_rotate(sd->last_b, sd->stack_b, 0);
 		putendl("rrr");
 	}
-	else if ((is_2nd_lower(sd->stack_a, sd->last_a)
-			|| is_2nd_lower(sd->stack_a, sd->prev->last_a)))
+	else if (conditions_reverse_stack_a(sd))
 		reverse_rotate(sd->last_a, sd->stack_a, 'a');
-	else if ((!is_2nd_lower(sd->stack_b, sd->last_b)
-			|| !is_2nd_lower(sd->stack_b, sd->prev->last_b)))
+	else if (conditions_reverse_stack_b(sd))
 		reverse_rotate(sd->last_b, sd->stack_b, 'b');
-	else
-		return (0);
-	return (1);
 }
