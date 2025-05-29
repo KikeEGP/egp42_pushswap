@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 19:24:02 by enrgil-p          #+#    #+#              #
-#    Updated: 2025/05/25 19:43:00 by enrgil-p         ###   ########.fr        #
+#    Updated: 2025/05/29 20:43:27 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SOURCES = 	main.c parse.c parse_add_nodes.c parse_conversion_utils.c\
 		sort_check.c stack_size.c\
 		sort_few.c sort_few_utils.c\
 		sort_large_input.c sort_large_utils.c\
-		sort_large_comparison_utils.c\
+		sort_large_comparison_utils.c rotation_conditions.c\
 
 LIBFT_DIR = ./libft 
 LIBFT = $(LIBFT_DIR)/libft.a

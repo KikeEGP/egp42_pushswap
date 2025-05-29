@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_conditions.c                        :+:      :+:    :+:   */
+/*   rotation_conditions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 18:44:20 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/29 20:37:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	conditions_rotate_stack_a(t_sort_data *sd)
+{
+	if (is_2nd_lower(sd->stack_a, sd->last_a)
+		&& is_2nd_lower(sd->stack_a, sd->last_a->prev))
+		return (1);
+	return (0);
+}
+
 int	conditions_rotate_both(t_sort_data *sd)
 {
-	if (/*You will need this when returning to stack_a*/)
+	if (sd->stack_b > sd->size_a / 4
+		&& conditions_rotate_stack_a(sd))
 		return (1);
 	return (0);
 }
