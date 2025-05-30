@@ -33,7 +33,7 @@ static	int	return_nodes_to_stack_a(t_sort_data **data, int quartile);
 	swap_both(data->stack_a, data->stack_b);
 	if (is_consecutive(data->stack_a, data->stack_b))
 	{
-		push(data->stack_b, data->stack_a, 'a');
+		push(data->stack_b, data->stack_a, 'a');//wrong order
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);
 	}
@@ -52,7 +52,7 @@ static int	empty_stack_a(t_sort_data **data, int quartile)
 		reverse_rotate_both(data);
 	if (set_target_move_empty_a(*data, quartile) == 1)
 	{
-		push(data->stack_b, data->stack_a, 'b');
+		push(data->stack_b, data->stack_a, 'b');//wrong order
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);
 	}
@@ -79,7 +79,7 @@ int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	{
 		quartile -= size_a / 4;
 		while (data->size_b >= quartile)
-			data->size_b = return_nodes_to_stack_a(&data, quartile);
+			data->size_b -= return_nodes_to_stack_a(&data, quartile);//discount size when you push a node to a
 	}
 	free(data);
 	return (1);
