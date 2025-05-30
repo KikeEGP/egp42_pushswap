@@ -6,31 +6,32 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/30 18:14:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/30 22:38:51 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	initialize_sort_data(t_sort_data **data,
+static void	include_pointers_in_sort_data(t_sort_data *data,
 		t_stack **st_a, t_stack **st_b, t_stack **last_a)
 {
-	*data = (t_sort_data *)malloc(sizeof(t_sort_data));
-	if (!*data)
-		return (0);
-	(*data)->stack_a = *st_a;
-	(*data)->stack_b = *st_b;
-	(*data)->last_a = *last_a;
-	(*data)->last_b = NULL;
-	(*data)->size_a = 0;
-	(*data)->size_b = 0;
-	return (1);
+	data->stack_a = *st_a;
+	data->stack_b = *st_b;
+	data->last_a = *last_a;
+	data->last_b = NULL;
+}
+
+static void	include_integers_in_sort_data(t_sort_data *data, int size_a)
+{
+	data->size_a = size_a;
+	data->size_b = 0;
+	data->quartile = size_a / 4;
 }
 
 static	int	return_nodes_to_stack_a(t_sort_data **data, int quartile);
 {
 	swap_both(data->stack_a, data->stack_b);
-	if (is_consecutive(data->stack_a, data->stack_b));
+	if (is_consecutive(data->stack_a, data->stack_b))
 	{
 		push(data->stack_b, data->stack_a, 'a');
 		update_last_ptr(data->stack_b, data->last_b);
@@ -61,12 +62,10 @@ static int	empty_stack_a(t_sort_data **data, int quartile)
 //Quartile sort. push 2 b nodes which position is below current quartile of size
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
-	int			quartile;
-	t_sort_data	*data;
+	t_sort_data	data;
 
-	quartile = size_a / 4;
-	if (!initialize_sort_data(&data, st_a, st_b, last_a))
-		return (0);
+	include_pointers_in_sort_data(&data, st_a, st_b, last_a);
+	include_integers_in_sort_data(&data, size_a);
 	while (!stop_empty_stack_a(data))
 	{
 		if (size_a > quartile)
