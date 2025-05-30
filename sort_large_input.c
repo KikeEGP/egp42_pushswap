@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 21:12:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:14:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static int	empty_stack_a(t_sort_data **data, int quartile)
 	return (0);
 }
 
+//Quartile sort. push 2 b nodes which position is below current quartile of size
 int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	int			quartile;
