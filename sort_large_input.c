@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 00:27:18 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 00:44:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,12 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 
 static int	empty_stack_a(t_sort_data *data)
 {
-	swap_both(data->stack_a, data->stack_b);
-	if (!set_target_move_empty_a(data) || head_b_must_go_to_bottom(data))
+	if (next_lower(*data->stack_a))
+	{
+		ft_printf("Swap\n");//debug
+		swap_both(data->stack_a, data->stack_b);
+	}else if (!set_target_move_empty_a(data)
+		|| head_b_must_go_to_bottom(data))
 	{ft_printf("rotate_both\n");//debug
 		rotate_both(data);
 	}else if (set_target_move_empty_a(data) == 2)
