@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 21:14:11 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/31 23:35:03 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 /*New function allowed: exit(), defined in stdlib.h, included in libft*/
 # include "libft/complete_libft.h"
-/*		Defines and structs		*/
+/*	Where are defined structs? In header included below	*/
 # include "definitions.h"
-/*	*	*	*	* main	*	*	*	*	*/
-int		initialize_node(t_stack **new_stack, int value);
+//
+//
+//
 /*	*	*	*	* parse	*	*	*	*	*/
 int		parse_main(int argc, char **argv, t_stack **stack_a,
 			t_stack **last);
@@ -43,13 +44,13 @@ int		big_sort(t_stack **st_a, t_stack **st_b,
 int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
 /*	*	sort_large_utils 	*/
-void	get_quartiles(int size_a, /*Do I use this one?*/t_sort_data *sort_data);
 void	update_last_ptr(t_stack **head, t_stack **last);
 int		stop_empty_stack_a(t_sort_data *sd);
-int		set_target_move_empty_a(t_sort_data *sd, int quartile);
+int		set_target_move_empty_a(t_sort_data *sd);
 /*	* sort_large_comparison_utils *	*/
 int		is_2nd_lower(t_stack *node_1, t_stack *node_2);
 int		is_consecutive(t_stack *node_1, t_stack *node_2);
+int		head_b_must_go_to_bottom(t_sort_data *sd);
 /*	* rotation_conditions	*	*/
 int		conditions_rotate_stack_a(t_sort_data *sd);
 int		conditions_rotate_both(t_sort_data *sd);
@@ -63,9 +64,10 @@ void	swap(t_stack **stack_swapped, int id_stack);
 void	swap_both(t_stack **st_a, t_stack **st_b);
 void	rotate(t_stack **first, t_stack **last, int id_stack);
 void	reverse_rotate(t_stack **last, t_stack **first, int id_stack);
-void	rotate_both(t_sort_data **sd, int quartile);
-void	reverse_rotate_both(t_sort_data **sd);
-/*	*	*	*	error_clean	*	*	*	*/
+void	rotate_both(t_sort_data *sd);
+void	reverse_rotate_both(t_sort_data *sd);
+/*	*	*	*	manage_memory	*	*	*	*/
+int		initialize_node(t_stack **new_stack, int value);
 void	clean_list(t_stack **head);
 void	free_stacks(t_stack **stack_a, t_stack **stack_b);
 void	error_happened(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/30 22:19:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/31 21:01:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ typedef struct s_stack
 
 typedef struct s_sort_data
 {
-	t_stack		*stack_a;
-	t_stack		*stack_b;
-	t_stack		*last_a;
-	t_stack		*last_b;
+	t_stack		**stack_a;
+	t_stack		**stack_b;
+	t_stack		**last_a;
+	t_stack		**last_b;
 	int			size_a;/*Do you need this????*/
 	int			size_b;
 	int			quartile;

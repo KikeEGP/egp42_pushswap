@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 21:35:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/31 23:41:09 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,18 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 		ft_putendl("rb");
 }
 
-void	rotate_both(t_sort_data **sd, int quartile)
+void	rotate_both(t_sort_data *sd)
 {
-	if (conditions_rotate_both(*sd))
+	if (conditions_rotate_both(sd))
 	{
-		rotate(&(*sd)->stack_a, &(*sd)->last_a, 0);
-		rotate(&(*sd)->stack_b, &(*sd)->last_b, 0);
+		rotate(sd->stack_a, sd->last_a, 0);
+		rotate(sd->stack_b, sd->last_b, 0);
 		ft_putendl("rr");
 	}
-	else if (conditions_rotate_stack_a(*sd))
-		rotate(&sd->stack_a, &sd->last_a, 'a');
-	else if (sd->size_a / 4 > sd->stack_b->position
-			|| quartile > sd->stack_b->position)
-		rotate((*sd)->stack_b, (*sd)->last_b, 'b');
+	else if (conditions_rotate_stack_a(sd))
+		rotate(sd->stack_a, sd->last_a, 'a');
+	else if (head_b_must_go_to_bottom(sd))
+		rotate(sd->stack_b, sd->last_b, 'b');
 }
 
 void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
@@ -65,16 +64,16 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 		ft_putendl("rrb");
 }
 
-void	reverse_rotate_both(t_sort_data **sd)
+void	reverse_rotate_both(t_sort_data *sd)
 {
-	if (conditions_reverse_both(*sd))
+	if (conditions_reverse_both(sd))
 	{
-		reverse_rotate((*sd)->last_a, (*sd)->stack_a, 0);
-		reverse_rotate((*sd)->last_b, (*sd)->stack_b, 0);
+		reverse_rotate(sd->last_a, sd->stack_a, 0);
+		reverse_rotate(sd->last_b, sd->stack_b, 0);
 		ft_putendl("rrr");
 	}
-	else if (conditions_reverse_stack_a(*sd))
-		reverse_rotate((*sd)->last_a, (*sd)->stack_a, 'a');
-	else if (conditions_reverse_stack_b(*sd))
-		reverse_rotate((*sd)->last_b, (*sd)->stack_b, 'b');
+	else if (conditions_reverse_stack_a(sd))
+		reverse_rotate(sd->last_a, sd->stack_a, 'a');
+	else if (conditions_reverse_stack_b(sd))
+		reverse_rotate(sd->last_b, sd->stack_b, 'b');
 }

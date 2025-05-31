@@ -6,20 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 19:50:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/05/31 23:27:52 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	get_quartiles(int size_a, t_sort_data *sort_data)
-{
-	sort_data->q1 = size_a / 4;
-	//DO YOU USE THIS????
-	sort_data->median = size_a / 2;
-	sort_data->q3 = sort_data->q1 + sort_data->median;
-	sort_data->size_a = size_a;
-}
 
 //After push if a stack could start or finish empty after this move 
 void	update_last_ptr(t_stack **head, t_stack **last)
@@ -30,25 +21,35 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 		*last = *head;
 }
 
+//You can't access directly to next or prev from struct. Remind this in future 
 int	stop_empty_stack_a(t_sort_data *sd)
 {
+	t_stack	*head;
+	t_stack	*last;
+
+	head = *sd->stack_a;
+	last = *sd->last_a;
 	if (sd->size_a - sd->size_b == 3
-		|| (is_2nd_lower(sd->stack_a, sd->stack_a->next)
-			&& is_2nd_lower(sd->last_a->prev, sd->last_a)
-			&& sort_check(sd->stack_a) == 1))
+		|| (is_2nd_lower(head, head->next) 
+			&& is_2nd_lower(last->prev, last)
+			&& sort_check(head) == 1))
 		return (1);
 	return (0);
 }
 
-int	set_target_move_empty_a(t_sort_data *sd, int quartile)
+//Same said in last comment
+int	set_target_move_empty_a(t_sort_data *sd)
 {
-	if (quartile > sd->stack_a->position
-		&& is_2nd_lower(sd->last_a, sd->stack_a)
-		&& is_2nd_lower(sd->last_a->prev, sd->stack_a))
+	t_stack	*head;
+	t_stack	*last;
+	
+	head = *sd->stack_a;
+	last = *sd->last_a;
+	if (sd->quartile > head->position && is_2nd_lower(last, head)
+		&& is_2nd_lower(last->prev, head))
 		return (1);
-	else if (sd->stack_a->position > quartile
-		&& sd->last_a->position > quartile
-		&& sd->last_a->prev->position > quartile)
+	else if (head->position > sd->quartile && last->position > sd->quartile
+		&& last->prev->position > sd->quartile)
 		return (0);
 	else
 		return (2);
