@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/31 23:53:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 00:27:18 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,19 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 static int	empty_stack_a(t_sort_data *data)
 {
 	swap_both(data->stack_a, data->stack_b);
-	ft_printf("HiEEEEEEY\n");//debug
 	if (!set_target_move_empty_a(data) || head_b_must_go_to_bottom(data))
+	{ft_printf("rotate_both\n");//debug
 		rotate_both(data);
-	if (set_target_move_empty_a(data) == 2)
+	}else if (set_target_move_empty_a(data) == 2)
+	{ft_printf("reverse_both\n");//debug
 		reverse_rotate_both(data);
-	if (set_target_move_empty_a(data) == 1)
-	{
+	}else if (set_target_move_empty_a(data) == 1)
+	{ft_printf("push\n");//debug
 		push(data->stack_b, data->stack_a, 'b');
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);
 	}
+	ft_printf("\tOut of empty_A\n");//debug
 	return (0);
 }
 

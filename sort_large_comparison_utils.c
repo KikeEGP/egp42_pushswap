@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/31 23:32:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 00:16:58 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int	head_b_must_go_to_bottom(t_sort_data *sd)
 {
+	ft_printf("HEAD_B\n");//debug
 	t_stack	*head;
 
 	head = *sd->stack_b;
-	if (sd->size_a / 4 > head->position || sd->quartile > head->position)
+	ft_printf("%p is head\n", head);//debug
+	if (head && (sd->size_a / 4 > head->position
+			|| sd->quartile > head->position))
 		return (1);
 	return (0);
 }
