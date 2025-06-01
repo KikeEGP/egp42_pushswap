@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 00:05:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 21:57:46 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,33 +50,39 @@ void	swap(t_stack **stack_swapped, int id_stack)
 {
 	t_stack	*transition_ptr;
 
-	transition_ptr = (*stack_swapped)->next;  
-	(*stack_swapped)->next = (*stack_swapped)->next->next;
 	if ((*stack_swapped)->next)
-		(*stack_swapped)->next->prev = *stack_swapped;
-	(*stack_swapped)->prev = transition_ptr;
-	transition_ptr->next = *stack_swapped;
-	transition_ptr->prev = NULL;
-	*stack_swapped = transition_ptr;
-	if (id_stack == 'a')
-		ft_putendl("sa");
-	else if (id_stack == 'b')
-		ft_putendl("sb");
+	{
+		transition_ptr = (*stack_swapped)->next;
+		(*stack_swapped)->next = (*stack_swapped)->next->next;
+		if ((*stack_swapped)->next)
+			(*stack_swapped)->next->prev = *stack_swapped;
+		(*stack_swapped)->prev = transition_ptr;
+		transition_ptr->next = *stack_swapped;
+		transition_ptr->prev = NULL;
+		*stack_swapped = transition_ptr;
+		if (id_stack == 'a')
+			ft_putendl("sa");
+		else if (id_stack == 'b')
+			ft_putendl("sb");
+	}
 }
 
 //Call a function 'both' doesn't mean that I have to do both always
 void	swap_both(t_stack **st_a, t_stack **st_b)
 {
 	if ((st_a && next_lower(*st_a))
-			&& (*st_b && !next_lower(*st_b)))
+		&& (st_b && is_2nd_lower(*st_b, (*st_b)->next)))
 		/*In this if, I used to check if st_b->next exists.
 		But I had to remove it. And I don't like it. Review this, pls*/
 	{
-		swap(st_a, 0);
-		swap(st_b, 0);
+		ft_printf("SWAP BOTH\n");//debug
+		if (*st_a)
+			swap(st_a, 0);
+		if (*st_b)
+			swap(st_b, 0);
 		ft_putendl("ss");
 	}
-	else if ((!(*st_b) || next_lower(*st_b)) && next_lower(*st_a))
+	else if ((!st_b || next_lower(*st_b)) && next_lower(*st_a))
 		swap(st_a, 'a');
 	else if ((!st_a || !next_lower(*st_a))
 			&& (*st_b)->next && !next_lower(*st_b))
