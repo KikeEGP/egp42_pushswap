@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/25 18:55:42 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 15:59:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ static int	sort(t_stack **stack_a, t_stack **stack_b, t_stack **last_a)
 			sort_three(stack_a, last_a, NULL);
 		else if (size_a <= 5)
 			sort_five(stack_a, last_a);
-		else if (!big_sort(stack_a, stack_b, last_a, size_a))
-			return (0);
+		else
+			big_sort(stack_a, stack_b, last_a, size_a);
+		ft_printf("End of SORT loop. Once more again?\n");//denbug
 		sort_check_result = sort_check(*stack_a);
 	}
 	ft_printf("\n\n\tWE ARE GONNA GO OUT FROM  SORT_MAIN\n");//debug

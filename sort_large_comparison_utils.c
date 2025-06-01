@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 00:16:58 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 16:59:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	is_2nd_lower(t_stack *node_1, t_stack *node_2)
 	if (node_1 && node_2 && (node_1 != node_2)
 		&& (node_1->value > node_2->value))
 		return (1);
+	ft_printf("Second node is not lower or there is a problem\n");//debug
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 00:44:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:40:21 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 
 static int	empty_stack_a(t_sort_data *data)
 {
+	ft_printf("Enter in empty_stack_a\n");//debug
 	if (next_lower(*data->stack_a))
 	{
 		ft_printf("Swap\n");//debug
@@ -61,12 +62,11 @@ static int	empty_stack_a(t_sort_data *data)
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);
 	}
-	ft_printf("\tOut of empty_A\n");//debug
 	return (0);
 }
 
 //Quartile sort. push 2 b nodes which position is below current quartile of size
-int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
+void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	data;
 
@@ -74,20 +74,27 @@ int	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	include_integers_in_sort_data(&data, size_a);
 	while (!stop_empty_stack_a(&data))
 	{
+		ft_printf("\t\tHEEEEEEYYYYYY\n\n\n\n");//debug
 		if (size_a > data.quartile)
 			data.quartile += size_a / 4;
 		while (!stop_empty_stack_a(&data)
-			|| data.size_b < data.quartile)
-			data.size_b += empty_stack_a(&data);
-	}
-	while (sort_check(*data.stack_a) == 1)
-		sort_three(data.stack_a, data.last_a, data.stack_b);
-	while (data.stack_b)
+			&& data.size_b < data.quartile)
+			{data.size_b += empty_stack_a(&data);
+		ft_printf("Out of empty_A\n");//debug
+	}}
+	ft_printf("\nEnd of empty_A\n");//debug
+	if (size_a - data.size_b <= 3)
 	{
+		ft_printf("Sort three inside big sort\n");//debug
+		while (sort_check(*data.stack_a) == 1)
+			sort_three(data.stack_a, data.last_a, data.stack_b);
+	}
+	while (*data.stack_b)
+	{
+		ft_printf("WHOOPSIE DAISY\n");//debug
 		data.quartile -= size_a / 4;
 		while (data.size_b >= data.quartile)
-			data.size_b -= return_nodes_to_stack_a(&data);//discount size when you push a node to a
+			data.size_b -= return_nodes_to_stack_a(&data);
 	}
-//	free(data);//With no malloc, do I need this?
-	return (1);
+	ft_printf("Out of big sort\n");//debug
 }

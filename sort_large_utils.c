@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 00:43:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:34:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ int	stop_empty_stack_a(t_sort_data *sd)
 
 	head = *sd->stack_a;
 	last = *sd->last_a;
-	if (sort_check(head) == 1 || sd->size_a - sd->size_b == 3
-		|| (is_2nd_lower(head, head->next)
-			&& is_2nd_lower(last->prev, last)))
+	ft_printf("\tstop_empty_a conditions\n\n");//debug
+	if (sd->size_a - sd->size_b <= 3 || (is_2nd_lower(head->next, head)
+			&& is_2nd_lower(last, last->prev)
+			&& sort_check(head) == 1))
 		return (1);
+	ft_printf("NON STOP, BABY\n");//debug
 	return (0);
 }
 
@@ -45,12 +47,20 @@ int	set_target_move_empty_a(t_sort_data *sd)
 	ft_printf("SET_TAGET\n");//debug
 	head = *sd->stack_a;
 	last = *sd->last_a;
-	if (sd->quartile > head->position
-		&& is_2nd_lower(last, head) && is_2nd_lower(last->prev, head))
-		return (1);
-	else if (head->position > sd->quartile && last->position > sd->quartile
-		&& last->prev->position > sd->quartile)
-		return (0);
-	else
-		return (2);
+	if (!stop_empty_stack_a(sd))
+	{
+		ft_printf("CHECK NEXT TARGET MOVE\n");//debug
+		if (sd->quartile > head->position && is_2nd_lower(last, head)
+			&& is_2nd_lower(last->prev, head))
+		{ft_printf("Target is 1\n");//debug
+			return (1);
+		}else if (head->position > sd->quartile
+			&& last->position > sd->quartile
+			&& last->prev->position > sd->quartile)
+		{ft_printf("Target is 0\n");//debug
+			return (0);
+		}else
+			return (2);
+	}
+	return (-1);
 }
