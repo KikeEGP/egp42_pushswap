@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 17:40:21 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 19:55:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	include_pointers_in_sort_data(t_sort_data *data,
 	data->stack_a = st_a;
 	data->stack_b = st_b;
 	data->last_a = last_a;
-	data->last_b = NULL;
 }
 
 static void	include_integers_in_sort_data(t_sort_data *data, int size_a)
@@ -58,7 +57,7 @@ static int	empty_stack_a(t_sort_data *data)
 		reverse_rotate_both(data);
 	}else if (set_target_move_empty_a(data) == 1)
 	{ft_printf("push\n");//debug
-		push(data->stack_b, data->stack_a, 'b');
+		push(data->stack_a, data->stack_b, 'b');
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);
 	}

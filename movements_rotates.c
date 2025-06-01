@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/31 23:41:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/01 18:57:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 
 void	reverse_rotate_both(t_sort_data *sd)
 {
+	ft_printf("\n\tREVERSE_BOTH DEBUG\n");//debug
 	if (conditions_reverse_both(sd))
 	{
 		reverse_rotate(sd->last_a, sd->stack_a, 0);
