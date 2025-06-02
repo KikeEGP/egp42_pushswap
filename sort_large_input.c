@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:24:34 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:50:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,8 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 			data.quartile += size_a / 4;
 		while (!stop_empty_stack_a(&data)
 			&& data.size_b < data.quartile)
-			{data.size_b += empty_stack_a(&data);
-		ft_printf("Out of empty_A\n");//debug
-	}}
+			data.size_b += empty_stack_a(&data);
+	}
 	ft_printf("\nEnd of empty_A\n");//debug
 	if (size_a - data.size_b <= 3)
 	{
