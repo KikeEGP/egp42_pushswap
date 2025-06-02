@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:07:21 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:24:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,14 @@ static int	empty_stack_a(t_sort_data *data)
 {
 	ft_printf("Enter in empty_stack_a\n");//debug
 	if (next_lower(*data->stack_a))
-	{
-		ft_printf("Swap\n");//debug
 		swap_both(data->stack_a, data->stack_b);
-	}else if (!set_target_move_empty_a(data)
+	else if (!set_target_move(data)
 		|| head_b_must_go_to_bottom(data))
-	{ft_printf("rotate_both\n");//debug
 		rotate_both(data);
-	}else if (set_target_move_empty_a(data) == 2)
-	{ft_printf("reverse_both\n");//debug
+	else if (set_target_move(data) == 2)
 		reverse_rotate_both(data);
-	}else if (set_target_move_empty_a(data) == 1)
-	{ft_printf("push\n");//debug
+	else if (set_target_move(data) == 1)
+	{
 		push(data->stack_a, data->stack_b, 'b');
 		update_last_ptr(data->stack_b, data->last_b);
 		return (1);

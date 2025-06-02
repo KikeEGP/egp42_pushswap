@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:21:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:23:24 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	stop_empty_stack_a(t_sort_data *sd)
 }
 
 //Same said in last comment
-int	set_target_move_empty_a(t_sort_data *sd)
+int	set_target_move(t_sort_data *sd)
 {
 	ft_printf("SET_TAGET\n");//debug
 	if (!stop_empty_stack_a(sd))
