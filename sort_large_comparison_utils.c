@@ -6,21 +6,19 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 19:03:02 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:00:36 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*Here I discovered something: to acces to t_stack elements from sd,
+ * you must write (*sd->stack)->element*/
 int	head_b_must_go_to_bottom(t_sort_data *sd)
 {
-	ft_printf("HEAD_B\n");//debug
-	t_stack	*head;
-
-	head = *sd->stack_b;
-	ft_printf("%p is head\n", head);//debug
-	if (head && (sd->size_a / 4 > head->position
-			|| sd->quartile > head->position))
+	ft_printf("\n\n\n\nHEAD_B\n\n");//debug
+	if (*sd->stack_b && (sd->size_a / 4 > (*sd->stack_b)->position
+			|| sd->quartile > (*sd->stack_b)->position))
 		return (1);
 	return (0);
 }

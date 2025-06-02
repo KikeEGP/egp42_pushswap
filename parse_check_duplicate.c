@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 21:14:07 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 19:43:20 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 19:12:18 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ int	check_duplicate(t_stack **parse_list, t_stack **stack_a, t_stack **last)
 			iterator = iterator->next;
 		}
 		pop_push(stack_a, parse_list);
+		ft_printf("\n\nlast_a before is %p\n\n", *last);//debug
 		update_last_ptr(stack_a, last);
+		ft_printf("\n\nlast_a after is %p\n\n", *last);//debug
 	}
 	return (1);
 }

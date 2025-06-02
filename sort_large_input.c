@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 19:55:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:07:21 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 static void	include_pointers_in_sort_data(t_sort_data *data,
 		t_stack **st_a, t_stack **st_b, t_stack **last_a)
 {
+	t_stack	*last_b;
+
+	last_b = NULL;
+	//ft_printf("last_b is %p and *last_b %p\n", last_b, *last_b);//debug
 	data->stack_a = st_a;
 	data->stack_b = st_b;
 	data->last_a = last_a;
+	data->last_b = &last_b;
 }
 
 static void	include_integers_in_sort_data(t_sort_data *data, int size_a)
