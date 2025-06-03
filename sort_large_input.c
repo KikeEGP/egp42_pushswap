@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/03 17:21:49 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 21:10:20 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	include_pointers_in_sort_data(t_sort_data *data,
 		t_stack **st_a, t_stack **st_b, t_stack **last_a)
 {
 	t_stack	*last_b;
-
-	last_b = NULL;
+	
+	last_b = *st_b; /*Think better this*/
 	data->stack_a = st_a;
 	data->stack_b = st_b;
 	data->last_a = last_a;
@@ -47,7 +47,7 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 
 static int	empty_stack_a(t_sort_data *data)
 {
-	ft_printf("Enter in empty_stack_a\n");//debug
+	ft_printf("\n\n\n\tENTER in empty_stack_a\n");//debug
 	if (next_lower(*data->stack_a))
 		swap_both(data->stack_a, data->stack_b);
 	else if (!set_target_move(data)
@@ -74,15 +74,13 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	while (!stop_empty_stack_a(&data))
 	{
 		ft_printf("\t\tHEEEEEEYYYYYY\n\n\n\n");//debug
-		if (size_a > data.quartile)
+		if (size_a > data.quartile)//IT'S NO ENTERING HERE, WHY???
 			data.quartile += size_a / 4;
 		while (!stop_empty_stack_a(&data)
 			&& data.size_b < data.quartile)
 			data.size_b += empty_stack_a(&data);
 	}
 	ft_printf("\nEnd of empty_A\n");//debug
-	ft_printf("\nIn BIG SORT, stack_b is %d\n", (*data.stack_b)->value);//debug
-	ft_printf("\nAnd last is %d\n", (*data.last_b)->value);//debug
 	if (size_a - data.size_b <= 3)
 	{
 		ft_printf("Sort three inside big sort\n");//debug

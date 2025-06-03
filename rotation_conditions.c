@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/03 18:04:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 18:07:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ int	conditions_rotate_both(t_sort_data *sd)
 
 int	conditions_reverse_stack_a(t_sort_data *sd)
 {
-	ft_printf("We are in conditions, ");//debug
-	ft_printf("last_A is %d\n", last_a->value);//debug
-	ft_printf("last_A->prev is %d\n", last_a->prev->value);//debug
-	ft_printf("stack_A is %d\n", stack_a->value);//debug
 	if (is_2nd_lower(*sd->stack_a, *sd->last_a)
 		|| is_2nd_lower(*sd->stack_a, (*sd->last_a)->prev))
 		return (1);

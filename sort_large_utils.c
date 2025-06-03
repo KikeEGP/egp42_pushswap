@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/03 17:22:55 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 18:35:24 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	update_last_ptr(t_stack **head, t_stack **last)
 {
+//	ft_printf("\tLast before update is %p\n", *last);//debug
 	if (!(*head))
+//	if (!head)
 		*last = NULL;
 	else if (!(*head)->next)
 		*last = *head;
@@ -25,8 +27,7 @@ void	update_last_ptr(t_stack **head, t_stack **last)
  * PS: IN FACT, YOU CAN. (*sd->stack_a)->element)*/
 int	stop_empty_stack_a(t_sort_data *sd)
 {
-	ft_printf("\tstop_empty_a conditions\n\n");//debug
-	ft_printf("Value of stack_next is %d\n\n", (*sd->stack_a)->next->value);//debug
+	ft_printf("\tInside stop_empty_a conditions\n\n");//debug
 	if (sd->size_a - sd->size_b <= 3
 		|| (is_2nd_lower((*sd->stack_a)->next, *sd->stack_a)
 			&& is_2nd_lower(*sd->last_a, (*sd->last_a)->prev)

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:00:36 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:55:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	head_b_must_go_to_bottom(t_sort_data *sd)
 //Both nodes must exist, point different memory blocks, and 1st node > 2nd node
 int	is_2nd_lower(t_stack *node_1, t_stack *node_2)
 {
-	ft_printf("\tis_2nd_lower, again a problem here\n");//debug
+	ft_printf("\tEnter is_2nd_lower\n");//debug
 	ft_printf("Node 1 is %p and it's value %d\n", node_1, node_1->value);//debug
 	ft_printf("Node 2 is %p and it's value %d\n", node_2, node_2->value);//debug
 	if (node_1 && node_2 && (node_1 != node_2)
