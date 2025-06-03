@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 21:01:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:36:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 
 void	rotate_both(t_sort_data *sd)
 {
+	ft_printf("Rotate both, stack_b is %d\n", (*sd->stack_b)->value);//debug
+	ft_printf("Rotate both, last_b->prev is %d\n", (*sd->last_b)->prev->value);//debug
 	ft_printf("Rotate both, Last_b is %d\n", (*sd->last_b)->value);//debug
 	if (conditions_rotate_both(sd))
 	{

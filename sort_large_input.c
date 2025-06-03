@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 21:11:44 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:21:49 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	include_pointers_in_sort_data(t_sort_data *data,
 	t_stack	*last_b;
 
 	last_b = NULL;
-	//ft_printf("last_b is %p and *last_b %p\n", last_b, *last_b);//debug
 	data->stack_a = st_a;
 	data->stack_b = st_b;
 	data->last_a = last_a;
@@ -92,7 +91,6 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	}
 	while (*data.stack_b)
 	{
-		ft_printf("WHOOPSIE DAISY\n");//debug
 		data.quartile -= size_a / 4;
 		while (data.size_b >= data.quartile)
 			data.size_b -= return_nodes_to_stack_a(&data);

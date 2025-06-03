@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/01 19:31:28 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:30:04 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	conditions_rotate_stack_a(t_sort_data *sd)
 {
-	t_stack	*last_a;
-
-	last_a = *sd->last_a;
-	if (is_2nd_lower(*sd->stack_a, last_a)
-		&& is_2nd_lower(*sd->stack_a, last_a->prev))
+	if (is_2nd_lower(*sd->stack_a, *sd->last_a)
+		&& is_2nd_lower(*sd->stack_a, (*sd->last_a)->prev))
 		return (1);
 	return (0);
 }

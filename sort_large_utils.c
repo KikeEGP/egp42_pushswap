@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:49:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:22:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	stop_empty_stack_a(t_sort_data *sd)
 			&& is_2nd_lower(*sd->last_a, (*sd->last_a)->prev)
 			&& sort_check(*sd->stack_a) == 1))
 		return (1);
-	ft_printf("NON STOP, BABY\n");//debug
+	ft_printf("NON STOP_EMPTY, BABY\n");//debug
 	return (0);
 }
 
