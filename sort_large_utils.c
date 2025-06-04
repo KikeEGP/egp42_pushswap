@@ -6,13 +6,15 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 19:04:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 19:21:03 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_quarter_of_size_a(int size_a)
+/*We are working with integers. If siize is not multiple of 4,
+ * quartile won't be accurate*/
+int	get_quarter(int size_a)
 {
 	int	quarter;
 

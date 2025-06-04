@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/03 21:10:20 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 19:21:40 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,16 @@ static void	include_pointers_in_sort_data(t_sort_data *data,
 	data->last_b = &last_b;
 }
 
+/*We begin with quarile 2, median. In stack_b, bottom will be for positions
+ * below quartile 1, and top for positions between median and q1*/
 static void	include_integers_in_sort_data(t_sort_data *data, int size_a)
 {
 	data->size_a = size_a;
 	data->size_b = 0;
-	data->quartile = size_a / 4;
+	if (size_a % 2 == 0)
+		data->quartile = size_a / 2;
+	else
+		data->quartile = (size_a / 2) + 1;
 }
 
 static	int	return_nodes_to_stack_a(t_sort_data *data)
@@ -74,8 +79,8 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	while (!stop_empty_stack_a(&data))
 	{
 		ft_printf("\t\tHEEEEEEYYYYYY\n\n\n\n");//debug
-		if (size_a > data.quartile)//IT'S NO ENTERING HERE, WHY???
-			data.quartile += size_a / 4;
+		if (data.quartile > data.size_b && size_a > data.quartile)
+			data.quartile += get_quarter(size_a);
 		while (!stop_empty_stack_a(&data)
 			&& data.size_b < data.quartile)
 			data.size_b += empty_stack_a(&data);
@@ -89,7 +94,7 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	}
 	while (*data.stack_b)
 	{
-		data.quartile -= size_a / 4;
+		data.quartile -= get_quarter(size_a);
 		while (data.size_b >= data.quartile)
 			data.size_b -= return_nodes_to_stack_a(&data);
 	}
