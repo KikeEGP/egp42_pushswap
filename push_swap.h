@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/02 20:25:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 19:06:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a);
 int		next_lower(t_stack *node);
 int		next_next_lower(t_stack *node);
 /*	*	sort_large_utils 	*/
+int		get_quarter_of_size_a(int size_a);
 void	update_last_ptr(t_stack **head, t_stack **last);
 int		stop_empty_stack_a(t_sort_data *sd);
 int		set_target_move(t_sort_data *sd);
