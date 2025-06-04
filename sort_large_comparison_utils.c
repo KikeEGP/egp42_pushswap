@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 19:27:11 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 19:29:02 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	head_b_must_go_to_bottom(t_sort_data *sd)
 {
 	int	quarter;
 
-	quarter = get_quarter(sd->size_a)
+	quarter = get_quarter(sd->size_a);
 	ft_printf("\n\n\n\nHEAD_B\n\n");//debug
 	if (*sd->stack_b && (quarter > (*sd->stack_b)->position
 		|| sd->quartile > (*sd->stack_b)->position))

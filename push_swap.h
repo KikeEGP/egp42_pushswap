@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 19:18:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:53:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		next_next_lower(t_stack *node);
 /*	*	sort_large_utils 	*/
 int		get_quarter(int size_a);
 void	update_last_ptr(t_stack **head, t_stack **last);
-int		stop_empty_stack_a(t_sort_data *sd);
+int		stop_empty_st_a(t_sort_data *sd);
 int		set_target_move(t_sort_data *sd);
 /*	* sort_large_comparison_utils *	*/
 int		is_2nd_lower(t_stack *node_1, t_stack *node_2);

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 19:21:03 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:54:25 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 
 /*You can't access directly to next or prev from struct. Remind this in future 
  * PS: IN FACT, YOU CAN. (*sd->stack_a)->element)*/
-int	stop_empty_stack_a(t_sort_data *sd)
+int	stop_empty_st_a(t_sort_data *sd)
 {
 	ft_printf("\tInside stop_empty_a conditions\n\n");//debug
 	if (sd->size_a - sd->size_b <= 3
@@ -53,7 +53,7 @@ int	stop_empty_stack_a(t_sort_data *sd)
 int	set_target_move(t_sort_data *sd)
 {
 	ft_printf("SET_TAGET\n");//debug
-	if (!stop_empty_stack_a(sd))
+	if (!stop_empty_st_a(sd))
 	{
 		ft_printf("CHECK NEXT TARGET MOVE\n");//debug
 		if (sd->quartile > (*sd->stack_a)->position

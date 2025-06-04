@@ -6,34 +6,31 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 19:21:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:53:02 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	include_pointers_in_sort_data(t_sort_data *data,
-		t_stack **st_a, t_stack **st_b, t_stack **last_a)
+static void	include_outer_data(t_sort_data *data, t_stack **st_a,
+		t_stack **st_b, t_stack **last_a)
 {
-	t_stack	*last_b;
-	
-	last_b = *st_b; /*Think better this*/
 	data->stack_a = st_a;
 	data->stack_b = st_b;
 	data->last_a = last_a;
-	data->last_b = &last_b;
 }
 
 /*We begin with quarile 2, median. In stack_b, bottom will be for positions
  * below quartile 1, and top for positions between median and q1*/
-static void	include_integers_in_sort_data(t_sort_data *data, int size_a)
+static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 {
-	data->size_a = size_a;
-	data->size_b = 0;
+	sd->last_b = last_b;
+	sd->size_a = size_a;
+	sd->size_b = 0;
 	if (size_a % 2 == 0)
-		data->quartile = size_a / 2;
+		sd->quartile = size_a / 2;
 	else
-		data->quartile = (size_a / 2) + 1;
+		sd->quartile = (size_a / 2) + 1;
 }
 
 static	int	return_nodes_to_stack_a(t_sort_data *data)
@@ -73,30 +70,24 @@ static int	empty_stack_a(t_sort_data *data)
 void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	data;
+	t_stack	*last_b;
 
-	include_pointers_in_sort_data(&data, st_a, st_b, last_a);
-	include_integers_in_sort_data(&data, size_a);
-	while (!stop_empty_stack_a(&data))
+	last_b = NULL;
+	include_outer_data(&data, st_a, st_b, last_a);
+	include_new_data(&data, size_a, &last_b);
+	while (!stop_empty_st_a(&data))
 	{
-		ft_printf("\t\tHEEEEEEYYYYYY\n\n\n\n");//debug
-		if (data.quartile > data.size_b && size_a > data.quartile)
+		if (data.size_b > data.quartile)
 			data.quartile += get_quarter(size_a);
-		while (!stop_empty_stack_a(&data)
-			&& data.size_b < data.quartile)
+		while (!stop_empty_st_a(&data) && data.size_b < data.quartile)
 			data.size_b += empty_stack_a(&data);
 	}
-	ft_printf("\nEnd of empty_A\n");//debug
-	if (size_a - data.size_b <= 3)
-	{
-		ft_printf("Sort three inside big sort\n");//debug
-		while (sort_check(*data.stack_a) == 1)
+	while (size_a - data.size_b <= 3 && sort_check(*data.stack_a) == 1)
 			sort_three(data.stack_a, data.last_a, data.stack_b);
-	}
 	while (*data.stack_b)
 	{
 		data.quartile -= get_quarter(size_a);
 		while (data.size_b >= data.quartile)
 			data.size_b -= return_nodes_to_stack_a(&data);
 	}
-	ft_printf("Out of big sort\n");//debug
 }
