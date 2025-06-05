@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/05 21:00:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/05 21:06:21 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
 //
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
-int		sort_check_worths(t_sort_data *data);
+int		sort_check_worths(t_sort_data *data, t_stack *stack_asked);
 int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a, t_stack **last_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **last_a);

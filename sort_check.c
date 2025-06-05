@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/05 20:58:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/05 21:05:54 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	sort_check(t_stack *stack_a)
 	return (check);
 }
 
-int	sort_check_worths(t_sort_data *data)
+int	sort_check_worths(t_sort_data *data, t_stack *stack_asked)
 {
 	if (is_2nd_lower((*data->stack_a)->next, *data->stack_a)
 		&& is_2nd_lower(*data->last_a, (*data->last_a)->prev)
-		&& sort_check(*data->stack_a) == 1)
+		&& sort_check(stack_asked) == 1)
 		return (1);
 	return (0);
 }
