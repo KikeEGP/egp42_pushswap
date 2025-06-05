@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/04 20:53:39 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/05 21:00:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
 //
 /*	*	*	*	sort time	*	*	*	*/
 int		sort_check(t_stack *stack_a);
+int		sort_check_worths(t_sort_data *data);
 int		check_sort_and_size(t_stack *stack_a, int *size);
 void	sort_three(t_stack **stack_a, t_stack **last_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **last_a);
@@ -50,7 +51,7 @@ int		set_target_move(t_sort_data *sd);
 /*	* sort_large_comparison_utils *	*/
 int		is_2nd_lower(t_stack *node_1, t_stack *node_2);
 int		is_consecutive(t_stack *node_1, t_stack *node_2);
-int		head_b_must_go_to_bottom(t_sort_data *sd);
+int		below_quartile_1(t_sort_data *sd);
 /*	* rotation_conditions	*	*/
 int		conditions_rotate_stack_a(t_sort_data *sd);
 int		conditions_rotate_both(t_sort_data *sd);
