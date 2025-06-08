@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/05 21:07:08 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 17:52:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 		*last = NULL;
 	else if (!(*head)->next)
 		*last = *head;
-	ft_printf("\tLast now is %p and has value %d\n", *last, (*last)->value);//debug
 }
 
 /*You can't access directly to next or prev from struct. Remind this in future 
@@ -40,7 +39,8 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 int	stop_empty_st_a(t_sort_data *sd)
 {
 	ft_printf("\tInside stop_empty_a conditions\n\n");//debug
-	if (sd->size_a - sd->size_b <= 3 || sort_check_worths(sd, *sd->stack_a))
+	if (sd->size_a - sd->size_b <= 3
+		|| sort_check_worths(*sd->stack_a, *sd->last_a))
 		return (1);
 	ft_printf("NON STOP_EMPTY, BABY\n");//debug
 	return (0);

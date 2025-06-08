@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/05 20:45:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 17:54:31 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 	{
 		push(data->stack_a, data->stack_b, 'a');
 		update_last_ptr(data->stack_b, data->last_b);
+		debug_list(*data->stack_a);//debug
 		return (1);
 	}
 	else
@@ -84,12 +85,12 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 		while (!stop_empty_st_a(&data) && data.size_b < data.quartile)
 			data.size_b += empty_stack_a(&data);
 	}
-	while (size_a - data.size_b <= 3 && sort_check(*data.stack_a) == 1)
-			sort_three(data.stack_a, data.last_a, data.stack_b);
+	while (size_a - data.size_b <= 3 && sort_check(*data.stack_a) != 1)
+		sort_three(data.stack_a, data.last_a, data.stack_b);
 	while (*data.stack_b)
 	{
 		data.quartile -= get_quarter(size_a);
-		while (data.size_b >= data.quartile)
+		while (data.size_b > 0 && data.size_b >= data.quartile)
 			data.size_b -= return_nodes_to_stack_a(&data);
 	}
 }
