@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 17:23:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 19:59:28 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ int		next_next_lower(t_stack *node);
 int		get_quarter(int size_a);
 void	update_last_ptr(t_stack **head, t_stack **last);
 int		stop_empty_st_a(t_sort_data *sd);
+int		lower_than_quartile(t_sort_data *sd);
 int		set_target_move(t_sort_data *sd);
 /*	* sort_large_comparison_utils *	*/
 int		is_2nd_lower(t_stack *node_1, t_stack *node_2);
 int		is_consecutive(t_stack *node_1, t_stack *node_2);
 int		below_quartile_1(t_sort_data *sd);
 /*	* rotation_conditions	*	*/
-int		conditions_rotate_stack_a(t_sort_data *sd);
 int		conditions_rotate_both(t_sort_data *sd);
 int		conditions_reverse_stack_a(t_sort_data *sd);
 int		conditions_reverse_stack_b(t_sort_data *sd);
