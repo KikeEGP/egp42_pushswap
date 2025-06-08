@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 20:18:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:36:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,9 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	include_new_data(&data, size_a, &last_b);
 	while (!stop_empty_st_a(&data))
 	{
-		if (data.size_b > data.quartile)
+		if (data.size_b >= data.quartile)
 			data.quartile += get_quarter(size_a);
-		while (!stop_empty_st_a(&data) || data.quartile > data.size_b)
-			data.size_b += empty_stack_a(&data);
+		data.size_b += empty_stack_a(&data);
 	}
 	while (size_a - data.size_b <= 3 && sort_check(*data.stack_a) != 1)
 		sort_three(data.stack_a, data.last_a, data.stack_b);
