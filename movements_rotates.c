@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 19:58:29 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 21:11:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 
 void	rotate_both(t_sort_data *sd)
 {
+	ft_printf("\tA");//debug
+	debug_list(*sd->stack_a);//debug
+//	ft_printf("\tB");//debug
+//	debug_list(*sd->stack_b);//debug
+	ft_printf("\tQUARTILE IS %d\n\n\n", sd->quartile);//debug
 	if (conditions_rotate_both(sd))
 	{
 		rotate(sd->stack_a, sd->last_a, 0);
@@ -73,6 +78,7 @@ void	reverse_rotate(t_stack **last, t_stack **first, int id_stack)
 void	reverse_rotate_both(t_sort_data *sd)
 {
 	ft_printf("\n\tREVERSE_BOTH DEBUG\n");//debug
+	
 	if (conditions_reverse_both(sd))
 	{
 		reverse_rotate(sd->last_a, sd->stack_a, 0);

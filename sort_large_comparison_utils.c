@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 17:24:10 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 21:18:36 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	below_quartile_1(t_sort_data *sd)
 
 	quarter = get_quarter(sd->size_a);
 	ft_printf("\n\n\n\nHEAD_B should go down?\n\n");//debug
-	if (sd->size_b >= 2 && (quarter > (*sd->stack_b)->position)
+	if (sd->size_b >= 2 && next_lower(*sd->stack_b)
 		&& !sort_check_worths(*sd->stack_b, *sd->last_b))
 		return (1);
 	return (0);
