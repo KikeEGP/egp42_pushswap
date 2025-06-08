@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:31:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 17:22:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:06:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int	sort_check(t_stack *stack_a)
 
 int	sort_check_worths(t_stack *head_asked, t_stack *last_asked)
 {
+	ft_printf("Head is %d\n", head_asked->position);//debug
+	ft_printf("Next is %d\n", head_asked->next->position);//debug
+	ft_printf("Last is %d\n", last_asked->position);//debug
+	ft_printf("Prev is %d\n", last_asked->prev->position);//debug
 	if (is_2nd_lower(head_asked->next, head_asked)
 		&& is_2nd_lower(last_asked, last_asked->prev)
 		&& sort_check(head_asked) == 1)
