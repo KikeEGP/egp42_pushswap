@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 18:03:23 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:20:24 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,7 @@ void	swap_both(t_stack **st_a, t_stack **st_b)
 {
 	if ((st_a && next_lower(*st_a))
 		&& (st_b && !next_lower(*st_b)))
-		/*In this if, I used to check if st_b->next exists.
-		But I had to remove it. And I don't like it. Review this, pls*/
 	{
-		ft_printf("SWAP BOTH\n");//debug
 		if (*st_a)
 			swap(st_a, 0);
 		if (*st_b)
@@ -89,6 +86,6 @@ void	swap_both(t_stack **st_a, t_stack **st_b)
 	else if ((!st_b || next_lower(*st_b)) && next_lower(*st_a))
 		swap(st_a, 'a');
 	else if ((!st_a || !next_lower(*st_a))
-			&& (*st_b)->next && !next_lower(*st_b))
+		&& (*st_b)->next && !next_lower(*st_b))
 		swap(st_b, 'b');
 }

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:30:19 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 20:37:19 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:05:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	set_target_empty(t_sort_data *sd)
 {
-	ft_printf("SET_TAGET\n");//debug
 	if (!stop_empty_st_a(sd))
 	{
-		ft_printf("CHECK NEXT TARGET MOVE\n");//debug
 		if (sd->quartile > (*sd->stack_a)->position
 			&& is_2nd_lower(*sd->last_a, *sd->stack_a)
 			&& is_2nd_lower((*sd->last_a)->prev, *sd->stack_a))

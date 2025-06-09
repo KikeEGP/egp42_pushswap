@@ -6,13 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 17:30:37 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:10:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*We are working with integers. If siize is not multiple of 4,
+/*We are working with integers. If size is not multiple of 4,
  * quartile won't be accurate*/
 int	get_quarter(int size_a)
 {
@@ -26,9 +26,7 @@ int	get_quarter(int size_a)
 
 void	update_last_ptr(t_stack **head, t_stack **last)
 {
-//	ft_printf("\tLast before update is %p\n", *last);//debug
 	if (!(*head))
-//	if (!head)
 		*last = NULL;
 	else if (!(*head)->next)
 		*last = *head;
@@ -38,11 +36,9 @@ void	update_last_ptr(t_stack **head, t_stack **last)
  * PS: IN FACT, YOU CAN. (*sd->stack_a)->element)*/
 int	stop_empty_st_a(t_sort_data *sd)
 {
-	ft_printf("\tInside stop_empty_a conditions\n\n");//debug
 	if (sd->size_a - sd->size_b <= 3
 		|| sort_check_worths(*sd->stack_a, *sd->last_a))
 		return (1);
-	ft_printf("NON STOP_EMPTY, BABY\n");//debug
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 20:19:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:25:22 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ static int	empty_stack_a(t_sort_data *data)
 	target_move = set_target_empty(data);
 	if (next_lower(*data->stack_a))
 		swap_both(data->stack_a, data->stack_b);
-	else if (!target_move
-		|| (below_quartile_1(data)
+	else if (!target_move || (below_quartile_1(data)
 			&& !next_lower(*data->stack_b)))
 		rotate_both(data);
 	else if (target_move == 2)

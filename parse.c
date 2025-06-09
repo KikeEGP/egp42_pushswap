@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/05/29 19:10:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:12:23 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ static int	convert_and_add(char **split_arg, t_stack **parse_list)
 	flag = NULL;
 	while (split_arg[i])
 	{
-		/*if (!ft_strchr_digit(split_arg[i]))
-			return (0);*/  //TEST IF WORKS WITHOUT THIS
 		value = string_to_int(split_arg[i], &flag);
 		if (flag[0] != '\0' || !add_to_list(value, parse_list))
 			return (0);
@@ -59,7 +57,7 @@ static int	split_to_convert(int argc, char **argv, t_stack **parse_list)
 	while (i < argc)
 	{
 		if (!ft_strchr_digit(argv[i]))
-			return (0);//Do test requested above, it's done here?
+			return (0);
 		split_arg = ft_split(argv[i], 32);
 		if (!split_arg || !convert_and_add(split_arg, parse_list))
 		{
