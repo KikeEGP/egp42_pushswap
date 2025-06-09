@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 20:36:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:06:18 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,20 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 
 static	int	return_nodes_to_stack_a(t_sort_data *data)
 {
+	int target_move;
+
+	target_move = set_target_return(data);
 	swap_both(data->stack_a, data->stack_b);
-	if (is_consecutive(*data->stack_a, *data->stack_b))
+	if (!target_move)
+		rotate(data->stack_b, data->last_b, 'b');
+	else if (target_move == 2)
+		reverse_rotate(data->last_b, data->stack_b, 'b');
+	else if (target_move == 1)
 	{
 		push(data->stack_a, data->stack_b, 'a');
 		update_last_ptr(data->stack_b, data->last_b);
-		debug_list(*data->stack_a);//debug
 		return (1);
 	}
-	else
-		rotate_both(data);
 	return (0);
 }
 
@@ -52,11 +56,11 @@ static int	empty_stack_a(t_sort_data *data)
 {
 	int	target_move;
 
-	target_move = set_target_move(data);
+	target_move = set_target_empty(data);
 	ft_printf("\n\nTARGET_MOVE is %d\n\n", target_move);//debug
 	if (next_lower(*data->stack_a))
 		swap_both(data->stack_a, data->stack_b);
-	else if (!target_move || below_quartile_1(data))
+	else if (!target_move || (below_quartile_1(data) && !next_lower(*data->stack_b)))
 		rotate_both(data);
 	else if (target_move == 2)
 		reverse_rotate_both(data);
@@ -88,8 +92,8 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 		sort_three(data.stack_a, data.last_a, data.stack_b);
 	while (*data.stack_b)
 	{
-		data.quartile -= get_quarter(size_a);
+		/*data.quartile -= get_quarter(size_a);
 		while (data.size_b > 0 && data.size_b >= data.quartile)
-			data.size_b -= return_nodes_to_stack_a(&data);
+			*/data.size_b -= return_nodes_to_stack_a(&data);
 	}
 }

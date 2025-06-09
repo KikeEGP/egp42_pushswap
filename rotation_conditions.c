@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 19:58:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:50:39 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	conditions_rotate_both(t_sort_data *sd)
 	ft_printf("%p and %d\n", *sd->stack_b, (*sd->stack_b)->value);//deb
 	ft_printf("%p and %d\n", (*sd->stack_b)->next, (*sd->stack_b)->next->value);//deb
 	if (sd->stack_b && (*sd->stack_b)->position >= quarter
+		&& is_2nd_lower((*sd->stack_b)->next, *sd->stack_b)
 		&& lower_than_quartile(sd))
 		return (1);
 	return (0);

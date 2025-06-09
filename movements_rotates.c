@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 21:11:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 19:03:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	rotate_both(t_sort_data *sd)
 	}
 	else if (lower_than_quartile(sd))
 		rotate(sd->stack_a, sd->last_a, 'a');
-	else if (below_quartile_1(sd))/* THIS WAS GOING TO TROUBLES*/
+	else if (below_quartile_1(sd))
+//		&& is_2nd_lower((*sd->stack_b)->next, *sd->stack_b))
 		rotate(sd->stack_b, sd->last_b, 'b');
 }
 

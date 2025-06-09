@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/08 20:00:45 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:30:37 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,4 @@ int	lower_than_quartile(t_sort_data *sd)
 		&& (*sd->last_a)->prev->position >= sd->quartile)
 		return (1);
 	return (0);
-}
-int	set_target_move(t_sort_data *sd)
-{
-	ft_printf("SET_TAGET\n");//debug
-	if (!stop_empty_st_a(sd))
-	{
-		ft_printf("CHECK NEXT TARGET MOVE\n");//debug
-		if (sd->quartile > (*sd->stack_a)->position
-			&& is_2nd_lower(*sd->last_a, *sd->stack_a)
-			&& is_2nd_lower((*sd->last_a)->prev, *sd->stack_a))
-			return (1);
-		else if ((*sd->stack_a)->position >= sd->quartile
-			&& (*sd->last_a)->position >= sd->quartile
-			&& (*sd->last_a)->prev->position >= sd->quartile)
-			return (0);
-		else
-			return (2);
-	}
-	return (-1);
 }
