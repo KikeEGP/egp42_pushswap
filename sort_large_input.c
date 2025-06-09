@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 20:06:18 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:19:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 
 static	int	return_nodes_to_stack_a(t_sort_data *data)
 {
-	int target_move;
+	int	target_move;
 
-	target_move = set_target_return(data);
 	swap_both(data->stack_a, data->stack_b);
+	target_move = set_target_return(data);
 	if (!target_move)
 		rotate(data->stack_b, data->last_b, 'b');
 	else if (target_move == 2)
@@ -57,10 +57,11 @@ static int	empty_stack_a(t_sort_data *data)
 	int	target_move;
 
 	target_move = set_target_empty(data);
-	ft_printf("\n\nTARGET_MOVE is %d\n\n", target_move);//debug
 	if (next_lower(*data->stack_a))
 		swap_both(data->stack_a, data->stack_b);
-	else if (!target_move || (below_quartile_1(data) && !next_lower(*data->stack_b)))
+	else if (!target_move
+		|| (below_quartile_1(data)
+			&& !next_lower(*data->stack_b)))
 		rotate_both(data);
 	else if (target_move == 2)
 		reverse_rotate_both(data);
@@ -77,7 +78,7 @@ static int	empty_stack_a(t_sort_data *data)
 void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	data;
-	t_stack	*last_b;
+	t_stack		*last_b;
 
 	last_b = NULL;
 	include_outer_data(&data, st_a, st_b, last_a);
@@ -93,7 +94,7 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	while (*data.stack_b)
 	{
 		/*data.quartile -= get_quarter(size_a);
-		while (data.size_b > 0 && data.size_b >= data.quartile)
-			*/data.size_b -= return_nodes_to_stack_a(&data);
+		while (data.size_b > 0 && data.size_b >= data.quartile)*/
+		data.size_b -= return_nodes_to_stack_a(&data);
 	}
 }

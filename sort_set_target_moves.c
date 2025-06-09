@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:30:19 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 20:06:51 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:37:19 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	set_target_return(t_sort_data *sd)
 	if (is_consecutive(*sd->stack_a, *sd->stack_b))
 		return (1);
 	else if (is_consecutive(*sd->stack_a, (*sd->last_b)->prev)
-		|| is_consecutive(*sd->stack_a, *sd->last_b)
-		|| is_2nd_lower(*sd->last_b, *sd->stack_b))
+		|| is_consecutive(*sd->stack_a, *sd->last_b))
+	//	|| is_2nd_lower(*sd->last_b, *sd->stack_b))
 		return (2);
 	else 
 		return (0);
