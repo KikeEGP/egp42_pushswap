@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:25:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:21:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 		sd->quartile = (size_a / 2) + 1;
 }
 
-static	int	return_nodes_to_stack_a(t_sort_data *data)
+static	int	return_nodes_to_stack_a(t_sort_data *data, int *debug_b)
 {
 	int	target_move;
 
 	swap_both(data->stack_a, data->stack_b);
+	debug_b++;//debug
 	target_move = set_target_return(data);
 	if (!target_move)
 		rotate(data->stack_b, data->last_b, 'b');
@@ -52,13 +53,16 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 	return (0);
 }
 
-static int	empty_stack_a(t_sort_data *data)
+static int	empty_stack_a(t_sort_data *data, int *debug_a)
 {
 	int	target_move;
 
 	target_move = set_target_empty(data);
 	if (next_lower(*data->stack_a))
+	{
 		swap_both(data->stack_a, data->stack_b);
+		debug_a++;//debug
+	}
 	else if (!target_move || (below_quartile_1(data)
 			&& !next_lower(*data->stack_b)))
 		rotate_both(data);
@@ -78,7 +82,11 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	data;
 	t_stack		*last_b;
+	int		debug_a;//debug
+	int		debug_b;//debug
 
+	debug_a = 0;//debug
+	debug_b = 0;//debug
 	last_b = NULL;
 	include_outer_data(&data, st_a, st_b, last_a);
 	include_new_data(&data, size_a, &last_b);
@@ -86,7 +94,8 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	{
 		if (data.size_b >= data.quartile)
 			data.quartile += get_quarter(size_a);
-		data.size_b += empty_stack_a(&data);
+		data.size_b += empty_stack_a(&data, &debug_a);
+		debug_a++;//debug
 	}
 	while (size_a - data.size_b <= 3 && sort_check(*data.stack_a) != 1)
 		sort_three(data.stack_a, data.last_a, data.stack_b);
@@ -94,6 +103,9 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 	{
 		/*data.quartile -= get_quarter(size_a);
 		while (data.size_b > 0 && data.size_b >= data.quartile)*/
-		data.size_b -= return_nodes_to_stack_a(&data);
+		data.size_b -= return_nodes_to_stack_a(&data, &debug_b);
+		debug_b++;//debug
 	}
+	ft_printf("Moves in empty %d\n", debug_a);//debug
+	ft_printf("Moves in return %d\n", debug_b);//debug
 }
