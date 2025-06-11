@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/10 17:21:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/11 19:10:23 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 		sd->quartile = (size_a / 2) + 1;
 }
 
-static	int	return_nodes_to_stack_a(t_sort_data *data, int *debug_b)
+static	int	return_nodes_to_stack_a(t_sort_data *data)
 {
 	int	target_move;
 
-	swap_both(data->stack_a, data->stack_b);
-	debug_b++;//debug
 	target_move = set_target_return(data);
+	if (is_2nd_lower((*data->stack_b)->next, *data->stack_b)
+		&& (*data->stack_b)->position >= data->quartile
+		&& data->quartile > data->size_a / 4)
+		swap_both(data->stack_a, data->stack_b);
 	if (!target_move)
 		rotate(data->stack_b, data->last_b, 'b');
 	else if (target_move == 2)
@@ -53,12 +55,13 @@ static	int	return_nodes_to_stack_a(t_sort_data *data, int *debug_b)
 	return (0);
 }
 
-static int	empty_stack_a(t_sort_data *data, int *debug_a)
+static int	empty_stack_a(t_sort_data *data,/*debug*/ int *debug_a)
 {
 	int	target_move;
 
 	target_move = set_target_empty(data);
-	if (next_lower(*data->stack_a))
+	if (next_lower(*data->stack_a)
+		&& data->quartile >= (*data->stack_a)->position)
 	{
 		swap_both(data->stack_a, data->stack_b);
 		debug_a++;//debug
@@ -101,9 +104,9 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 		sort_three(data.stack_a, data.last_a, data.stack_b);
 	while (*data.stack_b)
 	{
-		/*data.quartile -= get_quarter(size_a);
-		while (data.size_b > 0 && data.size_b >= data.quartile)*/
-		data.size_b -= return_nodes_to_stack_a(&data, &debug_b);
+		if (data.quartile >= data.size_b)
+			data.quartile -= get_quarter(size_a);
+		data.size_b -= return_nodes_to_stack_a(&data);
 		debug_b++;//debug
 	}
 	ft_printf("Moves in empty %d\n", debug_a);//debug
