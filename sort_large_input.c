@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 00:42:22 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/14 00:59:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 	int	target_move;
 
 	target_move = set_target_return(data);
-	if (is_2nd_lower((*data->stack_b)->next, *data->stack_b)
+	if (data->quartile > (*data->stack_b)->position && target_move == 1)
+		rotate(data->stack_b, data->last_b, 'b');
+	else if (is_2nd_lower((*data->stack_b)->next, *data->stack_b)
 		&& (*data->stack_b)->position >= data->quartile)
 		swap_both(data->stack_a, data->stack_b);
-	while (is_2nd_lower(*data->stack_b, *data->stack_a))
+	else if (is_2nd_lower(*data->stack_b, *data->stack_a))
 		rotate(data->stack_a, data->last_a, 'a');
-	if (target_move == 2)
+	else if (target_move == 2)
 		reverse_rotate_both(data);
 	else if (target_move == 1)
 	{
@@ -59,7 +61,7 @@ static int	empty_stack_a(t_sort_data *data)
 	int	target_move;
 
 	target_move = set_target_empty(data);
-	if ((next_lower(*data->stack_a)/* && target_move > 1*/
+	if ((next_lower(*data->stack_a) && target_move > 1
 		&& data->quartile >= (*data->stack_a)->position))
 		swap_both(data->stack_a, data->stack_b);
 	else if (!target_move || (below_quartile_1(data)
@@ -83,9 +85,7 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 {
 	t_sort_data	data;
 	t_stack		*last_b;
-	int		debug_b;//debug
 
-	debug_b = 0;//debug
 	last_b = NULL;
 	include_outer_data(&data, st_a, st_b, last_a);
 	include_new_data(&data, size_a, &last_b);
@@ -102,7 +102,5 @@ void	big_sort(t_stack **st_a, t_stack **st_b, t_stack **last_a, int size_a)
 		if (data.quartile >= data.size_b)
 			data.quartile -= get_quarter(size_a);
 		data.size_b -= return_nodes_to_stack_a(&data);
-		debug_b++;//debug
 	}
-	ft_printf("Moves in return %d\n", debug_b);//debug
 }
