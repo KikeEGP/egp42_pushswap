@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 20:07:14 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:22:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		below_quartile_1(t_sort_data *sd);
 int		conditions_rotate_both(t_sort_data *sd);
 int		conditions_reverse_stack_a(t_sort_data *sd);
 int		conditions_reverse_stack_b(t_sort_data *sd);
-int		conditions_reverse_both(t_sort_data *sd);
+int		conditions_rr_empty(t_sort_data *sd);
 /*	*	*	*	movements	*	*	*	*/
 void	pop_push(t_stack **stack_in, t_stack **stack_out);
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack);

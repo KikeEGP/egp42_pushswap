@@ -6,14 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:29:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:21:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*In stack_a, rotate is for integers higher to be pushed yet*/
-int	conditions_rotate_both(t_sort_data *sd)
+int	conditions_rr_empty(t_sort_data *sd)
 {
 	int	quarter;
 
