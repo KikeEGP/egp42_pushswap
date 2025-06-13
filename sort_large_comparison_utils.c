@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:37:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/14 00:30:00 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	below_quartile_1(t_sort_data *sd)
 	int	quarter;
 
 	quarter = get_quarter(sd->size_a);
-	if (sd->size_b >= 2 && next_lower(*sd->stack_b)
-		&& !sort_check_worths(*sd->stack_b, *sd->last_b))
+	if (sd->size_b >= 2 && quarter >= (*sd->stack_b)->position)/*next_lower(*sd->stack_b))
+	*///	&& !sort_check_worths(*sd->stack_b, *sd->last_b))
 		return (1);
 	return (0);
 }
