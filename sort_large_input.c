@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 01:33:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/14 01:40:18 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 static	int	return_nodes_to_stack_a(t_sort_data *data)
 {
 	int	target_move;
-
+/*HOW CAN I MAKE ROTATE IN CASE BELOW QUARTILE???*/
 	target_move = set_target_return(data);
 	if (data->quartile > (*data->stack_b)->position 
 		&& target_move == 1)
