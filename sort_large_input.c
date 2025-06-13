@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 00:59:16 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/14 01:33:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ static	int	return_nodes_to_stack_a(t_sort_data *data)
 	int	target_move;
 
 	target_move = set_target_return(data);
-	if (data->quartile > (*data->stack_b)->position && target_move == 1)
+	if (data->quartile > (*data->stack_b)->position 
+		&& target_move == 1)
 		rotate(data->stack_b, data->last_b, 'b');
 	else if (is_2nd_lower((*data->stack_b)->next, *data->stack_b)
 		&& (*data->stack_b)->position >= data->quartile)
