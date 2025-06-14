@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/13 22:31:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/14 02:06:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		get_quarter(int size_a);
 void	update_last_ptr(t_stack **head, t_stack **last);
 int		stop_empty_st_a(t_sort_data *sd);
 int		lower_than_quartile(t_sort_data *sd);
+/*	*	sort_set_target_moves	*/
 int		set_target_empty(t_sort_data *sd);
 int		set_target_return(t_sort_data *sd);
 /*	* sort_large_comparison_utils *	*/
