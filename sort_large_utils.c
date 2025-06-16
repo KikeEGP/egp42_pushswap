@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:10:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:40:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	get_quarter(int size_a)
 {
 	int	quarter;
 
-	quarter = size_a / 4;
-	if (size_a % 4 != 0)
+	quarter = size_a / 8;
+	if (size_a % 8 != 0)
 		quarter += 1;
 	return (quarter);
 }
