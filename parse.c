@@ -6,7 +6,7 @@
 /*   By: enrgil-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 21:34:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:12:23 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/17 20:28:09 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	string_to_int(char *source_str, char **endptr)
 	{
 		atoi_counter = 0;
 		result = ft_atoi_protected(source_str, &atoi_counter);
-		if (!check_atoi_overflow(result, atoi_counter))
+		if (!check_atoi_overflow(result, atoi_counter, source_str))
 			*endptr = "Error";
 	}
 	return (result);

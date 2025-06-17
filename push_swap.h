@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 02:06:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/17 20:29:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@
 int		parse_main(int argc, char **argv, t_stack **stack_a,
 			t_stack **last);
 /*	* parse_conversion_utils *	*/
-int		check_atoi_overflow(long result, int count);
+int		check_atoi_overflow(long result, int count, char *str);
 char	*get_endptr(char *str);
 /*	* parse_add_nodes *	*/
 int		add_to_list(int value, t_stack **parse_list);
-int		check_atoi_overflow(long result, int count);
 /*	* parse_check_duplicate */
 int		check_duplicate(t_stack **parse_list, t_stack **stack_a,
 			t_stack **last);
