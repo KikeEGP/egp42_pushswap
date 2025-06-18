@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:35:11 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:47:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 	sd->last_b = last_b;
 	sd->size_a = size_a;
 	sd->size_b = 0;
-	if (size_a % 2 == 0)
-		sd->quantile = size_a / 8;
-	else
-		sd->quantile = (size_a / 8) + 1;
+	sd->quantile = 0;
 }
 
 static	int	return_nodes_to_stack_a(t_sort_data *data)

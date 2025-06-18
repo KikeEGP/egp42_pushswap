@@ -6,14 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:37:52 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:48:16 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*We are working with integers. If size is not multiple of 4,
- * quantile won't be accurate*/
+/*We are working with integers. If size is not multiple of 8,
+ * quantile won't be accurate. At first idea, I've worked with 4*/
 int	get_quarter(int size_a)
 {
 	int	quarter;
