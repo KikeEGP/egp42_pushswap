@@ -6,14 +6,14 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/16 20:40:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:05:26 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*We are working with integers. If size is not multiple of 4,
- * quartile won't be accurate*/
+ * quantile won't be accurate*/
 int	get_quarter(int size_a)
 {
 	int	quarter;
@@ -42,11 +42,11 @@ int	stop_empty_st_a(t_sort_data *sd)
 	return (0);
 }
 
-int	lower_than_quartile(t_sort_data *sd)
+int	st_a_lower_than_quantile(t_sort_data *sd)
 {
-	if ((*sd->stack_a)->position >= sd->quartile
-		&& (*sd->last_a)->position >= sd->quartile
-		&& (*sd->last_a)->prev->position >= sd->quartile)
+	if ((*sd->stack_a)->position >= sd->quantile
+		&& (*sd->last_a)->position >= sd->quantile
+		&& (*sd->last_a)->prev->position >= sd->quantile)
 		return (1);
 	return (0);
 }

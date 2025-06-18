@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:32:36 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 00:45:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:05:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	conditions_rotate_both(t_sort_data *sd)
 	quarter = get_quarter(sd->size_a);
 	if (*sd->stack_b && (*sd->stack_b)->position >= quarter
 		&& is_2nd_lower((*sd->stack_b)->next, *sd->stack_b)
-		&& lower_than_quartile(sd))
+		&& st_a_lower_than_quantile(sd))
 		return (1);
 	return (0);
 }

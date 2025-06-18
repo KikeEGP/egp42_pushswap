@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/14 01:36:00 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:04:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Here I discovered something: to acces to t_stack elements from sd,
  * you must write (*sd->stack)->element*/
-int	below_quartile_1(t_sort_data *sd)
+int	st_b_below_quantile_1(t_sort_data *sd)
 {
 	int	lower_values;
 

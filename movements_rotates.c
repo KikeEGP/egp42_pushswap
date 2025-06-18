@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/16 20:24:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:06:23 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ void	rotate(t_stack **first, t_stack **last, int id_stack)
 
 void	rotate_both(t_sort_data *sd)
 {
-	if (conditions_rotate_both(sd) || (lower_than_quartile(sd)
-			&& below_quartile_1(sd)
+	if (conditions_rotate_both(sd) || (st_a_lower_than_quantile(sd)
+			&& st_b_below_quantile_1(sd)
 			&& is_2nd_lower((*sd->stack_b)->next, *sd->stack_b)))
 	{
 		rotate(sd->stack_a, sd->last_a, 0);
 		rotate(sd->stack_b, sd->last_b, 0);
 		ft_putendl("rr");
 	}
-	else if (lower_than_quartile(sd))
+	else if (st_a_lower_than_quantile(sd))
 		rotate(sd->stack_a, sd->last_a, 'a');
-	else if ((below_quartile_1(sd))
+	else if ((st_b_below_quantile_1(sd))
 		&& is_2nd_lower((*sd->stack_b)->next, *sd->stack_b))
 		rotate(sd->stack_b, sd->last_b, 'b');
 }
