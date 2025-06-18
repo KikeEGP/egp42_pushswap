@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:15:16 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/09 21:20:24 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:22:42 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 	transition_ptr = *stack_out;
 	*stack_out = transition_ptr->next;
 	if (*stack_in == NULL)
-	{
 		transition_ptr->next = NULL;
-	}
 	else
 	{
 		transition_ptr->next = *stack_in;
@@ -34,8 +32,6 @@ void	pop_push(t_stack **stack_in, t_stack **stack_out)
 		(*stack_out)->prev = NULL;
 }
 
-/*If stack_in starts as an empty list and last != NULL, 1st node == last
- * Last is called as NULL just in cases I really don't need it*/
 void	push(t_stack **stack_a, t_stack **stack_b, int id_stack)
 {
 	if (id_stack == 'b')
