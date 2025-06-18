@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:30:19 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:03:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:37:31 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	set_target_empty(t_sort_data *sd)
 int	set_target_return(t_sort_data *sd)
 {
 	if (!((*sd->stack_b)->position >= sd->quantile
-		&& is_2nd_lower(*sd->stack_b, (*sd->stack_a)->next)))
+			&& is_2nd_lower(*sd->stack_b, (*sd->stack_a)->next)))
 	{
 		if (((*sd->last_a)->position != (sd->size_a -1)
-			&& is_2nd_lower(*sd->last_a ,*sd->stack_b))
-				|| is_2nd_lower(*sd->last_b, *sd->stack_b))
+				&& is_2nd_lower(*sd->last_a, *sd->stack_b))
+			|| is_2nd_lower(*sd->last_b, *sd->stack_b))
 			return (2);
 		else if (is_2nd_lower(*sd->stack_b, *sd->stack_a))
 			return (0);

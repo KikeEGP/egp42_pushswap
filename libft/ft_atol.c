@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:15:13 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/17 20:08:38 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:38:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ long	ft_atol(const char *str, int *counter)
 
 	result = 0;
 	sign = 1;
-
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '-' || *str == '+')

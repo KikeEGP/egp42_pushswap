@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:31:13 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:37:52 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,3 @@ int	stop_empty_st_a(t_sort_data *sd)
 		return (1);
 	return (0);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:05:41 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:35:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 static	int	return_nodes_to_stack_a(t_sort_data *data)
 {
 	int	target_move;
-/*HOW CAN I MAKE ROTATE IN CASE BELOW QUARTILE???*/
+
 	target_move = set_target_return(data);
-	if (data->quantile > (*data->stack_b)->position 
+	if (data->quantile > (*data->stack_b)->position
 		&& target_move == 1)
 		rotate(data->stack_b, data->last_b, 'b');
 	else if (is_2nd_lower((*data->stack_b)->next, *data->stack_b)
@@ -63,7 +63,7 @@ static int	empty_stack_a(t_sort_data *data)
 
 	target_move = set_target_empty(data);
 	if ((next_lower(*data->stack_a) && target_move > 1
-		&& data->quantile >= (*data->stack_a)->position))
+			&& data->quantile >= (*data->stack_a)->position))
 		swap_both(data->stack_a, data->stack_b);
 	else if (!target_move || (st_b_below_quantile_1(data)
 			&& !next_lower(*data->stack_b)))
