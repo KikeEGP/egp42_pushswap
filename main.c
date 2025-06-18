@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:20:36 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:24:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	sort(t_stack **stack_a, t_stack **last_a)
 {
-	int	sort_check_result;
-	int	size_a;
+	int		sort_check_result;
+	int		size_a;
 	t_stack	*stack_b;
 
 	stack_b = NULL;

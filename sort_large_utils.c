@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:02:18 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:22:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:31:13 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	update_last_ptr(t_stack **head, t_stack **last)
 		*last = *head;
 }
 
-/*You can't access directly to next or prev from struct. Remind this in future 
- * PS: IN FACT, YOU CAN. (*sd->stack_a)->element)*/
 int	stop_empty_st_a(t_sort_data *sd)
 {
 	if (sd->size_a - sd->size_b <= 3
@@ -43,11 +41,4 @@ int	stop_empty_st_a(t_sort_data *sd)
 	return (0);
 }
 
-int	st_a_lower_than_quantile(t_sort_data *sd)
-{
-	if ((*sd->stack_a)->position >= sd->quantile
-		&& (*sd->last_a)->position >= sd->quantile
-		&& (*sd->last_a)->prev->position >= sd->quantile)
-		return (1);
-	return (0);
-}
+
