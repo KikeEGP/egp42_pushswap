@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:20 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:19:04 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:20:36 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ int	main(int argc, char *a_vector[])
 	t_stack	*stack_a;
 	t_stack	*last_a;
 
-	if (argc == 1)
-		return (0);
-	stack_a = NULL;
-	last_a = NULL;
-	if (!parse_main(argc, a_vector, &stack_a, &last_a))
-		error_happened(&stack_a);
-	sort(&stack_a, &last_a);
-	clean_list(&stack_a);
+	if (argc != 1)
+	{
+		stack_a = NULL;
+		last_a = NULL;
+		if (!parse_main(argc, a_vector, &stack_a, &last_a))
+			error_happened(&stack_a);
+		sort(&stack_a, &last_a);
+		clean_list(&stack_a);
+	}
 	return (0);
 }
