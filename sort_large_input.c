@@ -20,15 +20,13 @@ static void	include_outer_data(t_sort_data *data, t_stack **st_a,
 	data->last_a = last_a;
 }
 
-/*We begin with quarile 2, median. In stack_b, bottom will be for positions
- * below quartile 1, and top for positions between median and q1*/
 static void	include_new_data(t_sort_data *sd, int size_a, t_stack **last_b)
 {
 	sd->last_b = last_b;
 	sd->size_a = size_a;
 	sd->size_b = 0;
 	if (size_a % 2 == 0)
-		sd->quartile = size_a / 8;
+		sd->quartile = size_a / 8;/*Initialize to 0, get_quarter will change. And change the name to quantile*/
 	else
 		sd->quartile = (size_a / 8) + 1;
 }
