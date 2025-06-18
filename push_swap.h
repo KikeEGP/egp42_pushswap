@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:24:53 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:04:53 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:14:00 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,7 @@ void	reverse_rotate_both(t_sort_data *sd);
 /*	*	*	*	manage_memory	*	*	*	*/
 int		initialize_node(t_stack **new_stack, int value);
 void	clean_list(t_stack **head);
-void	free_stacks(t_stack **stack_a, t_stack **stack_b);
-void	error_happened(t_stack **stack_a, t_stack **stack_b);
+void	error_happened(t_stack **stack_a);
 void	free_split(char **array);
 /*	*	*	* 	Taken from libft *	*	*	*/
 int		stack_size(t_stack *lst);
