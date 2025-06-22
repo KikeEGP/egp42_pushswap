@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:52:32 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/18 18:47:27 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/22 12:13:04 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ static int	empty_stack_a(t_sort_data *data)
 		rotate_both(data);
 	else if (target_move == 2)
 		reverse_rotate_both(data);
-	else if (target_move == 3)
-		rotate(data->stack_b, data->last_b, 'b');
 	else if (target_move == 1)
 	{
 		push(data->stack_a, data->stack_b, 'b');

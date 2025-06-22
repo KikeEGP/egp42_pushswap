@@ -6,13 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:42:00 by enrgil-p          #+#    #+#             */
-/*   Updated: 2025/06/17 20:55:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2025/06/22 12:18:34 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*ADD HERE Function to compare new number to all previous*/
 
 /*Below here, string_to_int's utils functions*/
 int	check_atoi_overflow(long result, int count, char *str)
